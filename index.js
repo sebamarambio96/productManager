@@ -3,9 +3,9 @@ import app from "./src/app.js";
 
 async function main() {
     try {
-
-        app.listen(3000)
-        console.log('Servidor en el puerto 3000')
+        const port = 8080
+        app.listen(port)
+        console.log(`Servidor en el puerto ${port}`)
     } catch (error) {
         console.error('Hubo un error en el servidor');
     }

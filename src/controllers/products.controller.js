@@ -4,7 +4,6 @@ const productManager = new ProductManager('./src/data/productos.json')
 //GET products wiith optional limit
 export async function getProducts(req, res) {
     try {
-        console.log(req.query.limit)
         let products = await productManager.getProducts()
         products.shift()
         if (req.query.limit) {
