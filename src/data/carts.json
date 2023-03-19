@@ -30,7 +30,20 @@
         "id": 2
     },
     {
-        "products": [],
+        "products": [
+            {
+                "pid": 9,
+                "quantity": 1
+            },
+            {
+                "pid": 12,
+                "quantity": 2
+            },
+            {
+                "pid": 11,
+                "quantity": 1
+            }
+        ],
         "id": 3
     },
     {
