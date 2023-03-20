@@ -1,8 +1,9 @@
 import express from "express"
 import { engine } from "express-handlebars"
 import { Server as SocketIOServer } from "socket.io"
+import { productManager } from "./controllers/productsController.js"
 import { apiRouter } from "./routers/apiRouter.js"
-import { render } from "./routers/renderRouter.js"
+import { viewsRouter } from "./routers/viewsRouter.js"
 
 
 const app = express()
@@ -14,7 +15,7 @@ app.set('view engine', '.hbs');
 app.set('views', './views');
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-app.use('/', render)
+app.use('/', viewsRouter)
 app.use('/api', apiRouter)
 
 //Error handling
@@ -38,13 +39,18 @@ app.use((error, req, res, next) => {
 const PORT = 8080
 const server = app.listen(PORT, () => console.log(`Servidor en el puerto ${PORT}`))
 
-const io = new SocketIOServer(server)
+export const io = new SocketIOServer(server)
 
-io.on('connection', clientSocket => {
+io.on('connection',async clientSocket => {
     console.log(`Nuevo cliente conectado! socket id# ${clientSocket.id}`)
-    clientSocket.emit('mensajito', { hola: 'hola mundo' })
-    clientSocket.on('msgClient', datosAdjuntos => {
-        console.log(`#${clientSocket.id} dice:`)
-        console.log(datosAdjuntos)
+    clientSocket.emit('updateProducts', await productManager.getProducts())
+    clientSocket.on('newProduct', async product => {
+        await productManager.addProduct(product)
+        clientSocket.emit('updateProducts', await productManager.getProducts())
     })
+    clientSocket.on('deleteProduct', async item => {
+        await productManager.deleteProduct(item.id)
+        clientSocket.emit('updateProducts', await productManager.getProducts())
+    })
+
 })

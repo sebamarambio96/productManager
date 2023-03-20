@@ -74,14 +74,23 @@
         "id": 11
     },
     {
-        "id": 12,
-        "tittle": "producto prueba actualizado 3",
-        "description": "Este es un producto prueba",
-        "price": 300,
-        "thumbnail": [
-            "11asda12312.jpg"
-        ],
-        "code": "ab1qw221asd21",
-        "stock": 25
+        "tittle": "asdasd",
+        "price": "12312",
+        "stock": "3123",
+        "thumbnail": "asdasd",
+        "description": "asdasda",
+        "code": "asdasd",
+        "status": true,
+        "id": 13
+    },
+    {
+        "tittle": "Embudo",
+        "price": "10000",
+        "stock": "100",
+        "thumbnail": "embudo.jpg",
+        "description": "Sirve para verter liquidos de manera segura",
+        "code": "asdfasd1223",
+        "status": true,
+        "id": 14
     }
 ]

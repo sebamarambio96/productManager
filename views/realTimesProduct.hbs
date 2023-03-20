@@ -1,0 +1,27 @@
+<h1>{{titulo}}</h1>
+<h2 class="py-3">Agregar producto:</h2>
+<div class="d-flex flex-column w-50">
+    <label for="tittle">Titulo:</label>
+    <input type="text" id="tittle" />
+    <label for="price">Precio:</label>
+    <input type="number" id="price" />
+    <label for="stock">Stock:</label>
+    <input type="number" id="stock" />
+    <label for="imagen">Imagen:</label>
+    <input type="text" id="imagen" />
+    <label for="code">Código:</label>
+    <input type="text" id="code" />
+    <label for="description">Descripción:</label>
+    <input type="text" id="description" />
+    <button id="btnAdd" class="btn btn-success w-50 my-3">Enviar</button>
+</div>
+<div class="my-3">
+    <h2 class="py-2">Eliminar producto:</h2>
+    <label for="id">ID:</label>
+    <input type="text" id="id"/>
+    <button id="btnDelete" class="btn btn-danger">Enviar</button>
+</div>
+<div id="productsList">
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="static/js/index.js"></script> 
