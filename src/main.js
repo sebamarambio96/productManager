@@ -1,10 +1,13 @@
 import express from "express"
 import { engine } from "express-handlebars"
 import { Server as SocketIOServer } from "socket.io"
-import { productManager } from "./controllers/productsController.js"
 import { apiRouter } from "./routers/apiRouter.js"
 import { viewsRouter } from "./routers/viewsRouter.js"
+import { ioManager } from "./controllers/mongoIoController.js"
+import { connectMongo } from "./data/mongoose.js"
 
+//Se conecta base de datos
+await connectMongo()
 
 const app = express()
 
@@ -41,16 +44,20 @@ const server = app.listen(PORT, () => console.log(`Servidor en el puerto ${PORT}
 
 export const io = new SocketIOServer(server)
 
-io.on('connection',async clientSocket => {
-    console.log(`Nuevo cliente conectado! socket id# ${clientSocket.id}`)
-    clientSocket.emit('updateProducts', await productManager.getProducts())
-    clientSocket.on('newProduct', async product => {
-        await productManager.addProduct(product)
-        clientSocket.emit('updateProducts', await productManager.getProducts())
-    })
-    clientSocket.on('deleteProduct', async item => {
-        await productManager.deleteProduct(item.id)
-        clientSocket.emit('updateProducts', await productManager.getProducts())
-    })
+//Importa la función que comunica la base de datos y el front para actualización automatica
+ioManager(io)
 
-})
+
+/* FyleSystem */
+// io.on('connection',async clientSocket => {
+//     console.log(`Nuevo cliente conectado! socket id# ${clientSocket.id}`)
+//     clientSocket.emit('updateProducts', await productManager.getProducts())
+//     clientSocket.on('newProduct', async product => {
+//         await productManager.addProduct(product)
+//         clientSocket.emit('updateProducts', await productManager.getProducts())
+//     })
+//     clientSocket.on('deleteProduct', async item => {
+//         await productManager.deleteProduct(item.id)
+//         clientSocket.emit('updateProducts', await productManager.getProducts())
+//     })
+// })

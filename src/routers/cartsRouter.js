@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { getCart, addCart, addProducts } from "../controllers/cartsController.js"
+import { getCart, addCart, addProducts } from "../controllers/cartsControllerMongo.js"
 
 export const cartsRouter = Router()
 
@@ -9,5 +9,5 @@ cartsRouter.get('/:cid', getCart)
 //GET cart by id
 cartsRouter.post('/', addCart)
 
-//GET profile
+//Add product
 cartsRouter.post('/:cid/product/:pid', addProducts)

@@ -1,11 +1,12 @@
 import { Router } from "express"
-import { productManager } from "../controllers/productsController.js"
+import { productsManager } from "../dao/models/productsShema.js"
+/* import { productManager } from "../controllers/productsController.js" */
 
 export const viewsRouter = Router()
 
 //GET cart by id
 viewsRouter.get('/', async (req, res, next) => {
-    let products = await productManager.getProducts()
+    let products = await productsManager.getAll()
     res.render('home.hbs', {
         titulo: 'Inicio',
         encabezado: 'Inicio',
@@ -15,12 +16,19 @@ viewsRouter.get('/', async (req, res, next) => {
 })
 
 viewsRouter.get('/realtimesproduct', async (req, res, next) => {
-    let products = await productManager.getProducts()
+    let products = await productsManager.getAll()
     res.render('realTimesProduct.hbs', {
         titulo: 'Productos tiempo real',
         encabezado: 'Productos tiempo real',
         products,
         hayProductos: products.length > 0
+    })
+})
+
+viewsRouter.get('/Chat', async (req, res, next) => {
+    res.render('chat.hbs', {
+        titulo: 'Productos tiempo real',
+        encabezado: 'Productos tiempo real',
     })
 })
 

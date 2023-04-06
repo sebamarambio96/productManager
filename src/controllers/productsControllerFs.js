@@ -1,4 +1,4 @@
-import { ProductManager } from "./managers/productManager.js"
+import { ProductManager } from "../dao/managers/productManager.js"
 export const productManager = new ProductManager('./src/data/productos.json')
 
 //GET products wiith optional limit

@@ -4,10 +4,7 @@
         "tittle": "producto prueba",
         "description": "Este es un producto prueba",
         "price": 300,
-        "thumbnail": [
-            "11asda23.jpg",
-            "a313.png"
-        ],
+        "thumbnail": "11asda23.jpg",
         "code": "abcd112212",
         "stock": 25
     },
@@ -42,9 +39,7 @@
         "tittle": "producto prueba",
         "description": "Este es un producto prueba",
         "price": 300,
-        "thumbnail": [
-            "11a12312.jpg"
-        ],
+        "thumbnail": "11a12312.jpg",
         "code": "abcd1122121",
         "stock": 25,
         "id": 9,
@@ -55,9 +50,7 @@
         "tittle": "producto prueba",
         "description": "Este es un producto prueba",
         "price": 300,
-        "thumbnail": [
-            "11asda12312.jpg"
-        ],
+        "thumbnail": "11asda12312.jpg",
         "code": "ab122121",
         "stock": 25
     },
@@ -65,9 +58,7 @@
         "tittle": "producto prueba",
         "description": "Este es un producto prueba",
         "price": 300,
-        "thumbnail": [
-            "11asda12312.jpg"
-        ],
+        "thumbnail": "11asda12312.jpg",
         "code": "ab1qw22121",
         "stock": 25,
         "status": true,

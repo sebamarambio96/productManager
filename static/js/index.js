@@ -10,6 +10,7 @@ btnAdd.addEventListener('click', () => {
     const code = document.getElementById('code').value
 
     if (tittle != '' & price != '' & stock != '' & thumbnail != '' & description != '' & code != '') {
+        console.log('first')
         serverSocket.emit('newProduct', {
             tittle,
             price,
@@ -38,7 +39,7 @@ const template = `
     {{#each products}}
         <div class="card" style="width: 15rem;">
             <div class="card-body">
-                <h6 class="card-subtitle mb-2 text-muted">ID: {{this.id}}</h6>
+                <h6 class="card-subtitle mb-2 text-muted">ID: {{this._id}}</h6>
                 <h5 class="card-title text-success">Nombre: {{this.tittle}}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Stock: {{this.stock}}</h6>
                 <h6 class="card-subtitle mb-2 text-muted">Precio: {{this.price}}</h6>
