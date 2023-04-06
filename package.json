@@ -11,6 +11,9 @@
     "@types/express": "^4.17.17",
     "nodemon": "^2.0.21"
   },
+  "engines": {
+    "node": "15.x"
+  },
   "name": "primeraentrega",
   "version": "1.0.0",
   "main": "src/main.js",
