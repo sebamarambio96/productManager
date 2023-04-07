@@ -9,7 +9,7 @@ btnAdd.addEventListener('click', () => {
     const description = document.getElementById('description').value
     const code = document.getElementById('code').value
 
-    if (tittle != '' & price != '' & stock != '' & thumbnail != '' & description != '' & code != '') {
+    if (tittle != '' & price != '' & stock != '' & description != '' & code != '') {
         console.log('first')
         serverSocket.emit('newProduct', {
             tittle,

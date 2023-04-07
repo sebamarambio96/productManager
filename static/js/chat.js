@@ -25,7 +25,6 @@ if (btnSend) {
         const message = inputMessage.value
         //Validamos que exista
         if (!user || !message) return
-
         serverSocket.emit('newMessage', { user, message })
     })
 }
