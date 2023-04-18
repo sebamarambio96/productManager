@@ -8,16 +8,16 @@ btnAdd.addEventListener('click', () => {
     const thumbnail = document.getElementById('imagen').value
     const description = document.getElementById('description').value
     const code = document.getElementById('code').value
-
-    if (tittle != '' & price != '' & stock != '' & description != '' & code != '') {
-        console.log('first')
+    const category = document.getElementById('category').value
+    if (tittle != '' & price != '' & stock != '' & description != '' & code != ''& category != '') {
         serverSocket.emit('newProduct', {
             tittle,
             price,
             stock,
             thumbnail,
             description,
-            code
+            code,
+            category,
         })
     }
 })
@@ -41,6 +41,7 @@ const template = `
             <div class="card-body">
                 <h6 class="card-subtitle mb-2 text-muted">ID: {{this._id}}</h6>
                 <h5 class="card-title text-success">Nombre: {{this.tittle}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Categoría: {{this.category}}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Stock: {{this.stock}}</h6>
                 <h6 class="card-subtitle mb-2 text-muted">Precio: {{this.price}}</h6>
                 <h6 class="card-subtitle mb-2 text-muted">Imagen: {{this.thumbnail}}</h6>
@@ -58,6 +59,7 @@ const renderProducts = Handlebars.compile(template)
 
 serverSocket.on('updateProducts', products => {
     const divProducts = document.getElementById('productsList')
+    console.log(products)
     if (divProducts) {
         divProducts.innerHTML = renderProducts({ products, hayProductos: products.length > 0 })
     }

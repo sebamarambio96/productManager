@@ -5,14 +5,16 @@ export class Products {
     #thumbnail
     #code
     #stock
+    #category
 
-    constructor({ tittle, description, price, thumbnail, code, stock }) {
+    constructor({ tittle, description, price, thumbnail, code, stock, category }) {
         this.#tittle = tittle
         this.#description = description
         this.#price = price
         this.#thumbnail = thumbnail
         this.#code = code
         this.#stock = stock
+        this.#category = category
     }
 
     get tittle() { return this.#tittle }
@@ -21,6 +23,7 @@ export class Products {
     get thumbnail() { return this.#thumbnail }
     get code() { return this.#code }
     get stock() { return this.#stock }
+    get category() { return this.#category }
 
     data() {
         return {
@@ -30,6 +33,7 @@ export class Products {
             thumbnail: this.#thumbnail,
             code: this.#code,
             stock: this.#stock,
+            category: this.#category,
         }
     }
 }

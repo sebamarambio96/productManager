@@ -1,0 +1,43 @@
+<h1>{{encabezado}}</h1>
+<h2 class="py-3">Listado de productos:</h2>
+<h3 class="py-3">Filtros</h2>
+<div class="d-flex my-4">
+    <button class="btn btn-light"><a href="/products/?category=Comida">Comida</a></button>
+    <button class="btn btn-light"><a href="/products/?category=Otros">Otros</a></button>
+    <button class="btn btn-light"><a href="/products/?price=asc">Precio Ascendente</a></button>
+    <button class="btn btn-light"><a href="/products/?price=desc">Precio Descendente</a></button>
+    <button class="btn btn-light"><a href="/products/?stock=asc">Stock Ascendente</a></button>
+    <button class="btn btn-light"><a href="/products/?stock=desc">Stock Descendente</a></button>
+</div>
+
+{{#if hayProductos}}
+<div class="d-flex gap-3 flex-wrap">
+    {{#each products}}
+    <div class="card" style="width: 15rem;">
+        <div class="card-body">
+            <h6 class="card-subtitle mb-2 text-muted">ID: {{this._id}}</h6>
+            <h5 class="card-title text-success">Nombre: {{this.tittle}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Categoría:{{this.category}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">Stock: {{this.stock}}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">Precio: {{this.price}}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">Imagen: {{this.thumbnail}}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">Codigo: {{this.code}}</h6>
+            <h6 class="card-subtitle mb-2 text-muted">Descripción{{this.description}}</h6>
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{else}}
+<p>no hay productos...</p>
+{{/if}}
+<nav aria-label="Page navigation example">
+    <ul class="pagination my-4">
+        <li class="page-item">
+            <a class="page-link" {{#if info.hasPrevPage}} href="/products/?limit={{info.limit}}&page={{info.prevLink}}" {{/if}}>Anterior</a>
+        </li>
+        <li class="page-item page-link">{{info.page}}</li>
+        <li class="page-item">
+            <a class="page-link" {{#if info.hasNextPage}} href="/products/?limit={{info.limit}}&page={{info.nextLink}}" {{/if}}>Siguiente</a>
+        </li>
+    </ul>
+</nav>

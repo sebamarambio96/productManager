@@ -17,6 +17,7 @@ export async function ioManager(io) {
         //New product
         clientSocket.on('newProduct', async product => {
             const productReq = new Products(product)
+            console.log(productReq)
             await productsManager.addProduct(productReq.data())
             clientSocket.emit('updateProducts', await productsManager.getAll())
         })

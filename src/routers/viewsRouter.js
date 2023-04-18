@@ -15,6 +15,42 @@ viewsRouter.get('/', async (req, res, next) => {
     })
 })
 
+viewsRouter.get('/products', async (req, res, next) => {
+    let sort
+    if (req.query.stock) {
+        sort = req.query.stock === 'asc' ? { stock: 1 } : { stock: -1 }
+    } else {
+        sort = req.query.price === 'asc' ? { price: 1 } : { price: -1 }
+    }
+    const options = {
+        limit: req.query.limit || 10,
+        page: req.query.page || 1,
+        lean: true,
+        sort
+    }
+    const category = req.query.category ? { category: req.query.category } : {}
+    let products = await productsManager.getPaginate(category, options)
+    console.log(products)
+    const info = {
+        status: products ? 'Success' : 'Error',
+        payload: products.docs,
+        totalPages: products.totalPages, 
+        prevLink: products.prevPage,
+        nextLink: products.nextPage,
+        page: products.page,
+        limit: products.limit,
+        hasNextPage: products.hasNextPage,
+        hasPrevPage: products.hasPrevPage,
+    }
+    res.render('products.hbs', {
+        titulo: 'Products Pagination',
+        encabezado: 'Products Pagination',
+        products: info.payload,
+        info,
+        hayProductos: info.payload.length > 0
+    })
+})
+
 viewsRouter.get('/realtimesproduct', async (req, res, next) => {
     let products = await productsManager.getAll()
     res.render('realTimesProduct.hbs', {
