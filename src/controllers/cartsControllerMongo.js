@@ -17,7 +17,7 @@ export async function addCart(req, res, next) {
     try {
         const cart = await cartsManager.addCart()
         console.log(cart)
-        res.status(201).json({ message: 'Carrito vacío creado' })
+        res.status(201).json({ cart })
     } catch (error) {
         next(error)
     }

@@ -11,3 +11,6 @@ cartsRouter.post('/', addCart)
 
 //Add product
 cartsRouter.post('/:cid/product/:pid', addProducts)
+
+//Add product
+cartsRouter.post('/:cid/product/:pid', addProducts)

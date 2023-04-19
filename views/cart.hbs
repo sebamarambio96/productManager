@@ -1,0 +1,24 @@
+<h1>{{encabezado}}</h1>
+<h2 class="py-3">Resumen Carrito:</h2>
+{{#if hayCarrito}}
+<div class="d-flex gap-3 flex-wrap">
+    {{#each cart}}
+        <div class="card" style="width: 15rem;">
+            <div class="card-body">
+                <h5 class="card-title text-success">Nombre: {{this.tittle}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Stock: {{this.stock}}</h6>
+                <h6 class="card-subtitle mb-2 text-muted">Precio: {{this.price}}</h6>
+                <h6 class="card-subtitle mb-2 text-muted">Imagen: {{this.thumbnail}}</h6>
+                <h6 class="card-subtitle mb-2 text-muted">Codigo: {{this.code}}</h6>
+                <h6 class="card-subtitle mb-2 text-muted">Descripción: {{this.description}}</h6>
+                <button class="btn btn-danger" id="{{this._id}}">Eliminar</button>
+            </div>
+        </div>
+    {{/each}}
+</div>
+{{else}}
+    <p>no hay productos...</p>
+{{/if}}
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="static/js/cart.js"></script>

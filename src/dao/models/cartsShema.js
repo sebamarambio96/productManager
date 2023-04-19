@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import { productsManager } from "./productsShema.js";
+import { io } from "../../main.js";
 
 const schemaCarts = new mongoose.Schema({
     products: { type: Object, required: true }
@@ -34,11 +35,15 @@ class CartsManager {
             cart.products[pidx].quantity += 1
             console.log(cart.products[pidx].quantity)
         }
-        await this.#cartsDb.findOneAndUpdate({ _id: cid }, {products : cart.products}).lean()
+        await this.#cartsDb.findOneAndUpdate({ _id: cid }, { products: cart.products }).lean()
         console.log('Producto actualizado/agregado')
     }
     async addCart() {
         const newCart = await this.#cartsDb.create({ products: [] })
+        //Nuevo carrito
+        await io.on('connection', async clientSocket => {
+            clientSocket.emit('newCart', newCart)
+        })
         return newCart
     }
     async getAll() {

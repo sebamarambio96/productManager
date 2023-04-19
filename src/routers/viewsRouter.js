@@ -1,5 +1,6 @@
 import { Router } from "express"
 import { productsManager } from "../dao/models/productsShema.js"
+import { cartsManager } from "../dao/models/cartsShema.js"
 /* import { productManager } from "../controllers/productsController.js" */
 
 export const viewsRouter = Router()
@@ -12,6 +13,15 @@ viewsRouter.get('/', async (req, res, next) => {
         encabezado: 'Inicio',
         products,
         hayProductos: products.length > 0
+    })
+})
+
+viewsRouter.get('/cart', async (req, res, next) => {
+    res.render('cart.hbs', {
+        titulo: 'Carrito',
+        encabezado: 'Carrito',
+        /* cart,
+        hayCarrito: cart.length > 0 */
     })
 })
 
