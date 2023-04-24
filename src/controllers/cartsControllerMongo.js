@@ -32,3 +32,13 @@ export async function addProducts(req, res, next) {
         next(error)
     }
 }
+
+//Delete products
+export async function deleteProduct(req, res, next) {
+    try {
+        await cartsManager.deleteProduct(req.params.cid, req.params.pid)
+        res.status(201).json({ message: 'Producto eliminado' })
+    } catch (error) {
+        next(error)
+    }
+}

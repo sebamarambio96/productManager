@@ -17,11 +17,10 @@ viewsRouter.get('/', async (req, res, next) => {
 })
 
 viewsRouter.get('/cart', async (req, res, next) => {
+
     res.render('cart.hbs', {
         titulo: 'Carrito',
-        encabezado: 'Carrito',
-        /* cart,
-        hayCarrito: cart.length > 0 */
+        encabezado: 'Carrito'
     })
 })
 
