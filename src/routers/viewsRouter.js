@@ -77,6 +77,13 @@ viewsRouter.get('/Chat', async (req, res, next) => {
     })
 })
 
+viewsRouter.get('/login', async (req, res, next) => {
+    res.render('login.hbs', {
+        titulo: 'Login',
+        encabezado: 'Inicia sesión:',
+    })
+})
+
 viewsRouter.get('/about', async (req, res, next) => {
     const listado = ['hola', 'chau']
     /* const listado = [] */

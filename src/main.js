@@ -5,6 +5,8 @@ import { apiRouter } from "./routers/apiRouter.js"
 import { viewsRouter } from "./routers/viewsRouter.js"
 import { ioManager } from "./controllers/mongoIoController.js"
 import { connectMongo } from "./data/mongoose.js"
+import { loginRouter } from "./routers/loginRouter.js"
+/* import cookieParser from 'cookie-parser' */
 
 //Se conecta base de datos
 await connectMongo()
@@ -12,14 +14,16 @@ await connectMongo()
 const app = express()
 
 //middlewares
+/* app.use(cookieParser()) */
 app.use('/static', express.static('./static'))
 app.engine('.hbs', engine({ extname: '.hbs' }));
 app.set('view engine', '.hbs');
-app.set('views', './views');
+app.set('views', './views')
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use('/', viewsRouter)
 app.use('/api', apiRouter)
+app.use('/login', loginRouter)
 
 //Error handling
 app.use((error, req, res, next) => {
