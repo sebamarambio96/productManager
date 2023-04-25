@@ -1,3 +1,4 @@
+import { cartsManager } from "../dao/models/cartsShema.js"
 import { messagesManager } from "../dao/models/messagesShema.js"
 import { productsManager } from "../dao/models/productsShema.js"
 import { Messages } from "../entities/messages.js"
@@ -43,6 +44,10 @@ export async function ioManager(io) {
         //Avisa a los demás que alguien entra
         clientSocket.on('newUser', async username => {
             clientSocket.broadcast.emit('newUser', username)
+        })
+        clientSocket.on('updateCart', async cid => {
+            const cart = await cartsManager.getByID(cid)
+            clientSocket.emit('updateCart', cart)
         })
     })
 }

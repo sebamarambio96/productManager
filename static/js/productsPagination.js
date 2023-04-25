@@ -1,5 +1,5 @@
 const serverSocket = io('http://localhost:8080')
-const cartSave = localStorage.getItem('cartID')
+let cartSave = localStorage.getItem('cartID')
 console.log(cartSave);
 if (!cartSave) {
     fetch('http://localhost:8080/api/carts/', {
@@ -22,9 +22,10 @@ serverSocket.on('newCart', async cart => {
 
 function listenAddButtons() {
     const buttons = document.querySelectorAll('.btn-info')
+    console.log(buttons);
     buttons.forEach(btn => {
         btn.addEventListener('click', e => {
-            fetch(`http://localhost:8080/api/carts/${cartID}/product/${btn.id}`, {
+            fetch(`http://localhost:8080/api/carts/${cartSave}/product/${btn.id}`, {
                 method: 'POST',
             }
             )

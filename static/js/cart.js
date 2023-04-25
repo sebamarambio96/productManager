@@ -1,6 +1,6 @@
 let cartID
 const serverSocket = io('http://localhost:8080')
-const cartSave = localStorage.getItem('cartID')
+let cartSave = localStorage.getItem('cartID')
 console.log(cartSave);
 if (!cartSave) {
     fetch('http://localhost:8080/api/carts/', {
@@ -20,7 +20,6 @@ if (!cartSave) {
     )
         .then(res => res.json())
         .then(res => {
-            console.log(res)
             const template = `
 <h2 class="py-3">Listado de productos:</h2>
 {{#if hayProductos}}
@@ -46,6 +45,7 @@ if (!cartSave) {
             const divProducts = document.getElementById('productsList')
             if (divProducts) {
                 divProducts.innerHTML = renderProducts({ products: res.cartProducts, hayProductos: res.cartProducts.length > 0 })
+                listenDeleteButtons()
             }
         })
 }
@@ -85,15 +85,18 @@ serverSocket.on('updateCart', async cart => {
             const divProducts = document.getElementById('productsList')
             if (divProducts) {
                 divProducts.innerHTML = renderProducts({ products: res.cartProducts, hayProductos: res.cartProducts.length > 0 })
+                listenDeleteButtons()
             }
         })
 })
 
 
 function listenDeleteButtons() {
-    const buttons = document.querySelectorAll('.btn-info')
+    const buttons = document.querySelectorAll('.btn-danger')
+    console.log(buttons);
     buttons.forEach(btn => {
         btn.addEventListener('click', e => {
+            console.log('firts');
             fetch(`http://localhost:8080/api/carts/${cartID}/product/${btn.id}`, {
                 method: 'DELETE',
             }
@@ -101,7 +104,8 @@ function listenDeleteButtons() {
                 .then(res => res.json())
                 .then(res => {
                     console.log(res)
-                    serverSocket.emit('updateCart')
+                    cartSave = localStorage.getItem('cartID')
+                    serverSocket.emit('updateCart', cartSave)
                 })
         })
     })
