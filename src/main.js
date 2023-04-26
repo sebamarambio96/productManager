@@ -6,7 +6,8 @@ import { viewsRouter } from "./routers/viewsRouter.js"
 import { ioManager } from "./controllers/mongoIoController.js"
 import { connectMongo } from "./data/mongoose.js"
 import { loginRouter } from "./routers/loginRouter.js"
-/* import cookieParser from 'cookie-parser' */
+import cookieParser from 'cookie-parser'
+import session from 'express-session'
 
 //Se conecta base de datos
 await connectMongo()
@@ -14,7 +15,8 @@ await connectMongo()
 const app = express()
 
 //middlewares
-/* app.use(cookieParser()) */
+app.use(cookieParser('secreto'))
+app.use(session())
 app.use('/static', express.static('./static'))
 app.engine('.hbs', engine({ extname: '.hbs' }));
 app.set('view engine', '.hbs');
@@ -23,7 +25,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use('/', viewsRouter)
 app.use('/api', apiRouter)
-app.use('/login', loginRouter)
+app.use('/profile', loginRouter)
 
 //Error handling
 app.use((error, req, res, next) => {
@@ -36,6 +38,9 @@ app.use((error, req, res, next) => {
             break
         case 'El codigo ingresado ya existe':
             res.status(400)
+            break
+        case 'Login Failed':
+            res.status(401)
             break
         default:
             res.status(500)
