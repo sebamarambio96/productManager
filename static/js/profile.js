@@ -24,14 +24,14 @@ function login(username, pass) {
     fetch('http://localhost:8080/profile/login', {
         method: 'POST',
         headers: {
-            "Content-Type": "application/json",
+            'Content-type': 'application/json'
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(data)
     })
         .then(res => res.json())
         .then(res => {
-            console.log(res.session)
-            /* window.location.href = '/' */
+            console.log(res)
+            window.location.href = '/products'
         })
 }
 
@@ -40,9 +40,9 @@ function register(username, pass) {
     fetch('http://localhost:8080/profile/register', {
         method: 'POST',
         headers: {
-            "Content-Type": "application/json",
+            'Content-type': 'application/json'
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(data)
     })
         .then(res => res.json())
         .then(res => {

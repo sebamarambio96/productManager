@@ -57,6 +57,7 @@ export async function session(req, res, next) {
 export async function login(req, res, next) {
     try {
         const {username, pass} = req.body
+        console.log(username, pass);
         const usersData = await usersManager.getAll()
         const exist = usersData.filter(x=> x.user == username)
         /* if (exist.length == 0) throw new Error('Login Fail') */
@@ -79,8 +80,9 @@ export async function login(req, res, next) {
 //Login
 export async function register(req, res, next) {
     try {
-        const {user, pass}= req.body
-        await usersManager.register({user, pass})
+        const {username, pass}= req.body
+        console.log(username, pass);
+        await usersManager.register({username, pass})
         res.status(201).json({ message: 'Usuario registrado' })
     } catch (error) {
         next(error)
