@@ -80,9 +80,9 @@ export async function login(req, res, next) {
 //Login
 export async function register(req, res, next) {
     try {
-        const {username, pass}= req.body
-        console.log(username, pass);
-        await usersManager.register({username, pass})
+        const {user, pass}= req.body
+        console.log(user, pass);
+        await usersManager.register({user, pass})
         res.status(201).json({ message: 'Usuario registrado' })
     } catch (error) {
         next(error)

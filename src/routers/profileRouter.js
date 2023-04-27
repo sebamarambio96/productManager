@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { deleteCookie, getCookies, login, logout, register, session, setCookie } from "../controllers/loginControllers.js"
+import { deleteCookie, getCookies, login, logout, register, session, setCookie } from "../controllers/profileControllers.js"
 
 export const profileRouter = Router()
 

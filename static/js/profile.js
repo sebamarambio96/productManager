@@ -35,8 +35,9 @@ function login(username, pass) {
         })
 }
 
-function register(username, pass) {
-    const data = { username, pass }
+function register(user, pass) {
+    const data = { user, pass }
+    console.log(user, pass)
     fetch('http://localhost:8080/profile/register', {
         method: 'POST',
         headers: {
@@ -46,6 +47,7 @@ function register(username, pass) {
     })
         .then(res => res.json())
         .then(res => {
+            console.log(res)
             if (res.message == 'Usuario registrado') {
                 Swal.fire({
                     icon: 'success',
@@ -53,6 +55,5 @@ function register(username, pass) {
                     text: `Ya puedes ingresar`
                 })
             }
-            /* window.location.href = '/products' */
         })
 }
