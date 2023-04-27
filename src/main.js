@@ -8,6 +8,7 @@ import { connectMongo } from "./data/mongoose.js"
 import { profileRouter } from "./routers/profileRouter.js"
 import cookieParser from 'cookie-parser'
 import session from 'express-session'
+import MongoStore from "connect-mongo"
 
 //Se conecta base de datos
 await connectMongo()
@@ -16,7 +17,16 @@ const app = express()
 
 //middlewares
 app.use(cookieParser('secreto'))
-app.use(session())
+app.use(session({
+    store:MongoStore.create({
+        mongoUrl:"mongodb+srv://sebamarambio:sY0rGCZdJevBBiQM@estudio.1agovhf.mongodb.net/Practica?retryWrites=true&w=majority",
+        mongoOptions:{useNewUrlParser: true, useUnifiedTopology:true},
+        ttl:15,
+    }),
+    secret:"secret",
+    resave:false,
+    saveUninitialized:false
+}))
 app.use('/static', express.static('./static'))
 app.engine('.hbs', engine({ extname: '.hbs' }));
 app.set('view engine', '.hbs');

@@ -41,12 +41,11 @@ export async function logout(req, res, next) {
 //Session test
 export async function session(req, res, next) {
     try {
-        if (req.session.counter) {
-            req.session.counter++
-            res.send(`Contador de visitas ${req.session.counter}`)
+        console.log(req.session);
+        if (req.session.user) {
+            res.status(201).json({auth:true, info:req.session})
         } else {
-            req.session.counter = 1
-            res.status(201).json({message: 'Bienvenido'})
+            res.status(201).json({auth:false})
         }
     } catch (error) {
         next(error)
