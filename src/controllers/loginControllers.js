@@ -19,9 +19,9 @@ export async function getCookies(req, res, next) {
 }
 //DELETE cookie
 export async function deleteCookie(req, res, next) {
-    try {
+    try { 
         res.clearCookie("CoderCookie").send("Cookie Removed")
-    } catch (error) {
+    } catch (error) { 
         next(error)
     }
 }
@@ -32,7 +32,7 @@ export async function logout(req, res, next) {
             if (err) {
                 res.json({ status: 'Logout ERROR', body: err })
             } else {
-                res.send('Logout ok!')
+                res.status(201).json({message: 'Logout OK'})
             }})
     } catch (error) {
         next(error)
@@ -46,7 +46,7 @@ export async function session(req, res, next) {
             res.send(`Contador de visitas ${req.session.counter}`)
         } else {
             req.session.counter = 1
-            res.send('Bienvenido')
+            res.status(201).json({message: 'Bienvenido'})
         }
     } catch (error) {
         next(error)

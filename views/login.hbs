@@ -1,13 +1,29 @@
 <h1>{{encabezado}}</h1>
-<h2 class="py-3">Ingresa tus datos:</h2>
+
+<h2 class="py-3">Ingresa tus datos para ingresar:</h2>
 <main class="form-signin w-50 h-50">
-    <form>
+    <form id="login">
         <div class="form-floating">
-            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+            <input type="text" class="form-control" id="loginaUser" placeholder="name@example.com">
             <label for="floatingInput">Email address</label>
         </div>
         <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+            <input type="password" class="form-control" id="loginPass" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary my-4" type="submit">Sign in</button>
+    </form>
+</main>
+
+<h2 class="py-3">Registrate:</h2>
+<main class="form-signin w-50 h-50">
+    <form id="register">
+        <div class="form-floating">
+            <input type="email" class="form-control" id="registerUser" placeholder="name@example.com">
+            <label for="floatingInput">Email address</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="registerPass" placeholder="Password">
             <label for="floatingPassword">Password</label>
         </div>
         <button class="w-100 btn btn-lg btn-primary my-4" type="submit">Sign in</button>
@@ -15,5 +31,4 @@
 </main>
 
 <script src="/socket.io/socket.io.js"></script>
-{{!--
-<script src="static/js/login.js"></script> --}}
+<script src="static/js/profile.js"></script>

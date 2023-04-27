@@ -5,7 +5,7 @@ import { apiRouter } from "./routers/apiRouter.js"
 import { viewsRouter } from "./routers/viewsRouter.js"
 import { ioManager } from "./controllers/mongoIoController.js"
 import { connectMongo } from "./data/mongoose.js"
-import { loginRouter } from "./routers/loginRouter.js"
+import { profileRouter } from "./routers/profileRouter.js"
 import cookieParser from 'cookie-parser'
 import session from 'express-session'
 
@@ -25,7 +25,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use('/', viewsRouter)
 app.use('/api', apiRouter)
-app.use('/profile', loginRouter)
+app.use('/profile', profileRouter)
 
 //Error handling
 app.use((error, req, res, next) => {
@@ -55,18 +55,3 @@ export const io = new SocketIOServer(server)
 
 //Importa la función que comunica la base de datos y el front para actualización automatica
 ioManager(io)
-
-
-/* FyleSystem */
-// io.on('connection',async clientSocket => {
-//     console.log(`Nuevo cliente conectado! socket id# ${clientSocket.id}`)
-//     clientSocket.emit('updateProducts', await productManager.getProducts())
-//     clientSocket.on('newProduct', async product => {
-//         await productManager.addProduct(product)
-//         clientSocket.emit('updateProducts', await productManager.getProducts())
-//     })
-//     clientSocket.on('deleteProduct', async item => {
-//         await productManager.deleteProduct(item.id)
-//         clientSocket.emit('updateProducts', await productManager.getProducts())
-//     })
-// })
