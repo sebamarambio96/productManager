@@ -8,5 +8,11 @@ fetch('http://localhost:8080/profile/session')
                 title: 'Genial!',
                 text: `Bienvenido ${res.info.user}!!!\n Rol: ${res.info.admin ? 'Admin' : 'Usuario'}`
             })
+        }else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: `${res.message}`
+            })
         }
     })

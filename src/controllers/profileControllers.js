@@ -1,4 +1,5 @@
 import { usersManager } from "../dao/models/usersShema.js"
+import { encryptPass, validPass } from "../utils/bcrypt.js"
 
 //SET cookie
 export async function setCookie(req, res, next) {
@@ -56,15 +57,15 @@ export async function session(req, res, next) {
 export async function login(req, res, next) {
     try {
         const {username, pass} = req.body
-        console.log(username, pass);
+        /* console.log(username, pass); */
         const usersData = await usersManager.getAll()
         const exist = usersData.filter(x=> x.user == username)
-        /* if (exist.length == 0) throw new Error('Login Fail') */
+        if (exist.length < 1) throw new Error('Login Fail')
         if (username == 'adminCoder@coder.com' && pass == 'adminCod3r123') {
             req.session.admin = true
             req.session.user = 'adminCoder@coder.com'
             res.status(200).json(req.session)
-        }else if (exist[0].pass == pass) {
+        }else if (validPass(pass,exist[0])) {
             req.session.admin = false
             req.session.user = exist[0].user
             res.status(200).json(req.session)
@@ -76,12 +77,12 @@ export async function login(req, res, next) {
     }
 }
 
-//Login
+//Register
 export async function register(req, res, next) {
     try {
         const {user, pass}= req.body
-        console.log(user, pass);
-        await usersManager.register({user, pass})
+        console.log(user, encryptPass(pass));
+        await usersManager.register({user, pass:encryptPass(pass)})
         res.status(201).json({ message: 'Usuario registrado' })
     } catch (error) {
         next(error)

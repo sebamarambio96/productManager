@@ -54,6 +54,12 @@ function register(user, pass) {
                     title: 'Genial!',
                     text: `Ya puedes ingresar`
                 })
+            } else {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: `No has ingresado sesión`
+                })
             }
         })
 }
