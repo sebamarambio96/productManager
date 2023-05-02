@@ -20,9 +20,9 @@ export async function getCookies(req, res, next) {
 }
 //DELETE cookie
 export async function deleteCookie(req, res, next) {
-    try { 
+    try {
         res.clearCookie("CoderCookie").send("Cookie Removed")
-    } catch (error) { 
+    } catch (error) {
         next(error)
     }
 }
@@ -33,8 +33,9 @@ export async function logout(req, res, next) {
             if (err) {
                 res.json({ status: 'Logout ERROR', body: err })
             } else {
-                res.status(201).json({message: 'Logout OK'})
-            }})
+                res.status(201).json({ message: 'Logout OK' })
+            }
+        })
     } catch (error) {
         next(error)
     }
@@ -44,9 +45,9 @@ export async function session(req, res, next) {
     try {
         console.log(req.session);
         if (req.session.user) {
-            res.status(201).json({auth:true, info:req.session})
+            res.status(201).json({ auth: true, info: req.session })
         } else {
-            res.status(201).json({auth:false})
+            res.status(201).json({ auth: false })
         }
     } catch (error) {
         next(error)
@@ -56,21 +57,15 @@ export async function session(req, res, next) {
 //login
 export async function login(req, res, next) {
     try {
-        const {username, pass} = req.body
-        /* console.log(username, pass); */
-        const usersData = await usersManager.getAll()
-        const exist = usersData.filter(x=> x.user == username)
-        if (exist.length < 1) throw new Error('Login Fail')
-        if (username == 'adminCoder@coder.com' && pass == 'adminCod3r123') {
+        console.log(req.session.passport.user.user)
+        if (req.session.passport.user.user == 'adminCoder@coder.com' && req.session.passport.user.pass == 'adminCod3r123') {
             req.session.admin = true
             req.session.user = 'adminCoder@coder.com'
             res.status(200).json(req.session)
-        }else if (validPass(pass,exist[0])) {
-            req.session.admin = false
-            req.session.user = exist[0].user
-            res.status(200).json(req.session)
         } else {
-            throw new Error('Login Fail')
+            req.session.admin = false
+            req.session.user = req.session.passport.user.user
+            res.status(200).json(req.session)
         }
     } catch (error) {
         next(error)
@@ -80,9 +75,6 @@ export async function login(req, res, next) {
 //Register
 export async function register(req, res, next) {
     try {
-        const {user, pass}= req.body
-        console.log(user, encryptPass(pass));
-        await usersManager.register({user, pass:encryptPass(pass)})
         res.status(201).json({ message: 'Usuario registrado' })
     } catch (error) {
         next(error)

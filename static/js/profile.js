@@ -33,6 +33,7 @@ function login(username, pass) {
             console.log(res)
             window.location.href = '/products'
         })
+        .catch(err=>console.log(err))
 }
 
 function register(user, pass) {
@@ -62,4 +63,5 @@ function register(user, pass) {
                 })
             }
         })
+        .catch(err=>console.log(err))
 }

@@ -9,6 +9,7 @@ import { profileRouter } from "./routers/profileRouter.js"
 import cookieParser from 'cookie-parser'
 import session from 'express-session'
 import MongoStore from "connect-mongo"
+import { passportInit, passportSession } from "./config/passport.config.js"
 
 //Se conecta base de datos
 await connectMongo()
@@ -33,6 +34,7 @@ app.set('view engine', '.hbs');
 app.set('views', './views')
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
+app.use(passportInit,passportSession)
 app.use('/', viewsRouter)
 app.use('/api', apiRouter)
 app.use('/profile', profileRouter)

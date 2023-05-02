@@ -23,6 +23,10 @@ class UsersManager {
         const user = await this.#usersDb.findById(id).lean()
         return user
     }
+    async getByUser(user) {
+        const userData = await this.#usersDb.findOne({user:user}).lean()
+        return userData
+    }
 }
 
 export const usersManager = new UsersManager()
