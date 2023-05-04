@@ -62,15 +62,14 @@ passport.use('github', new GithubStrategy({
             let result = usersManager.register({user: newUser.user, pass:newUser.pass})
             done(null,result)
         } else {
-            done(null,user)
+            done(null,{user:'seba'})
         }
     } catch (error) {
         return done(error)
     }
-
 })
 )
-
+/*  */
 passport.serializeUser((user, next) => { next(null, user) })
 passport.deserializeUser((user, next) => { next(null, user) })
 
