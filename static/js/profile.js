@@ -35,7 +35,6 @@ function login(username, pass) {
         })
         .catch(err=>console.log(err))
 }
-
 function register(user, pass) {
     const data = { user, pass }
     console.log(user, pass)

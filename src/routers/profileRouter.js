@@ -1,6 +1,7 @@
 import { Router } from "express"
 import { deleteCookie, getCookies, login, logout, register, session, setCookie } from "../controllers/profileControllers.js"
 import passport from "passport"
+import { autenticacionPorGithub, autenticacionPorGithub_CB } from "../config/passport.config.js"
 
 export const profileRouter = Router()
 
@@ -13,8 +14,15 @@ profileRouter.get('/getCookies', getCookies)
 //Session test
 profileRouter.get('/session', session)
 
-//Session test
-profileRouter.post('/sessionGitHub',passport.authenticate('github'), session)
+//autentificacion github
+profileRouter.get('/github', autenticacionPorGithub, (req, res) => { })
+profileRouter.get('/sessionGitHub', autenticacionPorGithub_CB, (req, res, next) => {
+    console.log(req.user)
+    req.session.admin = false
+    req.session.user = req.user.user
+    res.redirect('/products')
+})
+
 
 //Logout
 profileRouter.get('/logout', logout)

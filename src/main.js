@@ -10,6 +10,7 @@ import cookieParser from 'cookie-parser'
 import session from 'express-session'
 import MongoStore from "connect-mongo"
 import { passportInit, passportSession } from "./config/passport.config.js"
+import cors from "cors"
 
 //Se conecta base de datos
 await connectMongo()
@@ -33,6 +34,7 @@ app.engine('.hbs', engine({ extname: '.hbs' }));
 app.set('view engine', '.hbs');
 app.set('views', './views')
 app.use(express.json())
+app.use(cors())
 app.use(express.urlencoded({ extended: true }))
 app.use(passportInit,passportSession)
 app.use('/', viewsRouter)

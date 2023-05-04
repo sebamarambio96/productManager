@@ -52,16 +52,18 @@ passport.use('github', new GithubStrategy({
     callbackURL: "http://localhost:8080/profile/sessionGitHub",
 }, async (accessToken, refreshToken, profile, done) => {
     try {
-        console.log(profile)
-        let user = await usersManager.getByUser(user)
+        /* console.log(profile) */
+        let user = await usersManager.getByUser(profile.username)
         if (!user) {
             let newUser ={
-                user: profile._json.email,
+                user: profile.username,
                 pass: ''
             }
             let result = usersManager.register({user: newUser.user, pass:newUser.pass})
+            
             done(null,result)
         } else {
+            
             done(null,{user:'seba'})
         }
     } catch (error) {
@@ -77,4 +79,4 @@ export const passportInit = passport.initialize()
 export const passportSession = passport.session()
 
 export const autenticacionPorGithub = passport.authenticate('github', { session: false, scope: ['user:email'] })
-export const antenticacionPorGithub_CB = passport.authenticate('github', { session: false, failWithError: true })
+export const autenticacionPorGithub_CB = passport.authenticate('github', { session: false, failWithError: true })

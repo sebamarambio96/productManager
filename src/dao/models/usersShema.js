@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const schemaUsers = new mongoose.Schema({
     user: { type: String, required: true },
-    pass: { type: String, required: true },
+    pass: { type: String },
 }, { versionKey: false })
 
 class UsersManager {
@@ -24,7 +24,7 @@ class UsersManager {
         return user
     }
     async getByUser(user) {
-        const userData = await this.#usersDb.findOne({user:user}).lean()
+        const userData = await this.#usersDb.findOne({ user: user }).lean()
         return userData
     }
 }
