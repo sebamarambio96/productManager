@@ -54,6 +54,24 @@ export async function session(req, res, next) {
     }
 }
 
+//current
+export async function current(req, res, next) {
+    try {
+        console.log(req.session.passport.user.user)
+        if (req.session.passport.user.user == 'adminCoder@coder.com' && req.session.passport.user.pass == 'adminCod3r123') {
+            req.session.admin = true
+            req.session.user = 'adminCoder@coder.com'
+            res.status(200).json(req.session)
+        } else {
+            req.session.admin = false
+            req.session.user = req.session.passport.user.user
+            res.status(200).json(req.session)
+        }
+    } catch (error) {
+        next(error)
+    }
+}
+
 //login
 export async function login(req, res, next) {
     try {

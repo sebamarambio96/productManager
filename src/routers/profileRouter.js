@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { deleteCookie, getCookies, login, logout, register, session, setCookie } from "../controllers/profileControllers.js"
+import { current, deleteCookie, getCookies, login, logout, register, session, setCookie } from "../controllers/profileControllers.js"
 import passport from "passport"
 import { autenticacionPorGithub, autenticacionPorGithub_CB } from "../config/passport.config.js"
 
@@ -35,5 +35,5 @@ profileRouter.post('/register', passport.authenticate('register'), register)
 //DESTROY cookie
 profileRouter.get('/deleteCookie', deleteCookie)
 
-//DELETE product
-profileRouter.get('/loginJWT', deleteCookie)
+//CURRENT
+profileRouter.get('/current', current)

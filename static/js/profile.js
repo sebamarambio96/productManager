@@ -15,7 +15,10 @@ registerForm.addEventListener('submit', e => {
     e.preventDefault()
     const username = document.getElementById('registerUser').value
     const pass = document.getElementById('registerPass').value
-    register(username, pass)
+    const first_name = document.getElementById('registerFirts').value
+    const last_name = document.getElementById('registerLast').value
+    const age = document.getElementById('registerAge').value
+    register(username, pass ,first_name,last_name,age)
 })
 
 
@@ -35,8 +38,8 @@ function login(username, pass) {
         })
         .catch(err=>console.log(err))
 }
-function register(user, pass) {
-    const data = { user, pass }
+function register(user, pass,first_name,last_name,age) {
+    const data = { user, pass,first_name,last_name,age }
     console.log(user, pass)
     fetch('http://localhost:8080/profile/register', {
         method: 'POST',
