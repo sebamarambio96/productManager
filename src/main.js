@@ -20,14 +20,14 @@ const app = express()
 //middlewares
 app.use(cookieParser('secreto'))
 app.use(session({
-    store:MongoStore.create({
-        mongoUrl:"mongodb+srv://sebamarambio:sY0rGCZdJevBBiQM@estudio.1agovhf.mongodb.net/Practica?retryWrites=true&w=majority",
-        mongoOptions:{useNewUrlParser: true, useUnifiedTopology:true},
-        ttl:15,
+    store: MongoStore.create({
+        mongoUrl: "mongodb+srv://sebamarambio:sY0rGCZdJevBBiQM@estudio.1agovhf.mongodb.net/Practica?retryWrites=true&w=majority",
+        mongoOptions: { useNewUrlParser: true, useUnifiedTopology: true },
+        ttl: 15,
     }),
-    secret:"secret",
-    resave:false,
-    saveUninitialized:false
+    secret: "secret",
+    resave: false,
+    saveUninitialized: false
 }))
 app.use('/static', express.static('./static'))
 app.engine('.hbs', engine({ extname: '.hbs' }));
@@ -36,7 +36,7 @@ app.set('views', './views')
 app.use(express.json())
 app.use(cors())
 app.use(express.urlencoded({ extended: true }))
-app.use(passportInit,passportSession)
+app.use(passportInit, passportSession)
 app.use('/', viewsRouter)
 app.use('/api', apiRouter)
 app.use('/profile', profileRouter)
@@ -55,6 +55,12 @@ app.use((error, req, res, next) => {
             break
         case 'Login Failed':
             res.status(401)
+            break
+        case 'Error de autenticacion':
+            res.status(401)
+            break
+        case 'Error de permisos':
+            res.status(403)
             break
         default:
             res.status(500)

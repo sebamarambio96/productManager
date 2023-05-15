@@ -1,11 +1,45 @@
-import passport from 'passport'
+import passport, { Passport } from 'passport'
 import local from 'passport-local'
 import { usersManager } from "../dao/models/usersShema.js"
 import { encryptPass, validPass } from "../utils/bcrypt.js"
 import { Strategy as GithubStrategy } from 'passport-github2'
-/* import { ExtractJwt, Strategy as JwtStrategy } from 'passport-jwt' */
+import { ExtractJwt, Strategy as JwtStrategy } from 'passport-jwt'
 
 const LocalStrategy = local.Strategy
+
+const secret = 'secreto'
+passport.use('jwt', new JwtStrategy({
+    jwtFromRequest: ExtractJwt.fromExtractors([function (req) {
+        let token = null
+        if (req && req.signedCookies) {
+            token = req.signedCookies['jwt_authorization']
+        }
+        return token
+    }]),
+    secretOrKey: secret,
+}, async (jwt_payload, done) => {
+    try {
+        done(null, jwt_payload) // se guarda en el req.user
+    } catch (error) {
+        done(error)
+    }
+}))
+
+export function authJwtApi(req, res, next) {
+    passport.authenticate('jwt', (error, jwt_payload, info) => {
+        if (error || !jwt_payload) return next(new Error('Error de autenticacion'))
+        req.user = jwt_payload
+        next()
+    })(req, res, next)
+}
+
+export function authJwtView(req, res, next) {
+    passport.authenticate('jwt', (error, jwt_payload) => {
+        if (error || !jwt_payload) return res.redirect('/login')
+        req.user = jwt_payload
+        next()
+    })(req, res, next)
+}
 
 passport.use('register', new LocalStrategy({
     passReqToCallback: true,

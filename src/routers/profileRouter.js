@@ -23,7 +23,6 @@ profileRouter.get('/sessionGitHub', autenticacionPorGithub_CB, (req, res, next) 
     res.redirect('/products')
 })
 
-
 //Logout
 profileRouter.get('/logout', logout)
 
@@ -33,5 +32,8 @@ profileRouter.post('/login', passport.authenticate('login'), login)
 //Register
 profileRouter.post('/register', passport.authenticate('register'), register)
 
-//DELETE product
+//DESTROY cookie
 profileRouter.get('/deleteCookie', deleteCookie)
+
+//DELETE product
+profileRouter.get('/loginJWT', deleteCookie)

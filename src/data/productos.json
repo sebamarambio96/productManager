@@ -83,5 +83,29 @@
         "code": "asdfasd1223",
         "status": true,
         "id": 14
+    },
+    {
+        "tittle": "producto prueba actualizado 3",
+        "description": "Este es un producto prueba",
+        "price": 300,
+        "thumbnail": [
+            "11asda12312.jpg"
+        ],
+        "code": "ab1qw221asd21",
+        "stock": 25,
+        "status": true,
+        "id": 15
+    },
+    {
+        "tittle": "producto prueba actualizado 3",
+        "description": "Este es un producto prueba",
+        "price": "300",
+        "thumbnail": [
+            "11asda12312.jpg"
+        ],
+        "code": "ab1qw221asdasdfasdf21",
+        "stock": "25",
+        "status": true,
+        "id": 16
     }
 ]
