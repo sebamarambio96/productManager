@@ -3,7 +3,6 @@ import local from 'passport-local'
 import { usersManager } from "../dao/models/usersShema.js"
 import { encryptPass, validPass } from "../utils/bcrypt.js"
 import { Strategy as GithubStrategy } from 'passport-github2'
-import { ExtractJwt, Strategy as JwtStrategy } from 'passport-jwt'
 
 const LocalStrategy = local.Strategy
 

@@ -11,6 +11,7 @@ import session from 'express-session'
 import MongoStore from "connect-mongo"
 import { passportInit, passportSession } from "./config/passport.config.js"
 import cors from "cors"
+import { MONGO, PORT, SECRET } from "./config/config.js"
 
 //Se conecta base de datos
 await connectMongo()
@@ -18,14 +19,14 @@ await connectMongo()
 const app = express()
 
 //middlewares
-app.use(cookieParser('secreto'))
+app.use(cookieParser(SECRET))
 app.use(session({
     store: MongoStore.create({
-        mongoUrl: "mongodb+srv://sebamarambio:sY0rGCZdJevBBiQM@estudio.1agovhf.mongodb.net/Practica?retryWrites=true&w=majority",
+        mongoUrl:`mongodb+srv://sebamarambio:${MONGO}@estudio.1agovhf.mongodb.net/Practica?retryWrites=true&w=majority`,
         mongoOptions: { useNewUrlParser: true, useUnifiedTopology: true },
         ttl: 15,
     }),
-    secret: "secret",
+    secret: SECRET,
     resave: false,
     saveUninitialized: false
 }))
@@ -68,7 +69,6 @@ app.use((error, req, res, next) => {
     res.json({ message: error.message })
 })
 
-const PORT = 8080
 const server = app.listen(PORT, () => console.log(`Servidor en el puerto ${PORT}`))
 
 export const io = new SocketIOServer(server)

@@ -1,15 +1,14 @@
 import jwt from 'jsonwebtoken'
-
-const secret = 'secret'
+import { SECRET } from '../config/config'
 
 export function encryptJWT(user) {
-    const token = jwt.sign(user, secret, { expiresIn: '24h' })
+    const token = jwt.sign(user, SECRET, { expiresIn: '24h' })
     return token
 }
 
 export function decrypt(token) {
     return new Promise((resolve, reject) => {
-        jwt.verify(token, secret, (err, decoded) => {
+        jwt.verify(token, SECRET, (err, decoded) => {
             if (err) {
                 reject(err)
             } else {
