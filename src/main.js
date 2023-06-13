@@ -6,6 +6,7 @@ import { viewsRouter } from "./routers/viewsRouter.js"
 import { ioManager } from "./controllers/mongoIoController.js"
 import { connectMongo } from "./data/mongoose.js"
 import { profileRouter } from "./routers/profileRouter.js"
+import { messagesRouter } from "./routers/msgRouter.js"
 import cookieParser from 'cookie-parser'
 import session from 'express-session'
 import MongoStore from "connect-mongo"
@@ -41,6 +42,7 @@ app.use(passportInit, passportSession)
 app.use('/', viewsRouter)
 app.use('/api', apiRouter)
 app.use('/profile', profileRouter)
+app.use('/msg', messagesRouter)
 
 //Error handling
 app.use((error, req, res, next) => {

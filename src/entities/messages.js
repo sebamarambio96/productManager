@@ -10,7 +10,7 @@ export class Messages {
     get user() { return this.#user }
     get message() { return this.#message }
 
-    data() {
+    dto() {
         return {
             user: this.#user,
             message: this.#message,

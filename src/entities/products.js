@@ -1,3 +1,23 @@
+function notEmpty(value) {
+    if (!value) throw new Error('el dato no puede ser vacio')
+    return value
+  }
+  
+  function soloAlfabetico(value) {
+    if (!/[a-zA-Z]+/.test(value)) throw new Error('el dato solo puede tener letras')
+    return value
+  }
+  
+  function entero(value) {
+    if (!Number.isInteger(value)) throw new Error('el dato debe ser entero')
+    return value
+  }
+  
+  function positivo(value) {
+    if (Number(value) < 0) throw new Error('el dato debe ser positivo')
+    return value
+  }
+
 export class Products {
     #tittle
     #description
@@ -9,11 +29,11 @@ export class Products {
 
     constructor({ tittle, description, price, thumbnail, code, stock, category }) {
         this.#tittle = tittle
-        this.#description = description
-        this.#price = price
+        this.#description = notEmpty(description)
+        this.#price = positivo(entero(price))
         this.#thumbnail = thumbnail
         this.#code = code
-        this.#stock = stock
+        this.#stock = notEmpty(stock)
         this.#category = category
     }
 
@@ -25,7 +45,7 @@ export class Products {
     get stock() { return this.#stock }
     get category() { return this.#category }
 
-    data() {
+    dto() {
         return {
             tittle: this.#tittle,
             description: this.#description,

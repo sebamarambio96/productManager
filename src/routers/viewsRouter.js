@@ -1,6 +1,7 @@
 import { Router } from "express"
 import { productsManager } from "../dao/models/productsShema.js"
 import { cartsManager } from "../dao/models/cartsShema.js"
+import compression from "express-compression"
 /* import { productManager } from "../controllers/productsController.js" */
 
 export const viewsRouter = Router()
@@ -16,7 +17,7 @@ viewsRouter.get('/', async (req, res, next) => {
     })
 })
 
-viewsRouter.get('/cart', async (req, res, next) => {
+viewsRouter.get('/cart', compression(), async (req, res, next) => {
 
     res.render('cart.hbs', {
         titulo: 'Carrito',
@@ -24,7 +25,7 @@ viewsRouter.get('/cart', async (req, res, next) => {
     })
 })
 
-viewsRouter.get('/products', async (req, res, next) => {
+viewsRouter.get('/products', compression(), async (req, res, next) => {
     let sort
     if (req.query.stock) {
         sort = req.query.stock === 'asc' ? { stock: 1 } : { stock: -1 }
@@ -43,7 +44,7 @@ viewsRouter.get('/products', async (req, res, next) => {
     const info = {
         status: products ? 'Success' : 'Error',
         payload: products.docs,
-        totalPages: products.totalPages, 
+        totalPages: products.totalPages,
         prevLink: products.prevPage,
         nextLink: products.nextPage,
         page: products.page,
@@ -60,7 +61,7 @@ viewsRouter.get('/products', async (req, res, next) => {
     })
 })
 
-viewsRouter.get('/realtimesproduct', async (req, res, next) => {
+viewsRouter.get('/realtimesproduct', compression(), async (req, res, next) => {
     let products = await productsManager.getAll()
     res.render('realTimesProduct.hbs', {
         titulo: 'Productos tiempo real',

@@ -1,6 +1,3 @@
-import { usersManager } from "../dao/models/usersShema.js"
-import { encryptPass, validPass } from "../utils/bcrypt.js"
-
 //SET cookie
 export async function setCookie(req, res, next) {
     try {

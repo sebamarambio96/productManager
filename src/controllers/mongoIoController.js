@@ -19,13 +19,13 @@ export async function ioManager(io) {
         clientSocket.on('newProduct', async product => {
             const productReq = new Products(product)
             console.log(productReq)
-            await productsManager.addProduct(productReq.data())
+            await productsManager.addProduct(productReq.dto())
             clientSocket.emit('updateProducts', await productsManager.getAll())
         })
         //Update product
         clientSocket.on('updateProduct', async product => {
             const productReq = new Products(product)
-            await productsManager.updateByID(product._id, productReq.data())
+            await productsManager.updateByID(product._id, productReq.dto())
             clientSocket.emit('updateProducts', await productsManager.getAll())
         })
         //Delete Product
@@ -38,7 +38,7 @@ export async function ioManager(io) {
         clientSocket.emit('updateMessage', await messagesManager.getAll())
         clientSocket.on('newMessage', async message => {
             const messageReq = new Messages(message)
-            await messagesManager.addMessage(messageReq.data())
+            await messagesManager.addMessage(messageReq.dto())
             clientSocket.emit('updateMessage', await messagesManager.getAll())
         })
         //Avisa a los demás que alguien entra

@@ -13,7 +13,7 @@ const schemaProducts = new mongoose.Schema({
 
 schemaProducts.plugin(mongoosePaginate)
 
-class ProductsManager {
+export class ProductsManager {
     #productsDb
     constructor() {
         this.#productsDb = mongoose.model('products', schemaProducts)
