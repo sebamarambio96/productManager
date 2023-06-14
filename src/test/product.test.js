@@ -3,7 +3,7 @@ import { ProductService } from "../services/product.service.js";
 import { randomString } from "../utils/randomUUID.js";
 
 const productRepositoryMock = {
-    create: product => {console.log('Se ha creado el producto correctamente')}
+    create: product => { console.log('Se ha creado el producto correctamente') }
 }
 
 const reqBodySimulado = {
@@ -22,3 +22,31 @@ const newProduct = new Products(reqBodySimulado)
 const res = await productService.addProduct(newProduct.dto())
 
 console.log(res)
+
+export async function mocking100Products(req, res, next) {
+    try {
+        const productRepositoryMock = {
+            create: product => { console.log('Se han creado 100 productos falsos') }
+        }
+
+        tenTenProducts = []
+
+        for (let i = 0; i <= 100; i++) {
+            const simulatedProduct = {
+                tittle: "producto prueba actualizado 3" + i.toString(),
+                description: "Este es un producto prueba" + i.toString(),
+                price: 300 + i,
+                thumbnail: ["11asda12312.jpg" + i.toString()],
+                code: `${randomString()}`,
+                stock: 25 + i
+            }
+            const validatedProduct = new Products(simulatedProduct)
+            tenTenProducts.push(validatedProduct);
+        }
+        const productService = new ProductService(productRepositoryMock)
+        const res = await productService.addProduct(tenTenProducts)
+        res.status(200).json(tenTenProducts)
+    } catch (error) {
+        next(error)
+    }
+}
