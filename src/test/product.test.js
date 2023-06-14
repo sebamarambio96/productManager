@@ -33,15 +33,15 @@ export async function mocking100Products(req, res, next) {
 
         for (let i = 0; i <= 100; i++) {
             const simulatedProduct = {
-                tittle: "producto prueba actualizado 3" + i.toString(),
+                tittle: "producto prueba actualizado " + i.toString(),
                 description: "Este es un producto prueba" + i.toString(),
                 price: 300 + i,
-                thumbnail: ["11asda12312.jpg" + i.toString()],
+                thumbnail: [`11asda12312numero${i}.jpg`],
                 code: `${randomString()}`,
                 stock: 25 + i
             }
             const validatedProduct = new Products(simulatedProduct)
-            tenTenProducts.push(validatedProduct);
+            tenTenProducts.push(validatedProduct.dto());
         }
         const productService = new ProductService(productRepositoryMock)
         await productService.addProduct(tenTenProducts)
