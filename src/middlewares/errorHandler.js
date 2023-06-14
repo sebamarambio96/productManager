@@ -1,11 +1,10 @@
-import { InvalidArgument } from "../models/errors/invalidArgument"
+import { InvalidArgument } from "../models/errors/invalidArgument.js"
 
 export function errorHandler(error, req, res, next) {
     switch (error.message) {
         case error instanceof InvalidArgument:
             res.status(400)
             res.json({
-                type: error.type,
                 description: error.description
             })
             break

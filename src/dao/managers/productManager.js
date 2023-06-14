@@ -1,5 +1,5 @@
 import fs from "fs/promises"
-import { InvalidArgument } from "../../models/errors/invalidArgument"
+import { InvalidArgument } from "../../models/errors/invalidArgument.js"
 
 export class ProductManager {
     constructor(path) {
