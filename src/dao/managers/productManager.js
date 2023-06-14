@@ -1,4 +1,5 @@
 import fs from "fs/promises"
+import { InvalidArgument } from "../../models/errors/invalidArgument"
 
 export class ProductManager {
     constructor(path) {
@@ -26,7 +27,7 @@ export class ProductManager {
         object.status = true
         !object.thumbnail && (object.thumbnail = 'Sin imagen')
         //VALIDATE fields
-        if (!Object.values(object).every(value => value != '')) throw new Error('Falta un argumento')
+        if (!Object.values(object).every(value => value != '')) throw new InvalidArgument('Falta un argumento')
         //VALIDATE code
         const arrayProducts = await this.getProducts()
         const result = arrayProducts.find(item => item.code === object.code)

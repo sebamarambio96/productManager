@@ -1,22 +1,5 @@
-function notEmpty(value) {
-    if (!value) throw new Error('el dato no puede ser vacio')
-    return value
-  }
-  
-  function soloAlfabetico(value) {
-    if (!/[a-zA-Z]+/.test(value)) throw new Error('el dato solo puede tener letras')
-    return value
-  }
-  
-  function entero(value) {
-    if (!Number.isInteger(value)) throw new Error('el dato debe ser entero')
-    return value
-  }
-  
-  function positivo(value) {
-    if (Number(value) < 0) throw new Error('el dato debe ser positivo')
-    return value
-  }
+import { isInteger, isPositive } from "../validations/numbers.js"
+import { notEmpty } from "../validations/input.js"
 
 export class Products {
     #tittle
@@ -28,11 +11,11 @@ export class Products {
     #category
 
     constructor({ tittle, description, price, thumbnail, code, stock, category }) {
-        this.#tittle = tittle
+        this.#tittle = notEmpty(tittle)
         this.#description = notEmpty(description)
-        this.#price = positivo(entero(price))
+        this.#price = isPositive(isInteger(price))
         this.#thumbnail = thumbnail
-        this.#code = code
+        this.#code = notEmpty(code)
         this.#stock = notEmpty(stock)
         this.#category = category
     }

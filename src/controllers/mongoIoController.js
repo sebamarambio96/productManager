@@ -1,8 +1,8 @@
 import { cartsManager } from "../dao/models/cartsShema.js"
 import { messagesManager } from "../dao/models/messagesShema.js"
 import { productsManager } from "../dao/models/productsShema.js"
-import { Messages } from "../entities/messages.js"
-import { Products } from "../entities/products.js"
+import { Messages } from "../models/entities/messages.js"
+import { Products } from "../models/entities/products.js"
 /* import { productManager } from "./productsController.js" */
 
 export async function ioManager(io) {

@@ -13,6 +13,7 @@ import MongoStore from "connect-mongo"
 import { passportInit, passportSession } from "./config/passport.config.js"
 import cors from "cors"
 import { MONGO, PORT, SECRET } from "./config/config.js"
+import { errorHandler } from "./middlewares/errorHandler.js"
 
 //Se conecta base de datos
 await connectMongo()
@@ -45,31 +46,7 @@ app.use('/profile', profileRouter)
 app.use('/msg', messagesRouter)
 
 //Error handling
-app.use((error, req, res, next) => {
-    switch (error.message) {
-        case 'ID no existe':
-            res.status(404)
-            break
-        case 'Falta un argumento':
-            res.status(400)
-            break
-        case 'El codigo ingresado ya existe':
-            res.status(400)
-            break
-        case 'Login Failed':
-            res.status(401)
-            break
-        case 'Error de autenticacion':
-            res.status(401)
-            break
-        case 'Error de permisos':
-            res.status(403)
-            break
-        default:
-            res.status(500)
-    }
-    res.json({ message: error.message })
-})
+app.use(errorHandler)
 
 const server = app.listen(PORT, () => console.log(`Servidor en el puerto ${PORT}`))
 

@@ -1,3 +1,5 @@
+import { notEmpty } from "../validations/input.js"
+
 export class Messages {
     #user
     #message
@@ -12,8 +14,8 @@ export class Messages {
 
     dto() {
         return {
-            user: this.#user,
-            message: this.#message,
+            user: notEmpty(this.#user),
+            message: notEmpty(this.#message),
         }
     }
 }
