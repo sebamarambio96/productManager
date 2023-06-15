@@ -1,18 +1,18 @@
 import express from "express"
+import cookieParser from 'cookie-parser'
+import session from 'express-session'
+import MongoStore from "connect-mongo"
+import cors from "cors"
 import { engine } from "express-handlebars"
 import { Server as SocketIOServer } from "socket.io"
 import { apiRouter } from "./routers/apiRouter.js"
 import { viewsRouter } from "./routers/viewsRouter.js"
 import { ioManager } from "./controllers/mongoIoController.js"
-import { connectMongo } from "./data/mongoose.js"
+import { connectMongo } from "./config/mongoose.config.js"
 import { profileRouter } from "./routers/profileRouter.js"
 import { messagesRouter } from "./routers/msgRouter.js"
-import cookieParser from 'cookie-parser'
-import session from 'express-session'
-import MongoStore from "connect-mongo"
 import { passportInit, passportSession } from "./config/passport.config.js"
-import cors from "cors"
-import { MONGO, PORT, SECRET } from "./config/config.js"
+import { MONGO_BBDD, MONGO_PASS, MONGO_SERVER, MONGO_USER, PORT, SECRET } from "./config/env.config.js"
 import { errorHandler } from "./middlewares/errorHandler.js"
 
 //Se conecta base de datos
@@ -24,7 +24,7 @@ const app = express()
 app.use(cookieParser(SECRET))
 app.use(session({
     store: MongoStore.create({
-        mongoUrl:`mongodb+srv://sebamarambio:${MONGO}@estudio.1agovhf.mongodb.net/Practica?retryWrites=true&w=majority`,
+        mongoUrl:`mongodb+srv://${MONGO_USER}:${MONGO_PASS}@${MONGO_SERVER}/${MONGO_BBDD}?retryWrites=true&w=majority`,
         mongoOptions: { useNewUrlParser: true, useUnifiedTopology: true },
         ttl: 15,
     }),
@@ -33,8 +33,8 @@ app.use(session({
     saveUninitialized: false
 }))
 app.use('/static', express.static('./static'))
-app.engine('.hbs', engine({ extname: '.hbs' }));
-app.set('view engine', '.hbs');
+app.engine('.hbs', engine({ extname: '.hbs' }))
+app.set('view engine', '.hbs')
 app.set('views', './views')
 app.use(express.json())
 app.use(cors())

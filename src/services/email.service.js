@@ -1,5 +1,5 @@
 import { createTransport } from 'nodemailer'
-import { EMAIL_PASS, EMAIL_USER } from '../config/config.js'
+import { EMAIL_PASS, EMAIL_USER } from '../config/env.config.js'
 
 class EmailService {
     #clientNodemailer
