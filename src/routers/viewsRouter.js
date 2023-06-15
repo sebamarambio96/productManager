@@ -1,6 +1,6 @@
 import { Router } from "express"
-import { productsManager } from "../dao/models/productsShema.js"
-import { cartsManager } from "../dao/models/cartsShema.js"
+import { productsManager } from "../dao/productsShema.js"
+import { cartsManager } from "../dao/cartsShema.js"
 import compression from "express-compression"
 /* import { productManager } from "../controllers/productsController.js" */
 

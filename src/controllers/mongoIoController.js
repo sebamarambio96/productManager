@@ -1,6 +1,6 @@
-import { cartsManager } from "../dao/models/cartsShema.js"
-import { messagesManager } from "../dao/models/messagesShema.js"
-import { productsManager } from "../dao/models/productsShema.js"
+import { cartsManager } from "../dao/cartsShema.js"
+import { messagesManager } from "../dao/messagesShema.js"
+import { productsManager } from "../dao/productsShema.js"
 import { Messages } from "../models/entities/messages.js"
 import { Products } from "../models/entities/products.js"
 /* import { productManager } from "./productsController.js" */

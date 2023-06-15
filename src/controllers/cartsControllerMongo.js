@@ -1,4 +1,4 @@
-import { cartsManager } from "../dao/models/cartsShema.js"
+import { cartsManager } from "../dao/cartsShema.js"
 
 //GET one product by ID
 export async function getCart(req, res, next) {

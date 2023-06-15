@@ -1,6 +1,6 @@
 import passport, { Passport } from 'passport'
 import local from 'passport-local'
-import { usersManager } from "../dao/models/usersShema.js"
+import { usersManager } from "../dao/usersShema.js"
 import { encryptPass, validPass } from "../utils/bcrypt.js"
 import { Strategy as GithubStrategy } from 'passport-github2'
 

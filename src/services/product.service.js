@@ -1,4 +1,4 @@
-import { ProductsManager, productsManager } from "../dao/models/productsShema.js"
+import { ProductsManager, productsManager } from "../dao/productsShema.js"
 
 export class ProductService {
     constructor(productsRepository) {

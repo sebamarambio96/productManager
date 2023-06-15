@@ -1,5 +1,4 @@
-import { isInteger, isPositive } from "../validations/numbers.js"
-import { notEmpty } from "../validations/input.js"
+import { validateString } from "../validations/string.js"
 
 export class Products {
     #tittle
@@ -11,12 +10,12 @@ export class Products {
     #category
 
     constructor({ tittle, description, price, thumbnail, code, stock, category }) {
-        this.#tittle = notEmpty(tittle)
-        this.#description = notEmpty(description)
-        this.#price = isPositive(isInteger(price))
+        this.#tittle = validateString(tittle)
+        this.#description = validateString(description)
+        this.#price = validateNum(price)
         this.#thumbnail = thumbnail
-        this.#code = notEmpty(code)
-        this.#stock = notEmpty(stock)
+        this.#code = validateString(code)
+        this.#stock = stock
         this.#category = category
     }
 
