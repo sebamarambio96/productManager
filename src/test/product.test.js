@@ -1,5 +1,5 @@
 import { Products } from "../models/entities/products.js";
-import { ProductService } from "../services/product.service.js";
+import { ProductsService } from "../services/products.service.js";
 import { randomString } from "../utils/randomUUID.js";
 
 /* const productRepositoryMock = {
@@ -43,7 +43,7 @@ export async function mocking100Products(req, res, next) {
             const validatedProduct = new Products(simulatedProduct)
             tenTenProducts.push(validatedProduct.dto());
         }
-        const productService = new ProductService(productRepositoryMock)
+        const productService = new ProductsService(productRepositoryMock)
         await productService.addProduct(tenTenProducts)
         res.status(200).json(tenTenProducts)
     } catch (error) {

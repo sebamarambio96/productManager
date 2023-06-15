@@ -1,4 +1,11 @@
-/* import { messagesDaoMongoose } from '../daos/messages.dao.mongoose.js'
-import { GenericRepository } from './GenericRepository.js'
+import { GenericRepository } from "./GenericRepository.js";
+import { messagesDaoMoongose } from "../dao/messagesShema.js";
 
-export const messagesRepository = new GenericRepository(messagesDaoMongoose) */
+
+class MessagesRepository extends GenericRepository {
+    constructor(dao) {
+        super(dao)
+    }
+}
+
+export const messagesRepository = new MessagesRepository(messagesDaoMoongose)

@@ -1,4 +1,11 @@
-/* import { usersDaoMongoose } from '../daos/users.dao.mongoose.js'
-import { GenericRepository } from './GenericRepository.js'
+import { GenericRepository } from "./GenericRepository.js";
+import { usersDaoMoongose } from "../dao/usersShema.js";
 
-export const usersRepository = new GenericRepository(usersDaoMongoose) */
+
+class UsersRepository extends GenericRepository {
+    constructor(dao) {
+        super(dao)
+    }
+}
+
+export const usersRepository = new UsersRepository(usersDaoMoongose)

@@ -1,5 +1,6 @@
 import mongoose, { Schema } from "mongoose";
 import { productsManager } from "./productsShema.js";
+import { DaoMongoose } from "./DaoMongoose.js";
 
 const schemaCarts = new mongoose.Schema({
     cartProducts: {
@@ -15,6 +16,8 @@ const schemaCarts = new mongoose.Schema({
         default: []
     }
 }, { versionKey: false })
+
+export const cartsDaoMoongose = new DaoMongoose(schemaCarts)
 
 class CartsManager {
     #cartsDb

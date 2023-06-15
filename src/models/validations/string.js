@@ -1,4 +1,4 @@
-import { InvalidArgument } from "../errors/invalidArgument.js"
+import { ErrorInvalidArgument } from "../errors/InvalidArgument.js"
 
 export function validateString(value, required = true, onlyAlphab= false) {
   isString(value)
@@ -8,12 +8,12 @@ export function validateString(value, required = true, onlyAlphab= false) {
 }
 
   export function onlyAlphabetical(value) {
-    if (!/[a-zA-Z]+/.test(value)) throw new InvalidArgument('El dato solo puede tener letras')
+    if (!/[a-zA-Z]+/.test(value)) throw new ErrorInvalidArgument('El dato solo puede tener letras')
     return value
   }
 
   export function isString(value) {
     if (typeof value !== 'string')
-      throw new InvalidArgument(`El dato debe ser de tipo string`)
+      throw new ErrorInvalidArgument(`El dato debe ser de tipo string`)
     return value
   }

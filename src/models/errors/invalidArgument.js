@@ -1,5 +1,5 @@
-export class InvalidArgument extends Error {
+export class ErrorInvalidArgument extends Error {
     constructor({description}) {
         this.description = description
-        this.type = 'Argumento invalido'
+        this.type = 'Argumento inválido'
 }}

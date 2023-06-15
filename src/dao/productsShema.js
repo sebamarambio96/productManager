@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import mongoosePaginate from "mongoose-paginate-v2";
+import { DaoMongoose } from "./DaoMongoose.js";
 
 const schemaProducts = new mongoose.Schema({
     tittle: { type: String, required: true },
@@ -12,6 +13,8 @@ const schemaProducts = new mongoose.Schema({
 }, { versionKey: false })
 
 schemaProducts.plugin(mongoosePaginate)
+
+export const productsDaoMoongose = new DaoMongoose(schemaProducts)
 
 export class ProductsManager {
     #productsDb

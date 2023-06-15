@@ -1,6 +1,6 @@
-import { ProductsManager, productsManager } from "../dao/productsShema.js"
+import { productsRepository } from "../repositories/products.repository.js"
 
-export class ProductService {
+export class ProductsService {
     constructor(productsRepository) {
         this.repo = productsRepository
     }
@@ -9,3 +9,5 @@ export class ProductService {
         return productData
     }
 }
+
+export const productsService = new ProductsService(productsRepository)

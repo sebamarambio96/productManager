@@ -1,9 +1,12 @@
 import mongoose from "mongoose";
+import { DaoMongoose } from "./DaoMongoose.js";
 
 const schemaMessages = new mongoose.Schema({
     user: { type: String, required: true },
     message: { type: String, required: true },
 }, { versionKey: false })
+
+export const messagesDaoMoongose = new DaoMongoose(schemaMessages)
 
 class MessagesManager {
     #messagesDb

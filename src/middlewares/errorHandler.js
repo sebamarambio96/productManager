@@ -1,10 +1,19 @@
-import { InvalidArgument } from "../models/errors/invalidArgument.js"
+import { ErrorInvalidArgument } from "../models/errors/InvalidArgument.js"
+import { ErrorNotFound } from "../models/errors/notFound.js"
 
 export function errorHandler(error, req, res, next) {
     switch (error.message) {
-        case error instanceof InvalidArgument:
+        case error instanceof ErrorInvalidArgument:
             res.status(400)
             res.json({
+                type: error.type,
+                description: error.description
+            })
+            break
+        case error instanceof ErrorNotFound:
+            res.status(400)
+            res.json({
+                type: error.type,
                 description: error.description
             })
             break

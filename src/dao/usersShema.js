@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { DaoMongoose } from "./DaoMongoose.js";
 
 const schemaUsers = new mongoose.Schema({
     first_name: { type: String },
@@ -9,6 +10,8 @@ const schemaUsers = new mongoose.Schema({
     user: { type: String, required: true },
     pass: { type: String },
 }, { versionKey: false })
+
+export const usersDaoMoongose = new DaoMongoose(schemaUsers)
 
 class UsersManager {
     #usersDb
