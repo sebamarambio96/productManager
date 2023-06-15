@@ -35,5 +35,5 @@ export function errorHandler(error, req, res, next) {
         default:
             res.status(500)
     }
-    res.json({ message: error.message })
+    res.json({ message: error.message, description: error.description })
 }

@@ -1,3 +1,4 @@
+import { validateNum } from "../validations/number.js"
 import { validateString } from "../validations/string.js"
 
 export class Products {

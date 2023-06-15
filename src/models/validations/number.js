@@ -19,6 +19,6 @@ export function isPositive(value) {
 }
 
 export function isNumber(value) {
-    if (typeof valor !== 'number') throw new ErrorInvalidArgument(`El dato debe ser un número`)
+    if (typeof value !== 'number') throw new ErrorInvalidArgument(`El dato debe ser un número`)
     return value
 }

@@ -1,7 +1,13 @@
 import { ErrorInvalidArgument } from "../errors/InvalidArgument.js"
 
-export function isBoolean(valor) {
-    if (typeof valor !== 'boolean')
-      throw new ErrorInvalidArgument(`El dato debe ser de tipo boolean`)
-    return valor
-  }
+export function validateBoolean(value, required = true) {
+  isBoolean(value)
+  if (required) notEmpty(value)
+  return value
+}
+
+export function isBoolean(value) {
+  if (typeof value !== 'boolean')
+    throw new ErrorInvalidArgument(`El dato debe ser de tipo boolean`)
+  return value
+}

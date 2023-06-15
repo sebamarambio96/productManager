@@ -10,4 +10,4 @@ export class ProductsService {
     }
 }
 
-export const productsService = new ProductsService(productsRepository)
+/* export const productsService = new ProductsService(productsRepository) */
