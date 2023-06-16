@@ -3,13 +3,10 @@ import mongoosePaginate from "mongoose-paginate-v2";
 import { DaoMongoose } from "./DaoMongoose.js";
 
 const schemaTickets = new mongoose.Schema({
-    tittle: { type: String, required: true },
-    description: { type: String, required: true },
-    category: { type: String, required: true, default: 'Otros' },
-    price: { type: Number, required: true },
-    thumbnail: { type: String },
     code: { type: String, required: true },
-    stock: { type: Number, required: true },
+    purchase_datetime: { type: String, required: true },
+    amount: { type: Number, required: true },
+    purchaser: { type: String, required: true },
 }, { versionKey: false })
 
 schemaTickets.plugin(mongoosePaginate)
