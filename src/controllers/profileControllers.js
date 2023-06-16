@@ -1,3 +1,5 @@
+import { Users } from "../models/entities/users.js"
+
 //SET cookie
 export async function setCookie(req, res, next) {
     try {
@@ -54,15 +56,15 @@ export async function session(req, res, next) {
 //current
 export async function current(req, res, next) {
     try {
-        console.log(req.session.passport.user.user)
-        if (req.session.passport.user.user == 'adminCoder@coder.com' && req.session.passport.user.pass == 'adminCod3r123') {
+        console.log(req.session.passport.user)
+        if (req.session.passport.user == 'adminCoder@coder.com' && req.session.passport.user.pass == 'adminCod3r123') {
             req.session.admin = true
             req.session.user = 'adminCoder@coder.com'
             res.status(200).json(req.session)
         } else {
             req.session.admin = false
             req.session.user = req.session.passport.user.user
-            res.status(200).json(req.session)
+            res.status(200).json(req.session.passport.user)
         }
     } catch (error) {
         next(error)

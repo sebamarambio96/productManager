@@ -39,7 +39,7 @@ function login(username, pass) {
         .catch(err=>console.log(err))
 }
 function register(user, pass,first_name,last_name,age) {
-    const data = { user, pass,first_name,last_name,age }
+    const data = { user, pass,first_name,last_name,age,role:'' }
     console.log(user, pass)
     fetch('http://localhost:8080/profile/register', {
         method: 'POST',

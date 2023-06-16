@@ -14,3 +14,6 @@ cartsRouter.post('/:cid/product/:pid', addProducts)
 
 //Delete product
 cartsRouter.delete('/:cid/product/:pid', deleteProduct)
+
+//Purchase
+cartsRouter.delete('/:cid/purchase')

@@ -14,7 +14,9 @@ const schemaProducts = new mongoose.Schema({
 
 schemaProducts.plugin(mongoosePaginate)
 
-export const productsDaoMoongose = new DaoMongoose(schemaProducts)
+const modelProducts = mongoose.model('products', schemaProducts)
+
+export const productsDaoMoongose = new DaoMongoose(modelProducts)
 
 export class ProductsManager {
     #productsDb

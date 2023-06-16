@@ -11,7 +11,9 @@ const schemaUsers = new mongoose.Schema({
     pass: { type: String },
 }, { versionKey: false })
 
-export const usersDaoMoongose = new DaoMongoose(schemaUsers)
+const modelUsers = mongoose.model('users', schemaUsers)
+
+export const usersDaoMoongose = new DaoMongoose(modelUsers)
 
 class UsersManager {
     #usersDb

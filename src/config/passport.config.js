@@ -1,8 +1,9 @@
-import passport, { Passport } from 'passport'
+import passport from 'passport'
 import local from 'passport-local'
 import { usersManager } from "../dao/usersShema.js"
 import { encryptPass, validPass } from "../utils/bcrypt.js"
 import { Strategy as GithubStrategy } from 'passport-github2'
+import { Users } from '../models/entities/users.js'
 
 const LocalStrategy = local.Strategy
 
@@ -12,10 +13,15 @@ passport.use('register', new LocalStrategy({
     usernameField: 'user',
     passwordField: 'pass'
 }, async (req, _u, _p, done) => {
-    const { user, pass, first_name, last_name, age, cart, role } = req.body
-    console.log(user, pass)
-    await usersManager.register({ user, pass: encryptPass(pass), first_name, last_name, age, cart, role })
-    done(null, { user, pass })
+    try {
+        const { user, pass, first_name, last_name, age, cart, role } = req.body
+        const newUser = new Users({ user, pass: encryptPass(pass), first_name, last_name, age: parseInt(age), cart, role: 'user' })
+        console.log(newUser.dto())
+        await usersManager.register(newUser.dto())
+        done(null, { user, pass })
+    } catch (error) {
+        return done(error)
+    }
 })
 )
 

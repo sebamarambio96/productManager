@@ -1,6 +1,5 @@
-import { notEmpty } from "../validations/input"
-import { validateNum } from "../validations/number"
-import { validateString } from "../validations/string"
+import { validateNum } from "../validations/number.js"
+import { validateString } from "../validations/string.js"
 
 export class Users {
     #first_name
@@ -20,6 +19,13 @@ export class Users {
         this.#user = validateString(user,true)
         this.#pass = pass
     }
+
+    get first_name() { return this.#first_name }
+    get last_name() { return this.#last_name }
+    get age() { return this.#age }
+    get cart() { return this.#cart }
+    get role() { return this.#role }
+    get user() { return this.#user }
 
     dto() {
         return {

@@ -17,7 +17,9 @@ const schemaCarts = new mongoose.Schema({
     }
 }, { versionKey: false })
 
-export const cartsDaoMoongose = new DaoMongoose(schemaCarts)
+const modelCarts = mongoose.model('carts', schemaCarts)
+
+export const cartsDaoMoongose = new DaoMongoose(modelCarts)
 
 class CartsManager {
     #cartsDb

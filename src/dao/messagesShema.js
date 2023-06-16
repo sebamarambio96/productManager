@@ -6,7 +6,9 @@ const schemaMessages = new mongoose.Schema({
     message: { type: String, required: true },
 }, { versionKey: false })
 
-export const messagesDaoMoongose = new DaoMongoose(schemaMessages)
+const modelMessages = mongoose.model('messages', schemaMessages)
+
+export const messagesDaoMoongose = new DaoMongoose(modelMessages)
 
 class MessagesManager {
     #messagesDb
