@@ -5,6 +5,12 @@ dotenv.config()
 const PORT = process.env.PORT
 const SECRET = process.env.SECRET
 
+//LOGGER
+
+const NODE_ENV = process.env.NODE_ENV || 'dev'
+const LOG_LEVEL = process.env.LOG_LEVEL || '10'
+const WINSTON_LEVEL = process.env.WINSTON_LEVEL || 'error'
+
 //MONGO
 
 const MONGO_USER = process.env.MONGO_USER
@@ -20,6 +26,10 @@ const EMAIL_PASS = process.env.EMAIL_PASS
 export {
     PORT,
     SECRET,
+
+    NODE_ENV,
+    LOG_LEVEL,
+    WINSTON_LEVEL,
 
     MONGO_PASS,
     MONGO_USER,
