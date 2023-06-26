@@ -4,6 +4,7 @@ dotenv.config()
 
 const PORT = process.env.PORT
 const SECRET = process.env.SECRET
+const SERVER_MODE = process.env.SERVER_MODE || 'normal'
 
 //LOGGER
 
@@ -26,6 +27,7 @@ const EMAIL_PASS = process.env.EMAIL_PASS
 export {
     PORT,
     SECRET,
+    SERVER_MODE,
 
     NODE_ENV,
     LOG_LEVEL,
