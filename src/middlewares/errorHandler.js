@@ -1,4 +1,4 @@
-import { ErrorInvalidArgument } from "../models/errors/InvalidArgument.js"
+import { ErrorInvalidArgument } from "../models/errors/invalidArgument.js"
 import { ErrorNotFound } from "../models/errors/notFound.js"
 
 export function errorHandler(error, req, res, next) {

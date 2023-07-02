@@ -1,4 +1,4 @@
-import { ErrorInvalidArgument } from "../errors/InvalidArgument.js"
+import { ErrorInvalidArgument } from "../errors/invalidArgument.js"
 
 export function validateBoolean(value, required = true) {
   isBoolean(value)

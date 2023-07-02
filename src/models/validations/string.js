@@ -1,4 +1,4 @@
-import { ErrorInvalidArgument } from "../errors/InvalidArgument.js"
+import { ErrorInvalidArgument } from "../errors/invalidArgument.js"
 import { notEmpty } from "./input.js"
 
 export function validateString(value, required = true, onlyAlphab= false) {
