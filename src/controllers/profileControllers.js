@@ -64,7 +64,8 @@ export async function current(req, res, next) {
         } else {
             req.session.admin = false
             req.session.user = req.session.passport.user.user
-            res.status(200).json(req.session.passport.user)
+            const user = new Users(req.session.passport.user)
+            res.status(200).json(user.dtoSafe())
         }
     } catch (error) {
         next(error)

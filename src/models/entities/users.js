@@ -38,4 +38,14 @@ export class Users {
             pass: this.#pass,
         }
     }
+
+    dtoSafe() {
+        return {
+            first_name: this.#first_name,
+            last_name: this.#last_name,
+            cart: this.#cart,
+            role: this.#role,
+            user: this.#user,
+        }
+    }
 }
