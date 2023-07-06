@@ -54,17 +54,33 @@ export async function session(req, res, next) {
 }
 
 //current
-export async function current(req, res, next) {
+export async function currentMiddleware(req, res, next) {
     try {
+        const user = new Users(req.session.passport.user)
         console.log(req.session.passport.user)
-        if (req.session.passport.user == 'adminCoder@coder.com' && req.session.passport.user.pass == 'adminCod3r123') {
+        req.session.user = user.dtoSafe()
+        if (user.role === 'admin') {
             req.session.admin = true
-            req.session.user = 'adminCoder@coder.com'
-            res.status(200).json(req.session)
         } else {
             req.session.admin = false
-            req.session.user = req.session.passport.user.user
-            const user = new Users(req.session.passport.user)
+        }
+        next()
+    } catch (error) {
+        next(error)
+    }
+}
+
+//current
+export async function current(req, res, next) {
+    try {
+        const user = new Users(req.session.passport.user)
+        console.log(req.session.passport.user)
+        req.session.user = user.dtoSafe()
+        if (user.role === 'admin') {
+            req.session.admin = true
+            res.status(200).json(user.dtoSafe())
+        } else {
+            req.session.admin = false
             res.status(200).json(user.dtoSafe())
         }
     } catch (error) {
