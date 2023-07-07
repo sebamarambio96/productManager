@@ -1,4 +1,6 @@
 import { cartsManager } from "../dao/cartsShema.js"
+import { cartsRepository } from "../repositories/carts.repository.js"
+import { productsRepository } from "../repositories/products.repository.js"
 
 //GET one product by ID
 export async function getCart(req, res, next) {
@@ -38,6 +40,18 @@ export async function deleteProduct(req, res, next) {
     try {
         await cartsManager.deleteProduct(req.params.cid, req.params.pid)
         res.status(201).json({ message: 'Producto eliminado' })
+    } catch (error) {
+        next(error)
+    }
+}
+
+//Purchase
+export async function purchase(req, res, next) {
+    try {
+        const cid = req.params.cid
+        const products = await productsRepository.readMany()
+        const cart = await cartsRepository.readOne({_id: cid})
+        res.status(201).json(cart)
     } catch (error) {
         next(error)
     }

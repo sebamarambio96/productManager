@@ -9,16 +9,30 @@ btnAdd.addEventListener('click', () => {
     const description = document.getElementById('description').value
     const code = document.getElementById('code').value
     const category = document.getElementById('category').value
-    if (tittle != '' & price != '' & stock != '' & description != '' & code != ''& category != '') {
-        serverSocket.emit('newProduct', {
-            tittle,
-            price,
-            stock,
-            thumbnail,
-            description,
-            code,
-            category,
-        })
+    if (tittle != '' & price != '' & stock != '' & description != '' & code != '' & category != '') {
+        fetch(`http://localhost:8080/profile/current`)
+            .then(res => res.json())
+            .then(res => {
+                console.log(res)
+                if (res.role === "admin") {
+                    serverSocket.emit('newProduct', {
+                        tittle,
+                        price,
+                        stock,
+                        thumbnail,
+                        description,
+                        code,
+                        category,
+                    })
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: `Solo un administrador puede crear un producto`
+                    })
+                }
+
+            })
     }
 })
 
@@ -26,7 +40,20 @@ const btnDelete = document.getElementById('btnDelete');
 btnDelete.addEventListener('click', () => {
     const id = document.getElementById('id').value
     if (id != '') {
-        serverSocket.emit('deleteProduct', { id })
+        fetch(`http://localhost:8080/profile/current`)
+            .then(res => res.json())
+            .then(res => {
+                console.log(res)
+                if (res.role === "admin") {
+                    serverSocket.emit('deleteProduct', { id })
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: `Solo un administrador puede eliminar un producto`
+                    })
+                }
+            })
     }
 })
 

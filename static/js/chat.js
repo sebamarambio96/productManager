@@ -1,32 +1,45 @@
 const serverSocket = io()
 
-Swal.fire({
-    title: 'Ingresa un correo:',
-    input: 'email',
-    inputLabel: 'ejemplo@ejemplo.com',
-    inputPlaceholder: 'ejemplo@ejemplo.com',
-    inputValidator: (value) => {
-        return !value && "¡Necesitas escribir un correo para comenzar a chatear!"
-    },
-    allowOutsideClick: false
-}).then(res => {
-    const inputAutor = document.getElementById('inputUser')
-    if (!(inputAutor instanceof HTMLInputElement)) return
-    inputAutor.value = res.value
-    serverSocket.emit('newUser', inputAutor.value)
-})
-
-
+fetch('http://localhost:8080/profile/current')
+    .then(res => res.json())
+    .then(res => {
+        console.log(res)
+        if (res.first_name) {
+            const inputAutor = document.getElementById('inputUser')
+            if (!(inputAutor instanceof HTMLInputElement)) return
+            inputAutor.value = res.user
+            serverSocket.emit('newUser', inputAutor.value)
+        } else {
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: `¡Necesitas iniciar sesión para comenzar a chatear!`
+            })
+        }
+    })
 
 if (btnSend) {
     btnSend.addEventListener('click', e => {
-        const inputUser = document.getElementById('inputUser')
-        const inputMessage = document.getElementById('inputMessage')
-        const user = inputUser.value
-        const message = inputMessage.value
-        //Validamos que exista
-        if (!user || !message) return
-        serverSocket.emit('newMessage', { user, message })
+        fetch('http://localhost:8080/profile/current')
+            .then(res => res.json())
+            .then(res => {
+                console.log(res)
+                if (res.first_name) {
+                    const inputUser = document.getElementById('inputUser')
+                    const inputMessage = document.getElementById('inputMessage')
+                    const user = inputUser.value
+                    const message = inputMessage.value
+                    //Validamos que exista
+                    if (!user || !message) return
+                    serverSocket.emit('newMessage', { user, message })
+                } else {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: `¡Necesitas iniciar sesión para comenzar a chatear!`
+                    })
+                }
+            })
     })
 }
 

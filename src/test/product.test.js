@@ -2,7 +2,7 @@ import { Products } from "../models/entities/products.js";
 import { ProductsService } from "../services/products.service.js";
 import { logger } from "../utils/logger.js";
 import { randomString } from "../utils/randomUUID.js";
-import { winstonLogger } from "../utils/winston.js";
+import { Logger } from "../utils/winston.js";
 
 /* const productRepositoryMock = {
     create: product => { console.log('Se ha creado el producto correctamente') }
@@ -64,7 +64,7 @@ export async function loggerTest(req, res, next) {
 
 export async function winston(req, res, next) {
     try {
-        winstonLogger.silly('mensaje de error de prueba nivel error 0')
+        Logger.silly('mensaje de error de prueba nivel error 0')
         res.status(200).json({})
     } catch (error) {
         next(error)

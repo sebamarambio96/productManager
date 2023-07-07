@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { getCart, addCart, addProducts, deleteProduct } from "../controllers/cartsControllerMongo.js"
+import { getCart, addCart, addProducts, deleteProduct, purchase } from "../controllers/cartsControllerMongo.js"
 
 export const cartsRouter = Router()
 
@@ -16,4 +16,4 @@ cartsRouter.post('/:cid/product/:pid', addProducts)
 cartsRouter.delete('/:cid/product/:pid', deleteProduct)
 
 //Purchase
-cartsRouter.delete('/:cid/purchase')
+cartsRouter.post('/:cid/purchase', purchase)

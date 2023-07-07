@@ -1,12 +1,12 @@
-fetch('http://localhost:8080/profile/session')
+fetch('http://localhost:8080/profile/current')
     .then(res => res.json())
     .then(res => {
         console.log(res)
-        if (res.auth) {
+        if (res.first_name) {
             Swal.fire({
                 icon: 'success',
                 title: 'Genial!',
-                text: `Bienvenido ${res.info.user}!!!\n Rol: ${res.info.admin ? 'Admin' : 'Usuario'}`
+                text: `Bienvenido ${res.first_name}!!!\n Rol: ${res.role}`
             })
         }else {
             Swal.fire({

@@ -5,7 +5,7 @@ const schemaUsers = new mongoose.Schema({
     first_name: { type: String },
     last_name: { type: String },
     age: { type: Number },
-    cart: { type: String },
+    cart: { type: String, default: ''  },
     role: { type: String, default: 'user' },
     user: { type: String, required: true },
     pass: { type: String },

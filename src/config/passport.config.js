@@ -16,7 +16,7 @@ passport.use('register', new LocalStrategy({
     try {
         const { user, pass, first_name, last_name, age, cart, role } = req.body
         const newUser = new Users({ user, pass: encryptPass(pass), first_name, last_name, age: parseInt(age), cart, role: 'user' })
-        console.log(newUser.dto())
+        /* console.log(newUser.dto()) */
         await usersManager.register(newUser.dto())
         done(null, { user, pass })
     } catch (error) {
@@ -36,15 +36,9 @@ passport.use('login', new LocalStrategy({
         const usersData = await usersManager.getAll()
         const exist = usersData.filter(x => x.user == username)
         if (exist.length < 1) throw new Error('Login Fail')
-        if (username == 'adminCoder@coder.com' && pass == 'adminCod3r123') {
-            req.session.admin = true
-            req.session.user = 'adminCoder@coder.com'
-            done(null, { user: 'adminCoder@coder.com', pass: 'adminCod3r123' })
-        } else if (validPass(pass, exist[0])) {
-            req.session.admin = false
-            req.session.user = exist[0].user
-            done(null, exist[0])
-        }
+        req.session.user = exist[0].user
+        done(null, exist[0])
+
     } catch (error) {
         return done(error)
     }

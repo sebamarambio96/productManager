@@ -18,14 +18,13 @@ export async function ioManager(io) {
         //New product
         clientSocket.on('newProduct', async product => {
             try {
-                console.log(product);
+                /* console.log(product); */
                 product.price = parseInt(product.price)
                 const productReq = new Products(product)
-                console.log(productReq)
+                /* console.log(productReq) */
                 await productsManager.addProduct(productReq.dto())
                 clientSocket.emit('updateProducts', await productsManager.getAll())
             } catch (error) {
-                console.log(error);
                 console.log(error);
             }
         })

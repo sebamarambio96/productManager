@@ -4,10 +4,16 @@ import { ErrorNotFound } from "../models/errors/notFound.js"
 export function errorHandler(error, req, res, next) {
     switch (error.message) {
         case error instanceof ErrorInvalidArgument:
-            res.status(400)
+            res.status(400).json({
+                type: error.type,
+                description: error.description
+            })
             break
         case error instanceof ErrorNotFound:
-            res.status(400)
+            res.status(400).json({
+                type: error.type,
+                description: error.description
+            })
             break
         case 'ID no existe':
             res.status(404)

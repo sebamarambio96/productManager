@@ -1,4 +1,5 @@
 import { Users } from "../models/entities/users.js"
+import { Logger } from "../utils/winston.js"
 
 //SET cookie
 export async function setCookie(req, res, next) {
@@ -73,8 +74,8 @@ export async function currentMiddleware(req, res, next) {
 //current
 export async function current(req, res, next) {
     try {
+        Logger.silly(req.session.passport.user);
         const user = new Users(req.session.passport.user)
-        console.log(req.session.passport.user)
         req.session.user = user.dtoSafe()
         if (user.role === 'admin') {
             req.session.admin = true
@@ -91,15 +92,19 @@ export async function current(req, res, next) {
 //login
 export async function login(req, res, next) {
     try {
-        console.log(req.session.passport.user.user)
-        if (req.session.passport.user.user == 'adminCoder@coder.com' && req.session.passport.user.pass == 'adminCod3r123') {
-            req.session.admin = true
-            req.session.user = 'adminCoder@coder.com'
-            res.status(200).json(req.session)
-        } else {
-            req.session.admin = false
-            req.session.user = req.session.passport.user.user
-            res.status(200).json(req.session)
+        try {
+            Logger.silly(req.session.passport.user);
+            const user = new Users(req.session.passport.user)
+            req.session.user = user.dtoSafe()
+            if (user.role === 'admin') {
+                req.session.admin = true
+                res.status(200).json(user.dtoSafe())
+            } else {
+                req.session.admin = false
+                res.status(200).json(user.dtoSafe())
+            }
+        } catch (error) {
+            next(error)
         }
     } catch (error) {
         next(error)

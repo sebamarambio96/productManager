@@ -2,11 +2,13 @@ import winston from 'winston'
 import { NODE_ENV, WINSTON_LEVEL } from '../config/env.config.js'
 
 const levels = {
-    fatal: 0,
-    error: 1,
-    warning: 2,
-    info: 3,
-    debug: 4
+    error: 0,
+    warn: 1,
+    info: 2,
+    http: 3,
+    verbose: 4,
+    debug: 5,
+    silly: 6
 }
 
 const winstonLoggerDev = winston.createLogger({
@@ -28,9 +30,9 @@ const winstonLoggerProd = winston.createLogger({
     ]
 })
 
-export let winstonLogger
+export let Logger
 if (NODE_ENV === 'production') {
-    winstonLogger = winstonLoggerProd
+    Logger = winstonLoggerProd
 } else {
-    winstonLogger = winstonLoggerDev
+    Logger = winstonLoggerDev
 }

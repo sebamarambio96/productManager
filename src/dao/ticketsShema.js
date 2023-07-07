@@ -9,8 +9,6 @@ const schemaTickets = new mongoose.Schema({
     purchaser: { type: String, required: true },
 }, { versionKey: false })
 
-schemaTickets.plugin(mongoosePaginate)
-
 const modelTickets = mongoose.model('tickets', schemaTickets)
 
 export const ticketsDaoMoongose = new DaoMongoose(modelTickets)

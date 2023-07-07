@@ -1,6 +1,6 @@
 import { LOG_LEVEL, NODE_ENV } from "../config/env.config.js"
 
-class Logger {
+class LoggerHandMade {
     constructor(env, level) {
         this.env = env
         this.level = level
@@ -12,4 +12,4 @@ class Logger {
     }
 }
 
-export const logger = new Logger(NODE_ENV, LOG_LEVEL)
+export const logger = new LoggerHandMade(NODE_ENV, LOG_LEVEL)
