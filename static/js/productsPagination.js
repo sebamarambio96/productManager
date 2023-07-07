@@ -28,7 +28,7 @@ function listenAddButtons() {
     const buttons = document.querySelectorAll('.btn-info')
     /* console.log(buttons); */
     buttons.forEach(btn => {
-        btn.addEventListener('click', e => {
+        btn.addEventListener('click', e => { 
             fetch(`http://localhost:8080/api/carts/${cartSave}/product/${btn.id}`, {
                 method: 'POST',
             }

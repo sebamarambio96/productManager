@@ -26,6 +26,7 @@ export async function getProduct(req, res,next) {
 //ADD new product
 export async function addProduct(req, res,next) {
     try {
+        console.log(req.body);
         await productManager.addProduct(req.body)
         res.status(201).json({message: 'Producto agregado'})
     } catch (error) {
