@@ -1,6 +1,7 @@
 import { cartsManager } from "../dao/cartsShema.js"
 import { cartsRepository } from "../repositories/carts.repository.js"
 import { productsRepository } from "../repositories/products.repository.js"
+import { ticketsService } from "../services/tickets.service.js"
 
 //GET one product by ID
 export async function getCart(req, res, next) {
@@ -48,10 +49,9 @@ export async function deleteProduct(req, res, next) {
 //Purchase
 export async function purchase(req, res, next) {
     try {
-        const cid = req.params.cid
-        const products = await productsRepository.readMany()
-        const cart = await cartsRepository.readOne({_id: cid})
-        res.status(201).json(cart)
+        const { cid, purchaser } = req.body
+        const ticket = await ticketsService.purchase(cid, purchaser)
+        res.status(201).json(ticket)
     } catch (error) {
         next(error)
     }

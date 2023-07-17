@@ -2,7 +2,7 @@ import { validateNum } from "../validations/number.js"
 import { validateString } from "../validations/string.js"
 
 export class Products {
-    #tittle
+    #title
     #description
     #price
     #thumbnail
@@ -10,8 +10,8 @@ export class Products {
     #stock
     #category
 
-    constructor({ tittle, description, price, thumbnail, code, stock, category }) {
-        this.#tittle = validateString(tittle)
+    constructor({ title, description, price, thumbnail, code, stock, category }) {
+        this.#title = validateString(title)
         this.#description = validateString(description)
         this.#price = validateNum(price)
         this.#thumbnail = thumbnail
@@ -20,7 +20,7 @@ export class Products {
         this.#category = category
     }
 
-    get tittle() { return this.#tittle }
+    get title() { return this.#title }
     get description() { return this.#description }
     get price() { return this.#price }
     get thumbnail() { return this.#thumbnail }
@@ -30,7 +30,7 @@ export class Products {
 
     dto() {
         return {
-            tittle: this.#tittle,
+            title: this.#title,
             description: this.#description,
             price: this.#price,
             thumbnail: this.#thumbnail,

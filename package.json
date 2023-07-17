@@ -43,7 +43,7 @@
     "dev": "nodemon src/main.js",
     "start": "node src/main.js",
     "taddProduct": "node src/test/product.test.js",
-    "mongo": "mongod --dbpath ../../MONGO/"
+    "mongo": "mongod --dbpath ../MONGO/"
   },
   "author": "",
   "license": "ISC",

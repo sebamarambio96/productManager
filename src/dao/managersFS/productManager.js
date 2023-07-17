@@ -38,14 +38,14 @@ export class ProductManager {
         console.log('Producto añadido')
     }
 
-    async updateProduct(id, object) {
+    async updateProduct(id, newData) {
         const arrayProducts = await this.getProducts()
         const product = arrayProducts.filter(item => item.id === parseInt(id))
         const idx = arrayProducts.indexOf(...product)
         // VERIFY EXISTENCE
         if (product.length === 0) throw new Error('ID no existe')
         const newProduct = {
-            id: parseInt(id), ...object
+            id: parseInt(id), ...newData
         }
         arrayProducts[idx] = newProduct
         await this.saveProducts(arrayProducts)
@@ -67,7 +67,7 @@ export class ProductManager {
 /* const productManager = new ProductManager('./src/data/productos.json') */
 
 /* productManager.addProduct({
-    tittle: "producto prueba nueva",
+    title: "producto prueba nueva",
     description: "Este es un producto prueba",
     price: 200,
     thumbnail: "Sin imagen",
@@ -76,7 +76,7 @@ export class ProductManager {
 }).then(res => console.log('Producto agregado')) */
 
 /* productManager.updateProduct(512274163, {
-    tittle: "producto prueba modificado",
+    title: "producto prueba modificado",
     description: "Este es un producto prueba  modificado",
     price: 2002,
     thumbnail: "Sin imagen modificado",

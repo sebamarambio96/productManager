@@ -3,13 +3,14 @@ import mongoosePaginate from "mongoose-paginate-v2";
 import { DaoMongoose } from "./DaoMongoose.js";
 
 const schemaProducts = new mongoose.Schema({
-    tittle: { type: String, required: true },
+    title: { type: String, required: true },
     description: { type: String, required: true },
     category: { type: String, required: true, default: 'Otros' },
     price: { type: Number, required: true },
     thumbnail: { type: String },
     code: { type: String, required: true },
     stock: { type: Number, required: true },
+    owner: { type: String, required: true },
 }, { versionKey: false })
 
 schemaProducts.plugin(mongoosePaginate)
@@ -21,7 +22,7 @@ export const productsDaoMoongose = new DaoMongoose(modelProducts)
 export class ProductsManager {
     #productsDb
     constructor() {
-        this.#productsDb = mongoose.model('products', schemaProducts)
+        this.#productsDb = modelProducts
     }
 
     async addProduct(productData) {
@@ -60,3 +61,7 @@ export class ProductsManager {
 }
 
 export const productsManager = new ProductsManager()
+
+/* const products = await productsManager.getAll()
+
+console.log(products); */

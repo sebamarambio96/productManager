@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "tittle": "producto prueba",
+        "title": "producto prueba",
         "description": "Este es un producto prueba",
         "price": 300,
         "thumbnail": "11asda23.jpg",
@@ -9,7 +9,7 @@
         "stock": 25
     },
     {
-        "tittle": "producto prueba nueva",
+        "title": "producto prueba nueva",
         "description": "Este es un producto prueba",
         "price": 200,
         "thumbnail": "Sin imagen",
@@ -18,7 +18,7 @@
         "id": 3
     },
     {
-        "tittle": "producto prueba nueva",
+        "title": "producto prueba nueva",
         "description": "Este es un producto prueba",
         "price": 200,
         "thumbnail": "Sin imagen",
@@ -27,7 +27,7 @@
         "id": 5
     },
     {
-        "tittle": "producto prueba nueva",
+        "title": "producto prueba nueva",
         "description": "Este es un producto prueba",
         "price": 200,
         "thumbnail": "Sin imagen",
@@ -36,7 +36,7 @@
         "id": 8
     },
     {
-        "tittle": "producto prueba",
+        "title": "producto prueba",
         "description": "Este es un producto prueba",
         "price": 300,
         "thumbnail": "11a12312.jpg",
@@ -47,7 +47,7 @@
     },
     {
         "id": 10,
-        "tittle": "producto prueba",
+        "title": "producto prueba",
         "description": "Este es un producto prueba",
         "price": 300,
         "thumbnail": "11asda12312.jpg",
@@ -55,7 +55,7 @@
         "stock": 25
     },
     {
-        "tittle": "producto prueba",
+        "title": "producto prueba",
         "description": "Este es un producto prueba",
         "price": 300,
         "thumbnail": "11asda12312.jpg",
@@ -65,7 +65,7 @@
         "id": 11
     },
     {
-        "tittle": "asdasd",
+        "title": "asdasd",
         "price": "12312",
         "stock": "3123",
         "thumbnail": "asdasd",
@@ -75,7 +75,7 @@
         "id": 13
     },
     {
-        "tittle": "Embudo",
+        "title": "Embudo",
         "price": "10000",
         "stock": "100",
         "thumbnail": "embudo.jpg",
@@ -85,7 +85,7 @@
         "id": 14
     },
     {
-        "tittle": "producto prueba actualizado 3",
+        "title": "producto prueba actualizado 3",
         "description": "Este es un producto prueba",
         "price": 300,
         "thumbnail": [
@@ -97,7 +97,7 @@
         "id": 15
     },
     {
-        "tittle": "producto prueba actualizado 3",
+        "title": "producto prueba actualizado 3",
         "description": "Este es un producto prueba",
         "price": "300",
         "thumbnail": [
@@ -109,7 +109,7 @@
         "id": 16
     },
     {
-        "tittle": "producto prueba actualizado 3",
+        "title": "producto prueba actualizado 3",
         "description": "Este es un producto prueba",
         "price": 300,
         "thumbnail": [
@@ -121,7 +121,7 @@
         "id": 17
     },
     {
-        "tittle": "producto prueba actualizado 3",
+        "title": "producto prueba actualizado 3",
         "description": "Este es un producto prueba",
         "price": 300,
         "thumbnail": [

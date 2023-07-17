@@ -1,7 +1,10 @@
 import { Router } from "express"
-import { sendMail } from "../controllers/msgController.js"
+import { passRecovery, sendMail } from "../controllers/msgController.js"
 
 export const messagesRouter = Router()
 
-//GET cart by id
 messagesRouter.post('/sendMail', sendMail)
+
+//Password recovery
+messagesRouter.post('/sendMail', passRecovery)
+

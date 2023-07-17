@@ -3,6 +3,7 @@ fetch('http://localhost:8080/profile/current')
     .then(res => {
         console.log(res)
         if (res.first_name) {
+            localStorage.setItem('cartID', res.cart)
             Swal.fire({
                 icon: 'success',
                 title: 'Genial!',

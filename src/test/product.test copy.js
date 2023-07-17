@@ -7,7 +7,7 @@ import { randomString } from "../utils/randomUUID.js";
 }
 
 const reqBodySimulado = {
-    tittle: "producto prueba actualizado 3",
+    title: "producto prueba actualizado 3",
     description: "Este es un producto prueba",
     price: 300,
     thumbnail: ["11asda12312.jpg"],
@@ -33,7 +33,7 @@ export async function mocking100Products(req, res, next) {
 
         for (let i = 0; i <= 100; i++) {
             const simulatedProduct = {
-                tittle: "producto prueba actualizado " + i.toString(),
+                title: "producto prueba actualizado " + i.toString(),
                 description: "Este es un producto prueba" + i.toString(),
                 price: 300 + i,
                 thumbnail: [`11asda12312numero${i}.jpg`],

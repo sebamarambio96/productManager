@@ -9,3 +9,4 @@ class ProductsRepository extends GenericRepository {
 }
 
 export const productsRepository = new ProductsRepository(productsDaoMoongose)
+

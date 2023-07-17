@@ -2,21 +2,21 @@ const serverSocket = io('http://localhost:8080')
 
 const btnAdd = document.getElementById('btnAdd');
 btnAdd.addEventListener('click', () => {
-    const tittle = document.getElementById('tittle').value
+    const title = document.getElementById('title').value
     const price = document.getElementById('price').value
     const stock = document.getElementById('stock').value
     const thumbnail = document.getElementById('imagen').value
     const description = document.getElementById('description').value
     const code = document.getElementById('code').value
     const category = document.getElementById('category').value
-    if (tittle != '' & price != '' & stock != '' & description != '' & code != '' & category != '') {
+    if (title != '' & price != '' & stock != '' & description != '' & code != '' & category != '') {
         fetch(`http://localhost:8080/profile/current`)
             .then(res => res.json())
             .then(res => {
                 console.log(res)
                 if (res.role === "admin") {
                     serverSocket.emit('newProduct', {
-                        tittle,
+                        title,
                         price,
                         stock,
                         thumbnail,
@@ -67,7 +67,7 @@ const template = `
         <div class="card" style="width: 15rem;">
             <div class="card-body">
                 <h6 class="card-subtitle mb-2 text-muted">ID: {{this._id}}</h6>
-                <h5 class="card-title text-success">Nombre: {{this.tittle}}</h5>
+                <h5 class="card-title text-success">Nombre: {{this.title}}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Categoría: {{this.category}}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Stock: {{this.stock}}</h6>
                 <h6 class="card-subtitle mb-2 text-muted">Precio: {{this.price}}</h6>

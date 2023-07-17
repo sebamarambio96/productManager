@@ -28,7 +28,7 @@ if (!cartSave) {
         <div class="card" style="width: 15rem;">
             <div class="card-body">
                 <h6 class="card-subtitle mb-2 text-muted">ID: {{this._id}}</h6>
-                <h5 class="card-title text-success">Nombre: {{this.product.tittle}}</h5>
+                <h5 class="card-title text-success">Nombre: {{this.product.title}}</h5>
                 <h6 class="card-title text-success">Cantidad: {{this.quantity}}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Categoría: {{this.product.category}}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Precio: {{this.product.price}}</h6>
@@ -68,7 +68,7 @@ serverSocket.on('updateCart', async cart => {
         <div class="card" style="width: 15rem;">
             <div class="card-body">
                 <h6 class="card-subtitle mb-2 text-muted">ID: {{this._id}}</h6>
-                <h5 class="card-title text-success">Nombre: {{this.product.tittle}}</h5>
+                <h5 class="card-title text-success">Nombre: {{this.product.title}}</h5>
                 <h6 class="card-title text-success">Cantidad: {{this.quantity}}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Categoría: {{this.product.category}}</h5>
                 <h6 class="card-subtitle mb-2 text-muted">Precio: {{this.product.price}}</h6>
@@ -111,4 +111,42 @@ function listenDeleteButtons() {
     })
 }
 
+function listenPurchase() {
+    const purcharBtn = document.getElementById('purchaseBtn');
+    purcharBtn.addEventListener('click', e => {
+        fetch(`http://localhost:8080/profile/current`)
+            .then(res => res.json())
+            .then(res => {
+                console.log(res)
+                if (res.role) {
+                    const data = {
+                        cid: res.cart,
+                        purchaser: res.user
+                    }
+                    fetch('http://localhost:8080/api/carts/purchase', {
+                        method: 'POST',
+                        headers: {
+                            'Content-type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    })
+                        .then(res => res.json())
+                        .then(res => {
+                            console.log(res)
+                            /* window.location.href = '/cart' */
+                        })
+                        .catch(err => console.log(err))
+                } else {
+                    window.location.href = '/login'
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: `¡Necesitas iniciar sesión para realizar un compra!`
+                    })
+                }
+            })
+    })
+}
+
+listenPurchase()
 listenDeleteButtons()

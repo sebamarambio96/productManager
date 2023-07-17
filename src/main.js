@@ -16,9 +16,13 @@ import { messagesRouter } from "./routers/msgRouter.js"
 import { passportInit, passportSession } from "./config/passport.config.js"
 import { MONGO_BBDD, MONGO_PASS, MONGO_SERVER, MONGO_USER, PORT, SECRET, SERVER_MODE } from "./config/env.config.js"
 import { errorHandler } from "./middlewares/errorHandler.js"
+import { ticketsService } from "./services/tickets.service.js"
+import { productsRepository } from "./repositories/products.repository.js"
+import { cartsDaoMoongose, cartsManager } from "./dao/cartsShema.js"
 
 //Se conecta base de datos
 await connectMongo()
+
 
 const app = express()
 
@@ -78,3 +82,14 @@ if (SERVER_MODE === 'cluster' && cluster.isPrimary) {
 }
 
 
+
+/* const cart = await cartsDaoMoongose.readOnePopulated(
+    { _id: '644699f414b4336cb400bc9f' },
+    'cartProducts.product',
+) */
+
+/* const cart = await cartsManager.getByID('644699f414b4336cb400bc9f') */
+
+/* const cart = await ticketsService.purchase('644699f414b4336cb400bc9f','admin')
+
+console.log(cart); */

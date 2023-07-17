@@ -1,4 +1,5 @@
 import { ErrorNotFound } from "../models/errors/notFound.js"
+import { toPojo } from "../utils/pojo.js"
 
 export class DaoMongoose {
     #model
@@ -48,8 +49,13 @@ export class DaoMongoose {
     }
 
     // POPULATIONS ----------------------------------------------------------
+    async readOnePopulated(criteria, localField) {
+        // localfield example 'cartProducts.product'
+        const result = await this.model.findById(criteria).populate(`${localField}`).lean()
+        return result
+    }
 
-    async readOnePopulated(criteria, localField, from, foreignField) {
+    async readOnePopulated2(criteria, localField, from, foreignField) {
         const [result] = await this.model.aggregate([
             { $match: criteria },
             { $limit: 1 },
@@ -70,7 +76,14 @@ export class DaoMongoose {
         return result
     }
 
-    async readManyPopulated(criteria, localField, from, foreignField) {
+    async readManyPopulated2(criteria, localField, from, foreignField) {
+        //Example
+        /* const cart = await cartsDaoMoongose.readManyPopulated(
+            { _id: '644699f414b4336cb400bc9f' },
+            'cartProducts',
+            'product',
+            '_id'
+        ) */
         const result = await this.model.aggregate([
             { $match: criteria },
             {

@@ -4,10 +4,11 @@ export class ProductsService {
     constructor(productsRepository) {
         this.repo = productsRepository
     }
-    async addProduct(productData) {
+    async verifyStock(productData) {
         const newProduct = await this.repo.create(productData)
         return productData
     }
 }
 
-/* export const productsService = new ProductsService(productsRepository) */
+export const productsService = new ProductsService(productsRepository)
+
