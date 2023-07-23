@@ -1,7 +1,9 @@
+import { notEmpty } from "../validations/input.js"
 import { validateNum } from "../validations/number.js"
 import { validateString } from "../validations/string.js"
 
 export class Users {
+    #id
     #first_name
     #last_name
     #age
@@ -10,7 +12,8 @@ export class Users {
     #user
     #pass
 
-    constructor({ first_name, last_name, age, cart, role, user, pass }) {
+    constructor({ _id,first_name, last_name, age, cart, role, user, pass }) {
+        this.#id = notEmpty(_id)
         this.#first_name = validateString(first_name, true, true)
         this.#last_name = validateString(last_name, true, true)
         this.#age = validateNum(age)
@@ -20,6 +23,7 @@ export class Users {
         this.#pass = pass
     }
 
+    get id() { return this.#id }
     get first_name() { return this.#first_name }
     get last_name() { return this.#last_name }
     get age() { return this.#age }
@@ -29,6 +33,7 @@ export class Users {
 
     dto() {
         return {
+            id: this.id,
             first_name: this.#first_name,
             last_name: this.#last_name,
             age: this.#age,
@@ -41,6 +46,7 @@ export class Users {
 
     dtoSafe() {
         return {
+            id: this.id,
             first_name: this.#first_name,
             last_name: this.#last_name,
             cart: this.#cart,

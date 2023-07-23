@@ -1,10 +1,9 @@
-import bcrypt, { genSaltSync } from "bcrypt"
+import bcrypt, { genSaltSync } from "bcrypt";
 
 export function encryptPass(pass) {
-    return bcrypt.hashSync(pass,genSaltSync(10))
-    
+    return bcrypt.hashSync(pass, genSaltSync(10));
 }
 
 export function validPass(hashPass, user) {
-    return bcrypt.compareSync(hashPass, user.pass)
+    return bcrypt.compareSync(user.pass, hashPass);
 }

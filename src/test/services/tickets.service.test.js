@@ -1,8 +1,8 @@
-import { cartsDaoMoongose } from "../dao/cartsShema.js"
-import { productsDaoMoongose } from "../dao/productsShema.js"
-import { cartsRepository } from "../repositories/carts.repository.js"
-import { ticketsRepository } from "../repositories/tickets.repository.js"
-import { randomString } from "../utils/randomUUID.js"
+import { cartsDaoMoongose} from "../../dao/cartsShema.js"
+import { productsDaoMoongose } from "../../dao/productsShema.js"
+import { cartsRepository } from "../../repositories/carts.repository.js"
+import { ticketsRepository } from "../../repositories/tickets.repository.js"
+import { randomString } from "../../utils/randomUUID.js"
 
 export class TicketsService {
     constructor(ticketsRepository) {

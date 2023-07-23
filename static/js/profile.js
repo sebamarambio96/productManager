@@ -34,7 +34,7 @@ function login(username, pass) {
         .then(res => res.json())
         .then(res => {
             console.log(res)
-            window.location.href = '/products'
+            /* window.location.href = '/products' */
         })
         .catch(err=>console.log(err))
 }
@@ -61,7 +61,7 @@ function register(user, pass,first_name,last_name,age) {
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
-                    text: `No has ingresado sesión`
+                    text: `No has ingresado`
                 })
             }
         })
