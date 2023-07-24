@@ -1,10 +1,12 @@
-import { Router } from "express"
-import { passRecovery, sendMail } from "../controllers/msgController.js"
+import { Router } from "express";
+import { passRecoveryMail, passRecoveryVerify, sendMail } from "../controllers/msgController.js";
 
-export const messagesRouter = Router()
+export const messagesRouter = Router();
 
-messagesRouter.post('/sendMail', sendMail)
+messagesRouter.post("/sendMail", sendMail);
 
-//Password recovery
-messagesRouter.post('/sendMail', passRecovery)
+//Password recovery mail
+messagesRouter.post("/passRecoveryMail", passRecoveryMail);
 
+//Password recovery validate token
+messagesRouter.post("/passRecoveryVerify", passRecoveryVerify);

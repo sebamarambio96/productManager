@@ -1,8 +1,8 @@
-import { createTransport } from 'nodemailer'
-import { EMAIL_PASS, EMAIL_USER } from '../config/env.config.js'
+import { createTransport } from "nodemailer";
+import { EMAIL_PASS, EMAIL_USER } from "../config/env.config.js";
 
 class EmailService {
-    #clientNodemailer
+    #clientNodemailer;
 
     constructor(credentialMail) {
         this.#clientNodemailer = createTransport({
@@ -12,32 +12,52 @@ class EmailService {
                 user: 'ross.mckenzie67@ethereal.email',
                 pass: 'JNTfHWvbQvpCWpfCGr'
             }, */
-            service: 'gmail',
+            service: "gmail",
             port: 587,
             auth: credentialMail,
             tls: {
-                rejectUnauthorized: false
-            }
-            
-        })
+                rejectUnauthorized: false,
+            },
+        });
     }
 
-    async send(to, message) {
+    async sendRequest(to, message) {
         const mailOptions = {
-            from: 'Admin eccomerce',
+            from: "Admin eccomerce",
             to: to,
-            subject: 'Mail de consulta',
+            subject: "Mail de consulta",
             text: message,
-        }
+        };
         try {
-            const info = await this.#clientNodemailer.sendMail(mailOptions)
-            console.log(info)
-            return info
+            const info = await this.#clientNodemailer.sendMail(mailOptions);
+            console.log(info);
+            return info;
         } catch (error) {
-            console.log(error)
-            throw error
+            console.log(error);
+            throw error;
+        }
+    }
+
+    async passRecovery(to, token) {
+        const message = `
+        Código de recuperación de contraseña (Vigencia 24h)
+            Su código de recuperación es: ${token}
+        `;
+        const mailOptions = {
+            from: "Admin eccomerce",
+            to: to,
+            subject: "Recuperación Password",
+            text: message,
+        };
+        try {
+            const info = await this.#clientNodemailer.sendMail(mailOptions);
+            console.log(info);
+            return info;
+        } catch (error) {
+            console.log(error);
+            throw error;
         }
     }
 }
 
-export const emailService = new EmailService({ user: EMAIL_USER, pass: EMAIL_PASS })
+export const emailService = new EmailService({ user: EMAIL_USER, pass: EMAIL_PASS });

@@ -16,7 +16,7 @@ export class DaoMongoose {
     }
 
     async readOne(criteria) {
-        const result = await this.#model.findOne(criteria).select({ _id: 0 }).lean()
+        const result = await this.#model.findOne(criteria).lean()
         if (!result) throw new ErrorNotFound('No se encontrado ningún resultado que coincida con la busqueda')
         return result
     }

@@ -95,3 +95,10 @@ viewsRouter.get('/about', async (req, res, next) => {
         hayListado: listado.length > 0
     })
 })
+
+viewsRouter.get('/passRecovery', async (req, res, next) => {
+    res.render('passRecovery.hbs', {
+        titulo: 'Recovery Password',
+        encabezado: 'Ingresa tu código de recuperación:',
+    })
+})

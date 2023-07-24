@@ -143,7 +143,7 @@ export function authJwtApi(req, res, next) {
     passport.authenticate('jwt', (error, jwt_payload, info) => {
         if (error || !jwt_payload) return next(new Error('Error de autenticacion'))
         req.user = jwt_payload
-        next()
+        next(error)
     })(req, res, next)
 }
 
@@ -151,6 +151,6 @@ export function authJwtView(req, res, next) {
     passport.authenticate('jwt', (error, jwt_payload) => {
         if (error || !jwt_payload) return res.redirect('/login')
         req.user = jwt_payload
-        next()
+        next(error)
     })(req, res, next)
 } */

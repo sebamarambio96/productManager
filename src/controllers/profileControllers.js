@@ -71,7 +71,7 @@ export async function currentMiddleware(req, res, next) {
         } else {
             req.session.admin = false;
         }
-        next();
+        next(error);
     } catch (error) {
         next(error);
     }
@@ -85,13 +85,8 @@ export async function current(req, res, next) {
         req.session.user = user.dtoSafe();
         //Validate token
         decryptJWT(req.cookies.accessToken);
-        if (user.role === "admin") {
-            req.session.admin = true;
-            res.status(200).json(user.dtoSafe());
-        } else {
-            req.session.admin = false;
-            res.status(200).json(user.dtoSafe());
-        }
+        user.role === "admin" ? (req.session.admin = true) : (req.session.admin = false);
+        res.status(200).json(user.dtoSafe());
     } catch (error) {
         next(error);
     }
@@ -106,28 +101,16 @@ export async function login(req, res, next) {
         const userData = user.dtoSafe();
         req.session.user = userData;
         //Generate token
-
         Logger.silly(_id);
         const jwt = encryptJWT({ id: _id });
         Logger.silly(jwt);
-
-        if (user.role === "admin") {
-            req.session.admin = true;
-            res.cookie("accessToken", jwt, {
-                maxAge: 1 * 24 * 60 * 60 * 1000,
-            }).send({
-                status: "success",
-                message: "cookie set",
-            });
-        } else {
-            req.session.admin = false;
-            res.cookie("accessToken", jwt, {
-                maxAge: 1 * 24 * 60 * 60 * 1000,
-            }).send({
-                status: "success",
-                message: "cookie set",
-            });
-        }
+        //Set admin bool
+        user.role === "admin" ? (req.session.admin = true) : (req.session.admin = false);
+        //Set cookie
+        res.cookie("accessToken", jwt, { maxAge: 1 * 24 * 60 * 60 * 1000 }).send({
+            status: "success",
+            message: "cookie set",
+        });
     } catch (error) {
         Logger.error(error);
         next(error);

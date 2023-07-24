@@ -1,0 +1,25 @@
+<h1>{{encabezado}}</h1>
+
+<main class="form-signin w-50 h-50">
+    <form id="passRecoveryMail">
+        <div class="form-floating">
+            <input type="text" class="form-control" id="username">
+            <label for="floatingInput">Ingrese su username:</label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary my-4" type="submit">ENVIAR CORREO</button>
+    </form>
+    <form id="passRecoveryVerify">
+        <div class="form-floating">
+            <input type="text" class="form-control" id="token">
+            <label for="floatingInput">Código</label>
+        </div>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="newPassword" placeholder="Password">
+            <label for="floatingPassword">Nueva Password</label>
+        </div>
+        <button class="w-100 btn btn-lg btn-success my-4" type="submit">CAMBIAR CONTRASEÑA</button>
+    </form>
+</main>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="static/js/passRecovery.js"></script>
