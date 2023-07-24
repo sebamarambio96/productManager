@@ -15,7 +15,7 @@ fetch("http://localhost:8080/profile/current")
                 .then((res) => res.json())
                 .then((res) => {
                     console.log(res.cart._id);
-                    localStorage.setItem("cartID", res.cart._id);
+                    localStorage.setItem("cartID", res.cart);
                 });
         }
     });

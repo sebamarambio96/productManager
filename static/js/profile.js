@@ -39,7 +39,7 @@ function login(username, pass) {
                     title: "Genial!",
                     text: `Has iniciado session`,
                 });
-                /* window.location.href = '/products' */
+                window.location.href = '/products'
             } else {
                 Swal.fire({
                     icon: "error",

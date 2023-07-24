@@ -11,6 +11,7 @@ logoutBtn.addEventListener("click", (e) => {
                     title: "Genial!",
                     text: `Ha cerrado sesión`,
                 });
+                localStorage.clear()
             } else {
                 Swal.fire({
                     icon: "error",
