@@ -33,11 +33,18 @@ export async function deleteCookie(req, res, next) {
 //LOGOUT
 export async function logout(req, res, next) {
     try {
-        req.session.destroy((err) => {
+        req.session.destroy(async (err) => {
             if (err) {
                 res.json({ status: "Logout ERROR", body: err });
             } else {
-                res.status(201).json({ message: "Logout OK" });
+                try {
+                    // Validate token
+                    await decryptJWT(req.cookies.accessToken);
+                    res.clearCookie("accessToken");
+                    res.status(201).json({ message: "Logout OK" });
+                } catch (error) {
+                    next(error);
+                }
             }
         });
     } catch (error) {

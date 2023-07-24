@@ -1,23 +1,24 @@
-const serverSocket = io('http://localhost:8080')
-let cartSave = localStorage.getItem('cartID')
-const allCookies = document.cookie
-console.log(allCookies)
+const serverSocket = io("http://localhost:8080");
+let cartSave = localStorage.getItem("cartID");
+const allCookies = document.cookie;
 
-
-/* console.log(cartSave); */
-if (!cartSave) {
-    fetch('http://localhost:8080/api/carts/', {
-        method: 'POST'}
-    )
-        .then(res => res.json())
-        .then(res => {
-            console.log(res.cart._id)
-            localStorage.setItem('cartID', res.cart._id)
-        })
-} else {
-    cartSave = localStorage.getItem('cartID')
-}
-
+fetch("http://localhost:8080/profile/current")
+    .then((res) => res.json())
+    .then((res) => {
+        console.log(res);
+        if (res.cart && res.cart !== "") {
+            localStorage.setItem("cartID", res.cart);
+        } else {
+            fetch("http://localhost:8080/api/carts/", {
+                method: "POST",
+            })
+                .then((res) => res.json())
+                .then((res) => {
+                    console.log(res.cart._id);
+                    localStorage.setItem("cartID", res.cart._id);
+                });
+        }
+    });
 
 /* //Nuevo carrito
 serverSocket.on('newCart', async cart => {
@@ -25,18 +26,17 @@ serverSocket.on('newCart', async cart => {
 }) */
 
 function listenAddButtons() {
-    const buttons = document.querySelectorAll('.btn-info')
+    const buttons = document.querySelectorAll(".btn-info");
     /* console.log(buttons); */
-    buttons.forEach(btn => {
-        btn.addEventListener('click', e => { 
+    buttons.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
             fetch(`http://localhost:8080/api/carts/${cartSave}/product/${btn.id}`, {
-                method: 'POST',
-            }
-            )
-                .then(res => res.json())
-                .then(res => console.log(res))
-        })
-    })
+                method: "POST",
+            })
+                .then((res) => res.json())
+                .then((res) => console.log(res));
+        });
+    });
 }
 
-listenAddButtons()
+listenAddButtons();

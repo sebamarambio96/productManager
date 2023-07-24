@@ -2,17 +2,7 @@ let cartID
 const serverSocket = io('http://localhost:8080')
 let cartSave = localStorage.getItem('cartID')
 console.log(cartSave);
-if (!cartSave) {
-    fetch('http://localhost:8080/api/carts/', {
-        method: 'POST'
-    }
-    )
-        .then(res => res.json())
-        .then(res => {
-            console.log(res.cart._id)
-            localStorage.setItem('cartID', res.cart._id)
-        })
-} else {
+if (cartSave) {
     cartID = localStorage.getItem('cartID')
     fetch(`http://localhost:8080/api/carts/${cartID}`, {
         method: 'GET',

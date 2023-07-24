@@ -1,8 +1,6 @@
 import { Router } from "express"
 import { productsManager } from "../dao/productsShema.js"
-import { cartsManager } from "../dao/cartsShema.js"
 import compression from "express-compression"
-/* import { productManager } from "../controllers/productsController.js" */
 
 export const viewsRouter = Router()
 
