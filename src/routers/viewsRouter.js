@@ -100,3 +100,4 @@ viewsRouter.get('/passRecovery', async (req, res, next) => {
         encabezado: 'Ingresa tu código de recuperación:',
     })
 })
+

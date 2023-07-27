@@ -1,16 +1,15 @@
-let cartID
-const serverSocket = io('http://localhost:8080')
-let cartSave = localStorage.getItem('cartID')
+let cartID;
+const serverSocket = io("http://localhost:8080");
+let cartSave = localStorage.getItem("cartID");
 console.log(cartSave);
 
 if (cartSave) {
-    cartID = localStorage.getItem('cartID')
+    cartID = localStorage.getItem("cartID");
     fetch(`http://localhost:8080/api/carts/${cartID}`, {
-        method: 'GET',
-    }
-    )
-        .then(res => res.json())
-        .then(res => {
+        method: "GET",
+    })
+        .then((res) => res.json())
+        .then((res) => {
             const template = `
 <h2 class="py-3">Listado de productos:</h2>
 {{#if hayProductos}}
@@ -31,26 +30,24 @@ if (cartSave) {
 {{else}}
     <p>no hay productos...</p>
 {{/if}}
-`
-            const renderProducts = Handlebars.compile(template)
-            const divProducts = document.getElementById('productsList')
+`;
+            const renderProducts = Handlebars.compile(template);
+            const divProducts = document.getElementById("productsList");
             if (divProducts) {
-                divProducts.innerHTML = renderProducts({ products: res.cartProducts, hayProductos: res.cartProducts.length > 0 })
-                listenDeleteButtons()
+                divProducts.innerHTML = renderProducts({ products: res.cartProducts, hayProductos: res.cartProducts.length > 0 });
+                listenDeleteButtons();
             }
-        })
+        });
 }
 
-
 //Actualizar carrito
-serverSocket.on('updateCart', async cart => {
+serverSocket.on("updateCart", async (cart) => {
     fetch(`http://localhost:8080/api/carts/${cartID}`, {
-        method: 'GET',
-    }
-    )
-        .then(res => res.json())
-        .then(res => {
-            console.log(res)
+        method: "GET",
+    })
+        .then((res) => res.json())
+        .then((res) => {
+            console.log(res);
             const template = `
 <h2 class="py-3">Listado de productos:</h2>
 {{#if hayProductos}}
@@ -71,73 +68,96 @@ serverSocket.on('updateCart', async cart => {
 {{else}}
     <p>no hay productos...</p>
 {{/if}}
-`
-            const renderProducts = Handlebars.compile(template)
-            const divProducts = document.getElementById('productsList')
+`;
+            const renderProducts = Handlebars.compile(template);
+            const divProducts = document.getElementById("productsList");
             if (divProducts) {
-                divProducts.innerHTML = renderProducts({ products: res.cartProducts, hayProductos: res.cartProducts.length > 0 })
-                listenDeleteButtons()
+                divProducts.innerHTML = renderProducts({ products: res.cartProducts, hayProductos: res.cartProducts.length > 0 });
+                listenDeleteButtons();
             }
-        })
-})
-
+        });
+});
 
 function listenDeleteButtons() {
-    const buttons = document.querySelectorAll('.btn-danger')
+    const buttons = document.querySelectorAll(".btn-danger");
     console.log(buttons);
-    buttons.forEach(btn => {
-        btn.addEventListener('click', e => {
-            console.log('firts');
+    buttons.forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+            console.log("firts");
             fetch(`http://localhost:8080/api/carts/${cartID}/product/${btn.id}`, {
-                method: 'DELETE',
-            }
-            )
-                .then(res => res.json())
-                .then(res => {
-                    console.log(res)
-                    cartSave = localStorage.getItem('cartID')
-                    serverSocket.emit('updateCart', cartSave)
-                })
-        })
-    })
+                method: "DELETE",
+            })
+                .then((res) => res.json())
+                .then((res) => {
+                    console.log(res);
+                    cartSave = localStorage.getItem("cartID");
+                    serverSocket.emit("updateCart", cartSave);
+                });
+        });
+    });
 }
 
 function listenPurchase() {
-    const purcharBtn = document.getElementById('purchaseBtn');
-    purcharBtn.addEventListener('click', e => {
+    const purcharBtn = document.getElementById("purchaseBtn");
+    purcharBtn.addEventListener("click", (e) => {
         fetch(`http://localhost:8080/profile/current`)
-            .then(res => res.json())
-            .then(res => {
-                console.log(res)
+            .then((res) => res.json())
+            .then((res) => {
+                console.log(res);
                 if (res.role) {
                     const data = {
                         cid: res.cart,
-                        purchaser: res.user
-                    }
-                    fetch('http://localhost:8080/api/carts/purchase', {
-                        method: 'POST',
+                        purchaser: res.user,
+                    };
+                    fetch("http://localhost:8080/api/carts/purchase", {
+                        method: "POST",
                         headers: {
-                            'Content-type': 'application/json'
+                            "Content-type": "application/json",
                         },
-                        body: JSON.stringify(data)
+                        body: JSON.stringify(data),
                     })
-                        .then(res => res.json())
-                        .then(res => {
-                            console.log(res)
+                        .then((res) => res.json())
+                        .then((res) => {
+                            console.log(res);
+                            renderTicket(res);
                             /* window.location.href = '/cart' */
                         })
-                        .catch(err => console.log(err))
+                        .catch((err) => console.log(err));
                 } else {
-                    window.location.href = '/login'
                     Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: `¡Necesitas iniciar sesión para realizar un compra!`
-                    })
+                        icon: "error",
+                        title: "Oops...",
+                        text: `¡Necesitas iniciar sesión para realizar un compra!`,
+                    });
+                    window.location.href = "/login";
                 }
-            })
-    })
+            });
+    });
 }
 
-listenPurchase()
-listenDeleteButtons()
+listenPurchase();
+listenDeleteButtons();
+
+function renderTicket(ticketData) {
+
+    const formattedDate = new Date(ticketData.newTicket.purchase_datetime).toLocaleString();
+
+    const ticketTemplate = `
+    <div>
+        <h2>Ticket de Compra</h2>
+        <p><strong>Precio:</strong> $${ticketData.newTicket.amount}</p>
+        <p><strong>Código:</strong> ${ticketData.newTicket.code}</p>
+        <p><strong>Fecha de Compra:</strong> ${formattedDate}</p>
+        <p><strong>Comprador:</strong> ${ticketData.newTicket.purchaser}</p>
+        <h3>Productos Sin Stock:</h3>
+        <ul>
+            ${ticketData.noStock.map((item) => `<li>${item.product.tittle} (Cantidad: ${item.quantity})</li>`).join("")}
+        </ul>
+    </div>
+    `;
+
+    const ticketInfoElement = document.getElementById("ticketInfo");
+    ticketInfoElement.innerHTML = ticketTemplate;
+}
+
+

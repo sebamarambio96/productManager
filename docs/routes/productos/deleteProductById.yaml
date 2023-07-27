@@ -1,0 +1,21 @@
+paths:
+  /api/products/{pid}:
+    delete:
+      summary: Delete the product with given pid
+      tags:
+        - Productos
+      parameters:
+      - name: pid
+        in: path
+        description: path parameter takes the product pid
+        required: true
+        type: string
+      responses:
+        "204":
+          description: The product with given pid
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Product'
+        "404":
+          description: Product not found Error

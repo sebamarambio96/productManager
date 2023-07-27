@@ -1,0 +1,46 @@
+# Product
+components:
+  schemas:
+    Product:
+      type: object
+      required:
+        - title
+        - price
+        - code
+        - description
+        - stock
+        - category
+      properties:
+        id:
+          type: string
+          description: The auto-generated id of the product.
+        title:
+          type: string
+          description: The title of the product.
+        price:
+          type: number
+          description: The price of the product.
+        thumbnail:
+          type: string
+          description: The URL of the product thumbnail.
+        description:
+          type: string
+          description: The product description.
+        code:
+          type: string
+          description: SKU of the product.
+        stock:
+          type: number
+          description: Amount of the product.
+        category:
+          type: string
+          description: The URL of the product stock.
+
+      example:
+        id: "645039f2c3f328ae90ac008a"
+        title: "producto prueba creado"
+        description: "Este es un producto prueba"
+        price: 300
+        thumbnail: "11asda12312.jpg"
+        code: "612312434"
+        stock: 25

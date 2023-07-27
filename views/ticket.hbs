@@ -1,0 +1,22 @@
+<h1>{{encabezado}}</h1>
+<h2 class="py-3">Compra:</h2>
+
+    <div class="d-flex gap-3 flex-wrap">
+    {{#if noStock}}
+    <div class="d-flex gap-3 flex-wrap">
+        <h4 class="card-subtitle mb-2 text-muted">Código: {{ticket.newTicket.code}}</h4>
+        <h4 class="card-title text-success">Fecha: {{ticket.newTicket.purchase_datetime}}</h4>
+        <h4 class="card-subtitle mb-2 text-muted">Comprador: {{ticket.newTicket.purchaser}}</h4>
+        <h4 class="card-subtitle mb-2 text-muted">Precio: $ {{ticket.newTicket.amount}}</h4>
+    </div>
+    {{else}}
+    {{#each ticket.noStock}}
+        <div class="card" style="width: 15rem;">
+            <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-muted">ID: {{this.product._id}}</h6>
+                <h5 class="card-title text-success">Nombre: {{this.product.tittle}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Cantidad: {{this.quantity}}</h6>
+            </div>
+        </div>
+    {{/each}}
+    {{/if}}

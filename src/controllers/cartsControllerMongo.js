@@ -60,8 +60,15 @@ export async function purchase(req, res, next) {
     try {
         const { cid, purchaser } = req.body;
         const ticket = await ticketsService.purchase(cid, purchaser);
+        /* res.render('ticket.hbs', {
+            titulo: 'Boleta',
+            encabezado: 'Boleta',
+            ticket: ticket,
+            noStock: ticket.noStock.length <= 0
+        }) */
         res.status(201).json(ticket);
     } catch (error) {
+        console.log(error)
         next(error);
     }
 }

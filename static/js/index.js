@@ -14,7 +14,7 @@ btnAdd.addEventListener('click', () => {
             .then(res => res.json())
             .then(res => {
                 console.log(res)
-                if (res.role === "admin") {
+                if (res.role === "admin" || res.role === "premium") {
                     serverSocket.emit('newProduct', {
                         title,
                         price,
