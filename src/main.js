@@ -16,13 +16,9 @@ import { messagesRouter } from "./routers/msgRouter.js"
 import { passportInit, passportSession } from "./config/passport.config.js"
 import { MONGO_BBDD, MONGO_PASS, MONGO_SERVER, MONGO_USER, PORT, SECRET, SERVER_MODE } from "./config/env.config.js"
 import { errorHandler } from "./middlewares/errorHandler.js"
-import { ticketsService } from "./services/tickets.service.js"
-import { productsRepository } from "./repositories/products.repository.js"
-import { cartsDaoMoongose, cartsManager } from "./dao/cartsShema.js"
 
 //Se conecta base de datos
 await connectMongo()
-
 
 const app = express()
 
@@ -75,7 +71,10 @@ if (SERVER_MODE === 'cluster' && cluster.isPrimary) {
         cluster.fork()
     })
 } else {
-    const server = app.listen(PORT, () => console.log(`Servidor en el puerto ${PORT} - PID WORKER ${process.pid}`))
+    const server = app.listen(PORT, () => {
+        console.log(`Servidor en el puerto ${PORT} - PID WORKER ${process.pid}`)
+        console.log(`Documentación disponible en http://localhost:${PORT}/api/docs`)
+    })
     io = new SocketIOServer(server)
     //Importa la función que comunica la base de datos y el front para actualización automatica
     ioManager(io)

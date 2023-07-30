@@ -44,7 +44,7 @@ btnDelete.addEventListener('click', () => {
             .then(res => res.json())
             .then(res => {
                 console.log(res)
-                if (res.role === "admin") {
+                if (res.role === "admin" || res.role === "premium") {
                     serverSocket.emit('deleteProduct', { id })
                 } else {
                     Swal.fire({
