@@ -9,8 +9,9 @@ export class Products {
     #code
     #stock
     #category
+    #owner
 
-    constructor({ title, description, price, thumbnail, code, stock, category }) {
+    constructor({ title, description, price, thumbnail, code, stock, category, owner }) {
         this.#title = validateString(title)
         this.#description = validateString(description)
         this.#price = validateNum(price)
@@ -18,6 +19,7 @@ export class Products {
         this.#code = validateString(code)
         this.#stock = stock
         this.#category = category
+        this.#owner = owner
     }
 
     get title() { return this.#title }
@@ -37,6 +39,7 @@ export class Products {
             code: this.#code,
             stock: this.#stock,
             category: this.#category,
+            owner: this.#owner,
         }
     }
 }

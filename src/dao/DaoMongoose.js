@@ -1,58 +1,60 @@
-import { ErrorNotFound } from "../models/errors/notFound.js"
-import { toPojo } from "../utils/pojo.js"
+import { ErrorNotFound } from "../models/errors/notFound.js";
+import { toPojo } from "../utils/pojo.js";
 
 export class DaoMongoose {
-    #model
+    #model;
     constructor(mongooseModel) {
-        this.#model = mongooseModel
+        this.#model = mongooseModel;
     }
 
-    get model() { return this.#model }
+    get model() {
+        return this.#model;
+    }
 
     async create(element) {
-        const pojo = toPojo(await this.#model.create(element))
-        delete pojo._id
-        return pojo
+        const pojo = toPojo(await this.#model.create(element));
+        delete pojo._id;
+        return pojo;
     }
 
     async readOne(criteria) {
-        const result = await this.#model.findOne(criteria).lean()
-        if (!result) throw new ErrorNotFound('No se encontrado ningún resultado que coincida con la busqueda')
-        return result
+        const result = await this.#model.findOne(criteria).lean();
+        if (!result) throw new ErrorNotFound("No se encontrado ningún resultado que coincida con la busqueda");
+        return result;
     }
 
     async readMany(criteria) {
-        const result = await this.#model.find(criteria).select({ _id: 0 }).lean()
-        return result
+        const result = await this.#model.find(criteria).select({}).lean();
+        return result;
     }
 
     async updateOne(criteria, newData) {
-        const modifiedUser = await this.#model.findOneAndUpdate(criteria, newData, { new: true, projection: { _id: 0 } }).lean()
-        if (!modifiedUser) throw new ErrorNotFound('No se encontrado ningún resultado que coincida con la busqueda')
-        delete modifiedUser._id
-        return modifiedUser
+        const modifiedUser = await this.#model.findOneAndUpdate(criteria, newData, { new: true, projection: { _id: 0 } }).lean();
+        if (!modifiedUser) throw new ErrorNotFound("No se encontrado ningún resultado que coincida con la busqueda");
+        delete modifiedUser._id;
+        return modifiedUser;
     }
 
     async updateMany(criteria, newData) {
-        await this.#model.updateMany(criteria, newData)
+        await this.#model.updateMany(criteria, newData);
     }
 
     async deleteOne(criteria) {
-        const deletedUser = await this.#model.findOneAndDelete(criteria, { projection: { _id: 0 } }).lean()
-        if (!deletedUser) throw new ErrorNotFound('No se encontrado ningún resultado que coincida con la busqueda')
-        delete deletedUser._id
-        return deletedUser
+        const deletedUser = await this.#model.findOneAndDelete(criteria, { projection: { _id: 0 } }).lean();
+        if (!deletedUser) throw new ErrorNotFound("No se encontrado ningún resultado que coincida con la busqueda");
+        delete deletedUser._id;
+        return deletedUser;
     }
 
     async deleteMany(criteria) {
-        await this.#model.deleteMany(criteria)
+        await this.#model.deleteMany(criteria);
     }
 
     // POPULATIONS ----------------------------------------------------------
     async readOnePopulated(criteria, localField) {
         // localfield example 'cartProducts.product'
-        const result = await this.model.findById(criteria).populate(`${localField}`).lean()
-        return result
+        const result = await this.model.findById(criteria).populate(`${localField}`).lean();
+        return result;
     }
 
     async readOnePopulated2(criteria, localField, from, foreignField) {
@@ -65,15 +67,15 @@ export class DaoMongoose {
                     localField,
                     foreignField,
                     as: localField,
-                    pipeline: [{ $project: { "_id": false } }],
-                }
+                    pipeline: [{ $project: { _id: false } }],
+                },
             },
-            { $project: { "_id": false } }
-        ])
+            { $project: { _id: false } },
+        ]);
 
-        if (!result) throw new ErrorNotFound('No se encontrado ningún resultado que coincida con la busqueda')
-        delete result._id
-        return result
+        if (!result) throw new ErrorNotFound("No se encontrado ningún resultado que coincida con la busqueda");
+        delete result._id;
+        return result;
     }
 
     async readManyPopulated2(criteria, localField, from, foreignField) {
@@ -92,11 +94,11 @@ export class DaoMongoose {
                     localField,
                     foreignField,
                     as: localField,
-                    pipeline: [{ $project: { "_id": false } }],
-                }
+                    pipeline: [{ $project: { _id: false } }],
+                },
             },
-            { $project: { "_id": false } }
-        ])
-        return result
+            { $project: { _id: false } },
+        ]);
+        return result;
     }
 }
