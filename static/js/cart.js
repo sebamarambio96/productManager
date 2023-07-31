@@ -108,6 +108,7 @@ function listenPurchase() {
                     const data = {
                         cid: res.cart,
                         purchaser: res.user,
+                        role: res.role,
                     };
                     fetch("http://localhost:8080/api/carts/purchase", {
                         method: "POST",
@@ -119,8 +120,15 @@ function listenPurchase() {
                         .then((res) => res.json())
                         .then((res) => {
                             console.log(res);
+                            if (res.message) {
+                                Swal.fire({
+                                    icon: "error",
+                                    title: "Oops...",
+                                    text: `${res.message}`,
+                                });
+                            }
                             renderTicket(res);
-                            /* window.location.href = '/cart' */
+                            serverSocket.emit("updateCart", cartSave);
                         })
                         .catch((err) => console.log(err));
                 } else {
@@ -151,7 +159,7 @@ function renderTicket(ticketData) {
         <p><strong>Comprador:</strong> ${ticketData.newTicket.purchaser}</p>
         <h3>Productos Sin Stock:</h3>
         <ul>
-            ${ticketData.noStock.map((item) => `<li>${item.product.tittle} (Cantidad: ${item.quantity})</li>`).join("")}
+            ${ticketData.noStock.map((item) => `<li>${item.product.title} (Cantidad: ${item.quantity})</li>`).join("")}
         </ul>
     </div>
     `;

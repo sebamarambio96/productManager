@@ -31,19 +31,19 @@ export function errorHandler(error, req, res, next) {
             });
             break;
         case error.message === "ID no existe":
-            res.status(404);
+            res.status(404).json({message: error.message});
             break;
         case error.message === "El codigo ingresado ya existe":
-            res.status(400);
+            res.status(400).json({message: error.message});
             break;
         case error.message === "Login Failed":
         case error.message === "Error de autenticacion":
-            res.status(401);
+            res.status(401).json({message: error.message});
             break;
         case error.message === "Error de permisos":
-            res.status(403);
+            res.status(403).json({message: error.message});
             break;
         default:
-            res.status(500);
+            res.status(500).json({message: error.message});
     }
 }
