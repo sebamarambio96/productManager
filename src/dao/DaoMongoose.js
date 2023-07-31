@@ -25,6 +25,7 @@ export class DaoMongoose {
 
     async readMany(criteria) {
         const result = await this.#model.find(criteria).select({}).lean();
+        if (!result) throw new ErrorNotFound("No se encontrado ningún resultado que coincida con la busqueda");
         return result;
     }
 

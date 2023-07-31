@@ -1,21 +1,21 @@
-const serverSocket = io('http://localhost:8080')
+const serverSocket = io("http://localhost:8080");
 
-const btnAdd = document.getElementById('btnAdd');
-btnAdd.addEventListener('click', () => {
-    const title = document.getElementById('title').value
-    const price = document.getElementById('price').value
-    const stock = document.getElementById('stock').value
-    const thumbnail = document.getElementById('imagen').value
-    const description = document.getElementById('description').value
-    const code = document.getElementById('code').value
-    const category = document.getElementById('category').value
-    if (title != '' & price != '' & stock != '' & description != '' & code != '' & category != '') {
+const btnAdd = document.getElementById("btnAdd");
+btnAdd.addEventListener("click", () => {
+    const title = document.getElementById("title").value;
+    const price = document.getElementById("price").value;
+    const stock = document.getElementById("stock").value;
+    const thumbnail = document.getElementById("imagen").value;
+    const description = document.getElementById("description").value;
+    const code = document.getElementById("code").value;
+    const category = document.getElementById("category").value;
+    if ((title != "") & (price != "") & (stock != "") & (description != "") & (code != "") & (category != "")) {
         fetch(`http://localhost:8080/profile/current`)
-            .then(res => res.json())
-            .then(res => {
-                console.log(res)
+            .then((res) => res.json())
+            .then((res) => {
+                console.log(res);
                 if (res.role === "admin" || res.role === "premium") {
-                    serverSocket.emit('newProduct', {
+                    serverSocket.emit("newProduct", {
                         title,
                         price,
                         stock,
@@ -23,41 +23,41 @@ btnAdd.addEventListener('click', () => {
                         description,
                         code,
                         category,
-                    })
+                        owner: res.user,
+                    });
                 } else {
                     Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: `Solo un administrador puede crear un producto`
-                    })
+                        icon: "error",
+                        title: "Oops...",
+                        text: `Solo un administrador o premium puede crear un producto`,
+                    });
                 }
-
-            })
+            });
     }
-})
+});
 
-const btnDelete = document.getElementById('btnDelete');
-btnDelete.addEventListener('click', () => {
-    const id = document.getElementById('id').value
-    if (id != '') {
-        fetch(`http://localhost:8080/profile/current`)
-            .then(res => res.json())
-            .then(res => {
-                console.log(res)
-                if (res.role === "admin" || res.role === "premium") {
-                    serverSocket.emit('deleteProduct', { id })
-                } else {
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: `Solo un administrador puede eliminar un producto`
-                    })
+const btnDelete = document.getElementById("btnDelete");
+btnDelete.addEventListener("click", () => {
+    const id = document.getElementById("id").value;
+    if (id != "") {
+        fetch(`http://localhost:8080/api/products/${id}`, {
+            method: "DELETE",
+        })
+            .then((res) => res.json())
+            .then((res) => {
+                console.log(res);
+                Swal.fire({
+                    title: "Resultado:",
+                    text: `${res.message}`,
+                });
+                if (res.message == "Producto eliminado") {
+                    window.location.href = "/realtimesproduct";
                 }
-            })
+            });
     }
-})
+});
 
-//Renderizar    
+//Renderizar
 
 const template = `
 <h2 class="py-3">Listado de productos:</h2>
@@ -74,6 +74,7 @@ const template = `
                 <h6 class="card-subtitle mb-2 text-muted">Imagen: {{this.thumbnail}}</h6>
                 <h6 class="card-subtitle mb-2 text-muted">Codigo: {{this.code}}</h6>
                 <h6 class="card-subtitle mb-2 text-muted">Descripción: {{this.description}}</h6>
+                <h6 class="card-subtitle mb-2 text-muted">Vendedor: {{this.owner}}</h6>
             </div>
         </div>
     {{/each}}
@@ -81,13 +82,12 @@ const template = `
 {{else}}
     <p>no hay productos...</p>
 {{/if}}
-`
-const renderProducts = Handlebars.compile(template)
+`;
+const renderProducts = Handlebars.compile(template);
 
-serverSocket.on('updateProducts', products => {
-    const divProducts = document.getElementById('productsList')
-    console.log(products)
+serverSocket.on("updateProducts", (products) => {
+    const divProducts = document.getElementById("productsList");
     if (divProducts) {
-        divProducts.innerHTML = renderProducts({ products, hayProductos: products.length > 0 })
+        divProducts.innerHTML = renderProducts({ products, hayProductos: products.length > 0 });
     }
-})
+});

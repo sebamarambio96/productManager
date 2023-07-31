@@ -1,6 +1,4 @@
 import { cartsManager } from "../dao/cartsShema.js";
-import { cartsRepository } from "../repositories/carts.repository.js";
-import { productsRepository } from "../repositories/products.repository.js";
 import { usersRepository } from "../repositories/users.repository.js";
 import { ticketsService } from "../services/tickets.service.js";
 import { decryptJWT } from "../utils/jwt.js";

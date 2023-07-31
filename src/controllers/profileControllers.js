@@ -89,6 +89,8 @@ export async function current(req, res, next) {
     try {
         Logger.silly(req.session.passport.user);
         const user = new Users(req.session.passport.user);
+        /* console.log("user.dtoSafe()");
+        console.log(user.dtoSafe()); */
         req.session.user = user.dtoSafe();
         //Validate token
         decryptJWT(req.cookies.accessToken);

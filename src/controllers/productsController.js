@@ -1,7 +1,9 @@
-import { ProductManager } from "../../dao/managersFS/productManager.js";
-import { Products } from "../../models/entities/products.js";
-import { productsRepository } from "../../repositories/products.repository.js";
-import { Logger } from "../../utils/winston.js";
+import { ProductManager } from "../dao/managersFS/productManager.js";
+import { Products } from "../models/entities/products.js";
+import { productsRepository } from "../repositories/products.repository.js";
+import { usersRepository } from "../repositories/users.repository.js";
+import { decryptJWT } from "../utils/jwt.js";
+import { Logger } from "../utils/winston.js";
 export const productManager = new ProductManager("./src/data/productos.json");
 
 //GET products wiith optional limit
@@ -51,8 +53,23 @@ export async function putProduct(req, res, next) {
 //DELETE product
 export async function deleteProduct(req, res, next) {
     try {
-        await productsRepository.deleteOne({ _id: req.params.pid });
-        res.sendStatus(204);
+        //Verify token
+        const { id } = await decryptJWT(req.cookies.accessToken);
+        //Find user data
+        const userData = await usersRepository.readOne({ _id: id });
+        if (!userData) throw new ErrorNotFound("Username no existe");
+        //Find product
+        const productData = await productsRepository.readOne({ _id: req.params.pid });
+        if (!userData) throw new ErrorNotFound("Producto no existe");
+        let message
+        //Validate owner
+        if (userData.user == productData.owner || productData.owner == "adminCoder@coder.com") {
+            await productsRepository.deleteOne({ _id: req.params.pid });
+            message = "Producto eliminado"
+        } else {
+            message = "Solo el dueño o el admin puede eliminar este producto"
+        }
+        res.status(201).json({ message });
     } catch (error) {
         next(error);
     }
