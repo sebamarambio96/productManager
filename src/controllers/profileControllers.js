@@ -1,4 +1,5 @@
 import { Users } from "../models/entities/users.js";
+import { usersRepository } from "../repositories/users.repository.js";
 import { decryptJWT, encryptJWT } from "../utils/jwt.js";
 import { Logger } from "../utils/winston.js";
 
@@ -33,6 +34,9 @@ export async function deleteCookie(req, res, next) {
 //LOGOUT
 export async function logout(req, res, next) {
     try {
+        //Save last logout
+        const { id } = req.session.user;
+        usersRepository.updateOne({ _id: id }, { last_connection: new Date() });
         req.session.destroy(async (err) => {
             if (err) {
                 res.json({ status: "Logout ERROR", body: err });

@@ -6,6 +6,7 @@ import { Strategy as GithubStrategy } from "passport-github2";
 import { Users } from "../models/entities/users.js";
 import { ErrorLoginFailed } from "../models/errors/loginFailed.js";
 import { Logger } from "../utils/winston.js";
+import { usersRepository } from "../repositories/users.repository.js";
 
 const LocalStrategy = local.Strategy;
 
@@ -61,6 +62,7 @@ passport.use(
                 if (!validPass(exist[0].pass, { pass: pass }))
                     throw new ErrorLoginFailed("Contraseña incorrecta");
                 req.session.user = exist[0].user;
+                usersRepository.updateOne({_id:exist[0]._id}, {last_connection: new Date})
                 done(null, exist[0]);
             } catch (error) {
                 return done(error);

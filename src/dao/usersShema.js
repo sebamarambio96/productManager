@@ -25,7 +25,8 @@ const schemaUsers = new mongoose.Schema({
         name: String,
         reference: String
     }],
-    last_connection: { type: Date }
+    last_connection: { type: Date },
+    profileImg: { type: String }
 }, { versionKey: false });
 
 const modelUsers = mongoose.model('users', schemaUsers)
