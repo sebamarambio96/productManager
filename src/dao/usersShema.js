@@ -21,7 +21,12 @@ const schemaUsers = new mongoose.Schema({
     },
     user: { type: String, required: true },
     pass: { type: String },
-}, { versionKey: false })
+    documents: [{
+        name: String,
+        reference: String
+    }],
+    last_connection: { type: Date }
+}, { versionKey: false });
 
 const modelUsers = mongoose.model('users', schemaUsers)
 

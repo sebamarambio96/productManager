@@ -1,5 +1,5 @@
 import { Router } from "express"
-import { loggerTest, mocking100Products, winston } from "../test/product.test.js"
+import { loggerTest, mocking100Products, winston } from "../../test/product.test.js"
 
 export const testRouter = Router()
 

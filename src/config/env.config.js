@@ -18,6 +18,8 @@ const MONGO_USER = process.env.MONGO_USER
 const MONGO_PASS = process.env.MONGO_PASS
 const MONGO_BBDD = process.env.MONGO_BBDD
 const MONGO_SERVER = process.env.MONGO_SERVER
+const MONGO_BBDD_TEST = process.env.MONGO_BBDD_TEST
+
 
 //MSG
 
@@ -37,6 +39,7 @@ export {
     MONGO_USER,
     MONGO_BBDD,
     MONGO_SERVER,
+    MONGO_BBDD_TEST,
 
     EMAIL_PASS,
     EMAIL_USER

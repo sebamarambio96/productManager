@@ -15,7 +15,6 @@
     "express-session": "^1.17.3",
     "jsonwebtoken": "^9.0.0",
     "logform": "^2.5.1",
-    "mocha": "^10.2.0",
     "mongodb": "^5.2.0",
     "mongoose": "^7.0.3",
     "mongoose-paginate-v2": "^1.7.1",
@@ -27,7 +26,6 @@
     "passport-local": "^1.0.0",
     "semver": "^7.5.3",
     "socket.io": "^4.6.1",
-    "supertest": "^6.3.3",
     "swagger-jsdoc": "^6.2.8",
     "swagger-ui-express": "^5.0.0",
     "winston": "^3.9.0",
@@ -35,7 +33,13 @@
   },
   "devDependencies": {
     "@types/express": "^4.17.17",
-    "nodemon": "^3.0.1"
+    "mocha": "^10.2.0",
+    "nodemon": "^3.0.1",
+    "supertest": "^6.3.3"
+  },
+  "mocha": {
+    "timeout": 20000,
+    "require": "test/hooks.js"
   },
   "engines": {
     "node": "15.x"
@@ -48,6 +52,7 @@
     "dev": "nodemon src/main.js",
     "start": "node src/main.js",
     "taddProduct": "node src/test/product.test.js",
+    "testUsers": "mocha test/users.test.js",
     "mongo": "mongod --dbpath ../MONGO/"
   },
   "author": "",

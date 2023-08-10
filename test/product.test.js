@@ -1,6 +1,8 @@
-import { Products } from "../models/entities/products.js";
-import { ProductsService } from "../services/products.service.js";
-import { randomString } from "../utils/randomUUID.js";
+import { Products } from "../src/models/entities/products.js";
+import { ProductsService } from "../src/services/products.service.js";
+import { logger } from "../src/utils/logger.js";
+import { randomString } from "../src/utils/randomUUID.js";
+import { Logger } from "../src/utils/winston.js";
 
 /* const productRepositoryMock = {
     create: product => { console.log('Se ha creado el producto correctamente') }
@@ -46,6 +48,24 @@ export async function mocking100Products(req, res, next) {
         const productService = new ProductsService(productRepositoryMock)
         await productService.addProduct(tenTenProducts)
         res.status(200).json(tenTenProducts)
+    } catch (error) {
+        next(error)
+    }
+}
+
+export async function loggerTest(req, res, next) {
+    try {
+        logger.log('mensaje de error de prueba', 6)
+        res.status(200).json({})
+    } catch (error) {
+        next(error)
+    }
+}
+
+export async function winston(req, res, next) {
+    try {
+        Logger.silly('mensaje de error de prueba nivel error 0')
+        res.status(200).json({})
     } catch (error) {
         next(error)
     }

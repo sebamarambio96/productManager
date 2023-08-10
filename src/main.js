@@ -11,7 +11,7 @@ import { apiRouter } from "./routers/apiRouter.js"
 import { viewsRouter } from "./routers/viewsRouter.js"
 import { ioManager } from "./controllers/mongoIoController.js"
 import { connectMongo } from "./config/mongoose.config.js"
-import { profileRouter } from "./routers/profileRouter.js"
+import { sessionRouter } from "./routers/sessionRouter.js"
 import { messagesRouter } from "./routers/msgRouter.js"
 import { passportInit, passportSession } from "./config/passport.config.js"
 import { MONGO_BBDD, MONGO_PASS, MONGO_SERVER, MONGO_USER, PORT, SECRET, SERVER_MODE } from "./config/env.config.js"
@@ -44,7 +44,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(passportInit, passportSession)
 app.use('/', viewsRouter)
 app.use('/api', apiRouter)
-app.use('/profile', profileRouter)
+app.use('/profile', sessionRouter)
 app.use('/msg', messagesRouter)
 
 //Error handling

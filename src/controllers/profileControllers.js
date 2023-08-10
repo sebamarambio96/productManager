@@ -75,10 +75,11 @@ export async function currentMiddleware(req, res, next) {
         decryptJWT(req.cookies.accessToken);
         if (user.role === "admin") {
             req.session.admin = true;
+            next();
         } else {
             req.session.admin = false;
+            res.status(403).json({ auth: false, message: "El usuario no es admin" });
         }
-        next(error);
     } catch (error) {
         next(error);
     }
