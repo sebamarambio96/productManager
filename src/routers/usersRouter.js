@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { currentMiddleware } from "../controllers/profileControllers.js";
-import { changeRole, uploadDocuments, uploadProfile } from "../controllers/usersControllers.js";
+import { changeRole, getUsers, uploadDocuments, uploadProfile } from "../controllers/usersControllers.js";
 import multer from "multer";
 import { uploadThumbnail } from "../controllers/productsController.js";
 
@@ -8,6 +8,9 @@ export const usersRouter = Router();
 
 //Change role status
 usersRouter.get("/premium/:uid", currentMiddleware, changeRole);
+
+//Get all users basic information
+usersRouter.get("/", getUsers);
 
 // Multer config
 const storage = multer.diskStorage({

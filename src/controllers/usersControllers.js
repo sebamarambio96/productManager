@@ -1,7 +1,34 @@
+import { Users } from "../models/entities/users.js";
 import { ErrorInvalidArgument } from "../models/errors/invalidArgument.js";
 import { ErrorNotFound } from "../models/errors/notFound.js";
 import { usersRepository } from "../repositories/users.repository.js";
 import { usersService } from "../services/users.service.js";
+
+export async function getUsers(req, res, next) {
+    try {
+        const users = await usersRepository.readMany({});
+
+        const usersBasicInfo = users.map((user) => {
+            console.log(user);
+            let userDto = new Users({
+                _id: user._id,
+                user: user.user || "Sin registrar",
+                pass: user.pass || "Sin registrar",
+                first_name: user.first_name || "Sin registrar",
+                last_name: user.last_name || "Sin registrar",
+                age: user.age || 1,
+                cart: user.cart || "Sin registrar",
+                role: user.role || "Sin registrar",
+            });
+            userDto = userDto.dtoBasic();
+            return userDto;
+        });
+
+        res.status(200).json(usersBasicInfo);
+    } catch (error) {
+        next(error);
+    }
+}
 
 export async function changeRole(req, res, next) {
     try {
@@ -37,7 +64,7 @@ export async function uploadDocuments(req, res, next) {
         /* console.log(uploadedImages); */
         // Process uploaded files and update user
         if (!uploadedImages) throw new ErrorInvalidArgument("No se han subido documentos");
-        if(!user.documents) user.documents = [];
+        if (!user.documents) user.documents = [];
         uploadedImages.forEach((Image) => {
             user.documents.push({
                 name: Image.originalname,
