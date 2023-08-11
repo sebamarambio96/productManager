@@ -84,19 +84,20 @@ export async function uploadThumbnail(req, res, next) {
         const product = await productsRepository.readOne({ _id: pid });
 
         // Identify user
-        
+
         const userData = await usersRepository.readOne({ _id: id });
         if (!userData) throw new ErrorNotFound("Usuario no encontrado");
+        if (!product) throw new ErrorNotFound("Producto no existe");
 
-        if (!product) {
-            return res.status(404).json({ error: "Producto no existe" });
-        }
+        //Validate owner
+
+        if (product.owner == userData.user) throw new ErrorNotFound("No eres el dueño del producto");
 
         // Save the name in "thumbnail"
         let arrayImg = product.thumbnail;
-        uploadedFiles.forEach((file) => {
-            arrayImg.push(file.path);
-        });
+        if (!uploadedFiles) throw new ErrorInvalidArgument("No se han subido imagenes");
+        uploadedFiles.forEach((file) => arrayImg.push(file.path));
+
         await productsRepository.updateOne({ _id: pid }, { thumbnail: arrayImg });
 
         return res.status(200).json({ message: "Imagenes subidas correctamente" });

@@ -1,4 +1,5 @@
 import { ErrorInvalidArgument } from "../models/errors/invalidArgument.js";
+import { ErrorNotFound } from "../models/errors/notFound.js";
 import { usersRepository } from "../repositories/users.repository.js";
 import { usersService } from "../services/users.service.js";
 
@@ -26,18 +27,18 @@ export async function changeRole(req, res, next) {
 
 export async function uploadDocuments(req, res, next) {
     // Array of uploaded files
-    const uploadedImage = req.files;
+    const uploadedImages = req.files;
     //User ID
     const { uid } = req.params;
     try {
         const user = await usersRepository.readOne({ _id: uid });
 
-        if (!user) {
-            return res.status(404).json({ error: "User not found" });
-        }
-
+        if (!user) throw new ErrorNotFound("Usuario no encontrado");
+        /* console.log(uploadedImages); */
         // Process uploaded files and update user
-        uploadedImage.forEach((Image) => {
+        if (!uploadedImages) throw new ErrorInvalidArgument("No se han subido documentos");
+        if(!user.documents) user.documents = [];
+        uploadedImages.forEach((Image) => {
             user.documents.push({
                 name: Image.originalname,
                 reference: Image.path,
@@ -58,10 +59,8 @@ export async function uploadProfile(req, res, next) {
     try {
         const user = await usersRepository.readOne({ _id: id });
 
-        if (!user) {
-            return res.status(404).json({ error: "User not found" });
-        }
-
+        if (!user) throw new ErrorNotFound("Usuario no encontrado");
+        if (!req.file) throw new ErrorInvalidArgument("No se ha subido una imagen");
         await usersRepository.updateOne({ _id: uid }, { profileImg: req.file.path });
 
         return res.status(200).json({ message: "Imagen de perfil subida con exito" });

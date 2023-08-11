@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { currentMiddleware } from "../controllers/profileControllers.js";
-import { changeRole, uploadDocuments, uploadImage, uploadProfile } from "../controllers/usersControllers.js";
+import { changeRole, uploadDocuments, uploadProfile } from "../controllers/usersControllers.js";
 import multer from "multer";
 import { uploadThumbnail } from "../controllers/productsController.js";
 
@@ -26,7 +26,7 @@ const storage = multer.diskStorage({
     },
     filename: (req, file, cb) => {
         //Name of file is date + original filename
-        cb(null,`${Date.now()}_${file.name}`);
+        cb(null,`${Date.now()}_${file.originalname}`);
     },
 });
 
