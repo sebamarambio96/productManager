@@ -3,6 +3,7 @@ import { Products } from "../models/entities/products.js";
 import { ErrorNotFound } from "../models/errors/notFound.js";
 import { productsRepository } from "../repositories/products.repository.js";
 import { usersRepository } from "../repositories/users.repository.js";
+import { emailService } from "../services/email.service.js";
 import { decryptJWT } from "../utils/jwt.js";
 import { Logger } from "../utils/winston.js";
 export const productManager = new ProductManager("./src/data/productos.json");
@@ -67,6 +68,12 @@ export async function deleteProduct(req, res, next) {
         if (userData.user == productData.owner || productData.owner == "adminCoder@coder.com") {
             await productsRepository.deleteOne({ _id: req.params.pid });
             message = "Producto eliminado";
+            emailService.sendMail(
+                "Admin eccomerce",
+                userData.user,
+                `Eliminación de producto #ID: ${productData._id}`,
+                `Se ha eliminado el producto con Nombre: "${productData.title}" y ID: "${productData._id}"`
+            );
         } else {
             message = "Solo el dueño o el admin puede eliminar este producto";
         }
@@ -91,7 +98,8 @@ export async function uploadThumbnail(req, res, next) {
 
         //Validate owner
 
-        if (product.owner == userData.user) throw new ErrorNotFound("No eres el dueño del producto");
+        if (product.owner == userData.user)
+            throw new ErrorNotFound("No eres el dueño del producto");
 
         // Save the name in "thumbnail"
         let arrayImg = product.thumbnail;

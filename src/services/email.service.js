@@ -20,6 +20,22 @@ class EmailService {
             },
         });
     }
+    async sendMail(from, to, subject, text) {
+        const mailOptions = {
+            from,
+            to,
+            subject,
+            text,
+        };
+        try {
+            const info = await this.#clientNodemailer.sendMail(mailOptions);
+            console.log(info);
+            return info;
+        } catch (error) {
+            console.log(error);
+            throw error;
+        }
+    }
 
     async sendRequest(to, message) {
         const mailOptions = {

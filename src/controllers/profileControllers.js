@@ -69,7 +69,7 @@ export async function session(req, res, next) {
     }
 }
 
-//current
+//Verify admin
 export async function onlyAdmin(req, res, next) {
     try {
         Logger.silly(req.session.passport.user);
@@ -83,6 +83,26 @@ export async function onlyAdmin(req, res, next) {
         } else {
             req.session.admin = false;
             res.status(403).json({ auth: false, message: "El usuario no es admin" });
+        }
+    } catch (error) {
+        next(error);
+    }
+}
+
+//Verify admin
+export async function onlyPremium(req, res, next) {
+    try {
+        Logger.silly(req.session.passport.user);
+        const user = new Users(req.session.passport.user);
+        req.session.user = user.dtoSafe();
+        //Validate token
+        decryptJWT(req.cookies.accessToken);
+        if (user.role === "premium" || user.role === "admin") {
+            req.session.admin = true;
+            next();
+        } else {
+            req.session.admin = false;
+            res.status(403).json({ auth: false, message: "El usuario no es premium" });
         }
     } catch (error) {
         next(error);
