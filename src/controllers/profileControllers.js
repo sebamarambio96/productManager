@@ -70,7 +70,7 @@ export async function session(req, res, next) {
 }
 
 //current
-export async function currentMiddleware(req, res, next) {
+export async function onlyAdmin(req, res, next) {
     try {
         Logger.silly(req.session.passport.user);
         const user = new Users(req.session.passport.user);

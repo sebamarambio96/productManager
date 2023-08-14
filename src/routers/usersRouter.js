@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { currentMiddleware } from "../controllers/profileControllers.js";
+import { onlyAdmin } from "../controllers/profileControllers.js";
 import { changeRole, getUsers, uploadDocuments, uploadProfile } from "../controllers/usersControllers.js";
 import multer from "multer";
 import { uploadThumbnail } from "../controllers/productsController.js";
@@ -7,7 +7,7 @@ import { uploadThumbnail } from "../controllers/productsController.js";
 export const usersRouter = Router();
 
 //Change role status
-usersRouter.get("/premium/:uid", currentMiddleware, changeRole);
+usersRouter.get("/premium/:uid", onlyAdmin, changeRole);
 
 //Get all users basic information
 usersRouter.get("/", getUsers);
