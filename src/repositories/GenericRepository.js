@@ -1,3 +1,4 @@
+
 export class GenericRepository {
     #dao;
     constructor(dao) {
@@ -18,6 +19,18 @@ export class GenericRepository {
 
     readMany(criteria) {
         return this.#dao.readMany(criteria);
+    }
+
+    async getPaginate(category, options) {
+        //Options example
+        /* const options = {
+            limit: req.query.limit || 10,
+            page: req.query.page || 1,
+            lean: true,
+            sort,
+        }; */
+        const data = await this.#dao.getPaginate(category, options);
+        return data;
     }
 
     updateOne(criteria, newData) {

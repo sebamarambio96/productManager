@@ -31,6 +31,18 @@ export class DaoMongoose {
         return result;
     }
 
+    async getPaginate(category, options) {
+        //Options example
+        /* const options = {
+            limit: req.query.limit || 10,
+            page: req.query.page || 1,
+            lean: true,
+            sort,
+        }; */
+        const data = await this.#model.paginate(category, options);
+        return data;
+    }
+
     async updateOne(criteria, newData) {
         const modifiedUser = await this.#model.findOneAndUpdate(criteria, newData, { new: true, projection: { _id: 0 } }).lean();
         if (!modifiedUser) throw new ErrorNotFound("No se encontrado ningún resultado que coincida con la busqueda");

@@ -1,14 +1,14 @@
 import { Router } from "express";
-import { productsManager } from "../dao/productsShema.js";
 import compression from "express-compression";
 import { usersRepository } from "../repositories/users.repository.js";
 import { onlyAdmin } from "../controllers/profileControllers.js";
+import { productsRepository } from "../repositories/products.repository.js";
 
 export const viewsRouter = Router();
 
 //GET cart by id
 viewsRouter.get("/", async (req, res, next) => {
-    let products = await productsManager.getAll();
+    let products = await productsRepository.readMany({});
     res.render("home.hbs", {
         titulo: "Inicio",
         encabezado: "Inicio",
@@ -38,7 +38,7 @@ viewsRouter.get("/products", compression(), async (req, res, next) => {
         sort,
     };
     const category = req.query.category ? { category: req.query.category } : {};
-    let products = await productsManager.getPaginate(category, options);
+    let products = await productsRepository.getPaginate(category, options);
     const info = {
         status: products ? "Success" : "Error",
         payload: products.docs,
@@ -60,7 +60,7 @@ viewsRouter.get("/products", compression(), async (req, res, next) => {
 });
 
 viewsRouter.get("/realtimesproduct", compression(), async (req, res, next) => {
-    let products = await productsManager.getAll();
+    let products = await productsRepository.readMany({});
     res.render("realTimesProduct.hbs", {
         titulo: "Productos tiempo real",
         encabezado: "Productos tiempo real",

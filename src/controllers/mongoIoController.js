@@ -1,8 +1,8 @@
-import { productsManager } from "../dao/productsShema.js";
 import { Messages } from "../models/entities/messages.js";
 import { Products } from "../models/entities/products.js";
 import { cartsRepository } from "../repositories/carts.repository.js";
 import { messagesRepository } from "../repositories/messages.repository.js";
+import { productsRepository } from "../repositories/products.repository.js";
 import { usersRepository } from "../repositories/users.repository.js";
 import { Logger } from "../utils/winston.js";
 
@@ -23,7 +23,7 @@ export async function ioManager(io) {
         //PRODUCTS
 
         //New product
-        clientSocket.emit("updateProducts", await productsManager.getAll());
+        clientSocket.emit("updateProducts", await productsRepository.readMany({}));
         clientSocket.on("newProduct", async (product) => {
             try {
                 //Validate owner
@@ -33,8 +33,8 @@ export async function ioManager(io) {
                 product.price = parseInt(product.price);
                 const productReq = new Products(product);
                 /* Logger.error(productReq) */
-                await productsManager.addProduct(productReq.dto());
-                clientSocket.emit("updateProducts", await productsManager.getAll());
+                await productsRepository.create({ ...productReq.dto() });
+                clientSocket.emit("updateProducts", await productsRepository.readMany({}));
             } catch (error) {
                 Logger.error(error);
             }
@@ -43,8 +43,8 @@ export async function ioManager(io) {
         clientSocket.on("updateProduct", async (product) => {
             try {
                 const productReq = new Products(product);
-                await productsManager.updateByID(product._id, productReq.dto());
-                clientSocket.emit("updateProducts", await productsManager.getAll());
+                await productsRepository.updateOne({ _id: product._id }, { ...productReq.dto() });
+                clientSocket.emit("updateProducts", await productsRepository.readMany({}));
             } catch (error) {
                 Logger.error(error);
             }
@@ -52,8 +52,8 @@ export async function ioManager(io) {
         //Delete Product
         clientSocket.on("deleteProduct", async (item) => {
             try {
-                await productsManager.deleteByID(item.id);
-                clientSocket.emit("updateProducts", await productsManager.getAll());
+                await productsRepository.deleteOne({ _id: item.id });
+                clientSocket.emit("updateProducts", await productsRepository.readMany({}));
             } catch (error) {
                 Logger.error(error);
             }
@@ -64,7 +64,7 @@ export async function ioManager(io) {
         clientSocket.on("newMessage", async (message) => {
             try {
                 const messageReq = new Messages(message);
-                await await messagesRepository.create({...messageReq.dto()});
+                await await messagesRepository.create({ ...messageReq.dto() });
                 clientSocket.emit("updateMessage", await messagesRepository.readMany({}));
             } catch (error) {
                 Logger.error(error);

@@ -22,3 +22,4 @@ const schemaCarts = new mongoose.Schema(
 const modelCarts = mongoose.model("carts", schemaCarts);
 
 export const cartsDaoMoongose = new DaoMongoose(modelCarts);
+

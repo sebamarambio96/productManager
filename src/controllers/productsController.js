@@ -1,12 +1,11 @@
-import { ProductManager } from "../dao/managersFS/productManager.js";
 import { Products } from "../models/entities/products.js";
+import { ErrorInvalidArgument } from "../models/errors/invalidArgument.js";
 import { ErrorNotFound } from "../models/errors/notFound.js";
 import { productsRepository } from "../repositories/products.repository.js";
 import { usersRepository } from "../repositories/users.repository.js";
 import { emailService } from "../services/email.service.js";
 import { decryptJWT } from "../utils/jwt.js";
 import { Logger } from "../utils/winston.js";
-export const productManager = new ProductManager("./src/data/productos.json");
 
 //GET products wiith optional limit
 export async function getProducts(req, res, next) {
