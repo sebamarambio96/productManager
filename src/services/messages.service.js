@@ -1,9 +1,9 @@
-import { messagesRepository } from "../repositories/messages.repository.js"
+import { messagesRepository } from "../repositories/messages.repository.js";
 
 export class MessagesService {
     constructor(messagesRepository) {
-        this.repo = messagesRepository
+        this.repo = messagesRepository;
     }
 }
 
-export const messagesService = new MessagesService(messagesRepository)
+export const messagesService = new MessagesService(messagesRepository);

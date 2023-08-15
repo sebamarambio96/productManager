@@ -9,7 +9,7 @@ export async function connectMongo() {
 
 export const mochaHooks = {
     async beforeAll() {
-        await connectMongo()
+        await connectMongo();
     },
 
     async afterAll() {

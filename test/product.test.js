@@ -7,10 +7,12 @@ import { Logger } from "../src/utils/winston.js";
 export async function mocking100Products(req, res, next) {
     try {
         const productRepositoryMock = {
-            create: product => { Logger.silly('Se han creado 100 productos falsos') }
-        }
+            create: (product) => {
+                Logger.silly("Se han creado 100 productos falsos");
+            },
+        };
 
-        const tenTenProducts = []
+        const tenTenProducts = [];
 
         for (let i = 0; i <= 100; i++) {
             const simulatedProduct = {
@@ -19,33 +21,33 @@ export async function mocking100Products(req, res, next) {
                 price: 300 + i,
                 thumbnail: [`11asda12312numero${i}.jpg`],
                 code: `${randomString()}`,
-                stock: 25 + i
-            }
-            const validatedProduct = new Products(simulatedProduct)
+                stock: 25 + i,
+            };
+            const validatedProduct = new Products(simulatedProduct);
             tenTenProducts.push(validatedProduct.dto());
         }
-        const productService = new ProductsService(productRepositoryMock)
-        await productService.addProduct(tenTenProducts)
-        res.status(200).json(tenTenProducts)
+        const productService = new ProductsService(productRepositoryMock);
+        await productService.addProduct(tenTenProducts);
+        res.status(200).json(tenTenProducts);
     } catch (error) {
-        next(error)
+        next(error);
     }
 }
 
 export async function loggerTest(req, res, next) {
     try {
-        logger.log('mensaje de error de prueba', 6)
-        res.status(200).json({})
+        logger.log("mensaje de error de prueba", 6);
+        res.status(200).json({});
     } catch (error) {
-        next(error)
+        next(error);
     }
 }
 
 export async function winston(req, res, next) {
     try {
-        Logger.silly('mensaje de error de prueba nivel error 0')
-        res.status(200).json({})
+        Logger.silly("mensaje de error de prueba nivel error 0");
+        res.status(200).json({});
     } catch (error) {
-        next(error)
+        next(error);
     }
 }

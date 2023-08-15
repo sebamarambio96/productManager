@@ -1,6 +1,6 @@
 const logoutBtn = document.getElementById("logout");
 logoutBtn.addEventListener("click", (e) => {
-    e.preventDefault()
+    e.preventDefault();
     fetch("http://localhost:8080/profile/logout")
         .then((res) => res.json())
         .then((res) => {
@@ -10,7 +10,7 @@ logoutBtn.addEventListener("click", (e) => {
                     title: "Genial!",
                     text: `Ha cerrado sesión`,
                 });
-                localStorage.clear()
+                localStorage.clear();
             } else {
                 Swal.fire({
                     icon: "error",

@@ -98,8 +98,7 @@ export async function uploadThumbnail(req, res, next) {
 
         //Validate owner
 
-        if (product.owner == userData.user)
-            throw new ErrorNotFound("No eres el dueño del producto");
+        if (product.owner == userData.user) throw new ErrorNotFound("No eres el dueño del producto");
 
         // Save the name in "thumbnail"
         let arrayImg = product.thumbnail;

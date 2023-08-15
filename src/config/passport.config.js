@@ -86,7 +86,7 @@ passport.use(
                         user: profile.username,
                         pass: encryptPass(randomString()),
                         first_name,
-                        last_name
+                        last_name,
                     });
 
                     done(null, result);

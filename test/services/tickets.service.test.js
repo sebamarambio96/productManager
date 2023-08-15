@@ -1,53 +1,50 @@
-import { cartsDaoMoongose} from "../../dao/cartsShema.js"
-import { productsDaoMoongose } from "../../dao/productsShema.js"
-import { cartsRepository } from "../../repositories/carts.repository.js"
-import { ticketsRepository } from "../../repositories/tickets.repository.js"
-import { randomString } from "../../utils/randomUUID.js"
+import { cartsDaoMoongose } from "../../dao/cartsShema.js";
+import { productsDaoMoongose } from "../../dao/productsShema.js";
+import { cartsRepository } from "../../repositories/carts.repository.js";
+import { ticketsRepository } from "../../repositories/tickets.repository.js";
+import { randomString } from "../../utils/randomUUID.js";
 
 export class TicketsService {
     constructor(ticketsRepository) {
-        this.repo = ticketsRepository
+        this.repo = ticketsRepository;
     }
     async verifyStock(cid) {
-        const cartData = await cartsDaoMoongose.readOnePopulated({ _id: cid }, 'cartProducts.product')
+        const cartData = await cartsDaoMoongose.readOnePopulated({ _id: cid }, "cartProducts.product");
         // VERIFY EXISTENCE of product
-        if (!cartData) throw new Error('ID no existe')
+        if (!cartData) throw new Error("ID no existe");
         //Divide products in 2 arrays
-        const inStock = []
-        const noStock = []
-        cartData.cartProducts.forEach(product => {
+        const inStock = [];
+        const noStock = [];
+        cartData.cartProducts.forEach((product) => {
             if (product.product.stock >= product.quantity) {
-                inStock.push(product)
+                inStock.push(product);
             } else {
-                noStock.push(product)
+                noStock.push(product);
             }
         });
         //Return 2 arrays with products in stock and products out of stock, respectively.
-        return { inStock, noStock }
+        return { inStock, noStock };
     }
     async purchase(cid, purchaser) {
-        const { inStock, noStock } = await this.verifyStock(cid)
+        const { inStock, noStock } = await this.verifyStock(cid);
         //Calculate amount of purchase and discount stock
-        let amount = 0
-        inStock.map(product => {
-            amount += product.quantity * product.product.price
-            productsDaoMoongose.updateOne(
-                { _id: product.product._id },
-                { stock: product.product.stock - product.quantity }
-            )
-        })
+        let amount = 0;
+        inStock.map((product) => {
+            amount += product.quantity * product.product.price;
+            productsDaoMoongose.updateOne({ _id: product.product._id }, { stock: product.product.stock - product.quantity });
+        });
         //Create a new ticket with valid stock
         const newTicket = await this.repo.create({
             code: randomString(),
             purchase_datetime: new Date(),
             amount,
             purchaser,
-        })
-        //Update 
-        cartsRepository.updateOne({ _id: cid }, { cartProducts: noStock })
+        });
+        //Update
+        cartsRepository.updateOne({ _id: cid }, { cartProducts: noStock });
 
-        return { newTicket, noStock }
+        return { newTicket, noStock };
     }
 }
 
-export const ticketsService = new TicketsService(ticketsRepository)
+export const ticketsService = new TicketsService(ticketsRepository);

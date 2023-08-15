@@ -1,7 +1,6 @@
 import jwt from "jsonwebtoken";
 import { SECRET } from "../config/env.config.js";
 import { ErrorInvalidJWT } from "../models/errors/invalidJWT.js";
-import { Logger } from "./winston.js";
 
 export function encryptJWT(user) {
     const token = jwt.sign(user, SECRET, { expiresIn: 84600 });
@@ -13,7 +12,7 @@ export async function decryptJWT(token) {
         const data = await jwt.verify(token, SECRET);
         return data;
     } catch (error) {
-        throw new ErrorInvalidJWT("Código invalido")
+        throw new ErrorInvalidJWT("Código invalido");
     }
 }
 

@@ -19,9 +19,9 @@ btnDelete.addEventListener("click", () => {
         })
             .then((res) => res.json())
             .then((res) => {
-                let message =  res.message
+                let message = res.message;
                 if (res.description) {
-                    message = res.description
+                    message = res.description;
                 }
                 Swal.fire({
                     title: "Resultado:",
@@ -40,9 +40,9 @@ btnChangeRole.addEventListener("click", () => {
         fetch(`http://localhost:8080/api/users/premium/${id}`)
             .then((res) => res.json())
             .then((res) => {
-                let message =  res.message
+                let message = res.message;
                 if (res.description) {
-                    message = res.description
+                    message = res.description;
                 }
                 Swal.fire({
                     title: "Resultado:",

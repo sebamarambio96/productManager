@@ -92,9 +92,9 @@ describe("Testing Dao Users", () => {
             });
         });
 
-        it('Si el usuario no existe lanza un error', async () => {
+        it("Si el usuario no existe lanza un error", async () => {
             const dao = new DaoMongoose(usersTestModel);
-            await assert.rejects(dao.readOne({ id: '111111111111111' }))
-        })
+            await assert.rejects(dao.readOne({ id: "111111111111111" }));
+        });
     });
 });

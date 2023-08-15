@@ -44,9 +44,9 @@ btnDelete.addEventListener("click", () => {
         })
             .then((res) => res.json())
             .then((res) => {
-                let message =  res.message
+                let message = res.message;
                 if (res.description) {
-                    message = res.description
+                    message = res.description;
                 }
                 Swal.fire({
                     title: "Resultado:",

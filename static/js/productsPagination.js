@@ -31,7 +31,7 @@ function listenAddButtons() {
                 method: "POST",
             })
                 .then((res) => res.json())
-                .then((res) =>{});
+                .then((res) => {});
         });
     });
 }

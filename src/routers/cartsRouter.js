@@ -1,19 +1,19 @@
-import { Router } from "express"
-import { getCart, addCart, addProducts, deleteProduct, purchase } from "../controllers/cartsControllerMongo.js"
+import { Router } from "express";
+import { getCart, addCart, addProducts, deleteProduct, purchase } from "../controllers/cartsControllerMongo.js";
 
-export const cartsRouter = Router()
+export const cartsRouter = Router();
 
 //GET cart by id
-cartsRouter.get('/:cid', getCart)
+cartsRouter.get("/:cid", getCart);
 
 //Create cart
-cartsRouter.post('/', addCart)
+cartsRouter.post("/", addCart);
 
 //Add product
-cartsRouter.post('/:cid/product/:pid', addProducts)
+cartsRouter.post("/:cid/product/:pid", addProducts);
 
 //Delete product
-cartsRouter.delete('/:cid/product/:pid', deleteProduct)
+cartsRouter.delete("/:cid/product/:pid", deleteProduct);
 
 //Purchase
-cartsRouter.post('/purchase', purchase)
+cartsRouter.post("/purchase", purchase);

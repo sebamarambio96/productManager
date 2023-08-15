@@ -1,20 +1,8 @@
 import { Router } from "express";
-import {
-    current,
-    deleteCookie,
-    getCookies,
-    login,
-    logout,
-    register,
-    session,
-    setCookie,
-} from "../controllers/profileControllers.js";
+import { current, deleteCookie, getCookies, login, logout, register, session, setCookie } from "../controllers/profileControllers.js";
 import passport from "passport";
 import compression from "express-compression";
-import {
-    autenticacionPorGithub,
-    autenticacionPorGithub_CB,
-} from "../config/passport.config.js";
+import { autenticacionPorGithub, autenticacionPorGithub_CB } from "../config/passport.config.js";
 
 export const sessionRouter = Router();
 
@@ -29,15 +17,11 @@ sessionRouter.get("/session", compression(), session);
 
 //autentificacion github
 sessionRouter.get("/github", autenticacionPorGithub, (req, res) => {});
-sessionRouter.get(
-    "/sessionGitHub",
-    autenticacionPorGithub_CB,
-    (req, res, next) => {
-        req.session.admin = false;
-        req.session.user = req.user.user;
-        res.redirect("/products");
-    }
-);
+sessionRouter.get("/sessionGitHub", autenticacionPorGithub_CB, (req, res, next) => {
+    req.session.admin = false;
+    req.session.user = req.user.user;
+    res.redirect("/products");
+});
 
 //Logout
 sessionRouter.get("/logout", logout);

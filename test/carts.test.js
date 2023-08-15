@@ -8,7 +8,7 @@ const assert = Assert.strict;
 
 //TESTs
 
-const httpClient = supertest(`http://localhost:${PORT}/`)
+const httpClient = supertest(`http://localhost:${PORT}/`);
 
 describe("Testing Dao Users", () => {
     before(async () => {

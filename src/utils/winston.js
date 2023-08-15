@@ -1,5 +1,5 @@
-import winston from 'winston'
-import { NODE_ENV, WINSTON_LEVEL } from '../config/env.config.js'
+import winston from "winston";
+import { NODE_ENV, WINSTON_LEVEL } from "../config/env.config.js";
 
 const levels = {
     error: 0,
@@ -8,31 +8,31 @@ const levels = {
     http: 3,
     verbose: 4,
     debug: 5,
-    silly: 6
-}
+    silly: 6,
+};
 
 const winstonLoggerDev = winston.createLogger({
     // levels,
     transports: [
         new winston.transports.Console({
             level: WINSTON_LEVEL,
-        })
-    ]
-})
+        }),
+    ],
+});
 
 const winstonLoggerProd = winston.createLogger({
     // levels,
     transports: [
         new winston.transports.File({
             level: "http",
-            filename: 'events.log'
-        })
-    ]
-})
+            filename: "events.log",
+        }),
+    ],
+});
 
-export let Logger
-if (NODE_ENV === 'production') {
-    Logger = winstonLoggerProd
+export let Logger;
+if (NODE_ENV === "production") {
+    Logger = winstonLoggerProd;
 } else {
-    Logger = winstonLoggerDev
+    Logger = winstonLoggerDev;
 }

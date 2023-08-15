@@ -3,8 +3,8 @@ import { GenericRepository } from "./GenericRepository.js";
 
 class TicketsRepository extends GenericRepository {
     constructor(dao) {
-        super(dao)
+        super(dao);
     }
 }
 
-export const ticketsRepository = new TicketsRepository(ticketsDaoMoongose)
+export const ticketsRepository = new TicketsRepository(ticketsDaoMoongose);
