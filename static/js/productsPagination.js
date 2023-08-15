@@ -18,17 +18,20 @@ fetch("http://localhost:8080/profile/current")
         }
     });
 
-/* //Nuevo carrito
-serverSocket.on('newCart', async cart => {
-    cartID = localStorage.setItem('cartID', cart._id)
-}) */
-
 function listenAddButtons() {
     const buttons = document.querySelectorAll(".btn-info");
     buttons.forEach((btn) => {
         btn.addEventListener("click", (e) => {
+            const quantityInput = document.getElementById(`quantity_${btn.id}`);
+            const data = {
+                quantity: parseInt(quantityInput.value),
+            };
             fetch(`http://localhost:8080/api/carts/${cartSave}/product/${btn.id}`, {
                 method: "POST",
+                headers: {
+                    "Content-type": "application/json",
+                },
+                body: JSON.stringify(data),
             })
                 .then((res) => res.json())
                 .then((res) => {});

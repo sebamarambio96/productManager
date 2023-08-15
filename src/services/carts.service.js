@@ -6,7 +6,7 @@ export class CartsService {
     constructor(cartsRepository) {
         this.repo = cartsRepository;
     }
-    async addProducts(cid, pid) {
+    async addProducts(cid, pid, quantity) {
         const arrayCarts = await this.repo.readMany({ _id: cid });
         const arrayProducts = await productsRepository.readMany();
         const productVerify = arrayProducts.filter((item) => item._id == pid);
@@ -19,14 +19,22 @@ export class CartsService {
         let product = cart.cartProducts.find((item) => item.product == pid);
         //Cart index
         if (!product) {
-            cart.cartProducts.push({ product: pid, quantity: 1 });
+            cart.cartProducts.push({ product: pid, quantity });
         } else {
             //Product index in cartProducts array
             const pidx = cart.cartProducts.indexOf(product);
-            cart.cartProducts[pidx].quantity += 1;
+            cart.cartProducts[pidx].quantity += quantity;
         }
-        await this.repo.findOneAndUpdate({ _id: cid }, { cartProducts: cart.cartProducts });
+        await this.repo.updateOne({ _id: cid }, { cartProducts: cart.cartProducts });
         Logger.silly("Producto actualizado/agregado");
+    }
+    async deleteProduct(cid, pid) {
+        const arrayCarts = await this.repo.readMany({});
+        let cart = arrayCarts.filter((item) => item._id == cid);
+        cart = cart[0];
+        let updateCart = cart.cartProducts.filter((item) => item.product._id != pid);
+        await this.repo.updateOne({ _id: cid }, { cartProducts: updateCart });
+        return cart;
     }
 }
 

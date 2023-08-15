@@ -1,5 +1,6 @@
-import { cartsManager } from "../dao/cartsShema.js";
+import { cartsRepository } from "../repositories/carts.repository.js";
 import { usersRepository } from "../repositories/users.repository.js";
+import { cartsService } from "../services/carts.service.js";
 import { ticketsService } from "../services/tickets.service.js";
 import { decryptJWT } from "../utils/jwt.js";
 
@@ -7,7 +8,7 @@ import { decryptJWT } from "../utils/jwt.js";
 export async function getCart(req, res, next) {
     try {
         const { cid } = req.params;
-        const cart = await cartsManager.getByID(cid);
+        const cart = await cartsRepository.readOne({ _id: cid });
         if (!cart) throw new Error("ID no existe");
         res.status(200).json(cart);
     } catch (error) {
@@ -18,7 +19,7 @@ export async function getCart(req, res, next) {
 //ADD new cart
 export async function addCart(req, res, next) {
     try {
-        const cart = await cartsManager.addCart();
+        const cart = await cartsRepository.create({ cartProducts: [] });
         //Validate token
         const { id } = await decryptJWT(req.cookies.accessToken);
         //If user don´t have cart, set it
@@ -34,8 +35,10 @@ export async function addCart(req, res, next) {
 
 //ADD products
 export async function addProducts(req, res, next) {
+    const { quantity } = req.body;
+    const { cid, pid } = req.params;
     try {
-        await cartsManager.addProducts(req.params.cid, req.params.pid);
+        await cartsService.addProducts(cid, pid, quantity);
         res.status(201).json({ message: "Producto actualizado/agregado" });
     } catch (error) {
         next(error);
@@ -44,8 +47,9 @@ export async function addProducts(req, res, next) {
 
 //Delete products
 export async function deleteProduct(req, res, next) {
+    const { cid, pid } = req.params;
     try {
-        await cartsManager.deleteProduct(req.params.cid, req.params.pid);
+        await cartsService.deleteProduct(cid, pid);
         res.status(201).json({ message: "Producto eliminado" });
     } catch (error) {
         next(error);

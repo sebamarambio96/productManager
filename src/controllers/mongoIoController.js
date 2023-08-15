@@ -1,8 +1,8 @@
-import { cartsManager } from "../dao/cartsShema.js";
 import { messagesManager } from "../dao/messagesShema.js";
 import { productsManager } from "../dao/productsShema.js";
 import { Messages } from "../models/entities/messages.js";
 import { Products } from "../models/entities/products.js";
+import { cartsRepository } from "../repositories/carts.repository.js";
 import { usersRepository } from "../repositories/users.repository.js";
 import { Logger } from "../utils/winston.js";
 
@@ -80,7 +80,7 @@ export async function ioManager(io) {
         });
         clientSocket.on("updateCart", async (cid) => {
             try {
-                const cart = await cartsManager.getByID(cid);
+                const cart = await cartsRepository.readOne({ _id: cid });
                 clientSocket.emit("updateCart", cart);
             } catch (error) {
                 Logger.error(error);
