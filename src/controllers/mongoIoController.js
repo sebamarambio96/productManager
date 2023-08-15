@@ -1,8 +1,8 @@
-import { messagesManager } from "../dao/messagesShema.js";
 import { productsManager } from "../dao/productsShema.js";
 import { Messages } from "../models/entities/messages.js";
 import { Products } from "../models/entities/products.js";
 import { cartsRepository } from "../repositories/carts.repository.js";
+import { messagesRepository } from "../repositories/messages.repository.js";
 import { usersRepository } from "../repositories/users.repository.js";
 import { Logger } from "../utils/winston.js";
 
@@ -60,12 +60,12 @@ export async function ioManager(io) {
         });
 
         //CHAT
-        clientSocket.emit("updateMessage", await messagesManager.getAll());
+        clientSocket.emit("updateMessage", await messagesRepository.readMany({}));
         clientSocket.on("newMessage", async (message) => {
             try {
                 const messageReq = new Messages(message);
-                await messagesManager.addMessage(messageReq.dto());
-                clientSocket.emit("updateMessage", await messagesManager.getAll());
+                await await messagesRepository.create({...messageReq.dto()});
+                clientSocket.emit("updateMessage", await messagesRepository.readMany({}));
             } catch (error) {
                 Logger.error(error);
             }
