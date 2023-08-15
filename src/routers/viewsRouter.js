@@ -101,3 +101,10 @@ viewsRouter.get('/passRecovery', async (req, res, next) => {
     })
 })
 
+viewsRouter.get('/adminPanel', async (req, res, next) => {
+    res.render('passRecovery.hbs', {
+        titulo: 'Recovery Password',
+        encabezado: 'Ingresa tu código de recuperación:',
+    })
+})
+

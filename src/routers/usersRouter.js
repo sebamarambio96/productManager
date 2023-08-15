@@ -1,6 +1,12 @@
 import { Router } from "express";
 import { onlyAdmin } from "../controllers/profileControllers.js";
-import { changeRole, getUsers, uploadDocuments, uploadProfile } from "../controllers/usersControllers.js";
+import {
+    changeRole,
+    getUsers,
+    removeInactives,
+    uploadDocuments,
+    uploadProfile,
+} from "../controllers/usersControllers.js";
 import multer from "multer";
 import { uploadThumbnail } from "../controllers/productsController.js";
 
@@ -11,6 +17,9 @@ usersRouter.get("/premium/:uid", onlyAdmin, changeRole);
 
 //Get all users basic information
 usersRouter.get("/", getUsers);
+
+//Delete inactive users.
+usersRouter.delete("/", removeInactives);
 
 // Multer config
 const storage = multer.diskStorage({
@@ -29,7 +38,7 @@ const storage = multer.diskStorage({
     },
     filename: (req, file, cb) => {
         //Name of file is date + original filename
-        cb(null,`${Date.now()}_${file.originalname}`);
+        cb(null, `${Date.now()}_${file.originalname}`);
     },
 });
 

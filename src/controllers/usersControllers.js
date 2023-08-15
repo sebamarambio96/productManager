@@ -95,3 +95,22 @@ export async function uploadProfile(req, res, next) {
         next(error);
     }
 }
+
+export async function removeInactives(req, res, next) {
+    try {
+        //Set time for delete inactive users
+        const timeInactive = 2 * 24 * 3600 * 1000;
+
+        const now = new Date();
+        const inactiveLimit = new Date(now - timeInactive);
+
+        //Delete users who are under the time limit
+        const deletedUsers = await usersRepository.deleteMany({ last_connection: { $lt: inactiveLimit } });
+
+        res.status(200).json({
+            message: `Usuarios con tiempo de inactividad "${timeInactive / 3600000} horas" han sido eliminados y notificados.`,
+        });
+    } catch (error) {
+        next(error);
+    }
+}
