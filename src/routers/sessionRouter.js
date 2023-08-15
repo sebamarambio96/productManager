@@ -33,7 +33,6 @@ sessionRouter.get(
     "/sessionGitHub",
     autenticacionPorGithub_CB,
     (req, res, next) => {
-        console.log(req.user);
         req.session.admin = false;
         req.session.user = req.user.user;
         res.redirect("/products");

@@ -27,7 +27,6 @@ export class TicketsService {
     }
     async purchase(cid, purchaser) {
         const { inStock, noStock } = await this.verifyStock(cid)
-        /* console.log(inStock); */
         //Calculate amount of purchase and discount stock
         let amount = 0
         inStock.map(product => {
@@ -37,7 +36,6 @@ export class TicketsService {
                 { stock: product.product.stock - product.quantity }
             )
         })
-        /* console.log(amount); */
         //Create a new ticket with valid stock
         const newTicket = await this.repo.create({
             code: randomString(),

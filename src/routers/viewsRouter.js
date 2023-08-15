@@ -39,7 +39,6 @@ viewsRouter.get("/products", compression(), async (req, res, next) => {
     };
     const category = req.query.category ? { category: req.query.category } : {};
     let products = await productsManager.getPaginate(category, options);
-    /* console.log(products) */
     const info = {
         status: products ? "Success" : "Error",
         payload: products.docs,

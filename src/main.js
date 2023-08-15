@@ -16,6 +16,7 @@ import { messagesRouter } from "./routers/msgRouter.js"
 import { passportInit, passportSession } from "./config/passport.config.js"
 import { MONGO_BBDD, MONGO_PASS, MONGO_SERVER, MONGO_USER, PORT, SECRET, SERVER_MODE } from "./config/env.config.js"
 import { errorHandler } from "./middlewares/errorHandler.js"
+import { Logger } from "./utils/winston.js"
 
 //Se conecta base de datos
 await connectMongo()
@@ -56,8 +57,8 @@ if (SERVER_MODE === 'cluster' && cluster.isPrimary) {
 
     const numCPUs = cpus().length
 
-    console.log(`N° of CPUs: ${numCPUs}`)
-    console.log(`PID PRIMARY ${process.pid}`)
+    Logger.silly(`N° of CPUs: ${numCPUs}`)
+    Logger.silly(`PID PRIMARY ${process.pid}`)
 
     for (let i = 0; i < numCPUs; i++) {
         cluster.fork()
@@ -67,13 +68,13 @@ if (SERVER_MODE === 'cluster' && cluster.isPrimary) {
     cluster.on('exit', worker => {
         //Si se escucha un evento exit podemos volver a 
         //invocar el fork para que siempre haya la misma cantidad de procesos
-        console.log('Worker', worker.process.pid, 'died', new Date().toLocaleString())
+        Logger.silly('Worker', worker.process.pid, 'died', new Date().toLocaleString())
         cluster.fork()
     })
 } else {
     const server = app.listen(PORT, () => {
-        console.log(`Servidor en el puerto ${PORT} - PID WORKER ${process.pid}`)
-        console.log(`Documentación disponible en http://localhost:${PORT}/api/docs`)
+        Logger.silly(`Servidor en el puerto ${PORT} - PID WORKER ${process.pid}`)
+        Logger.silly(`Documentación disponible en http://localhost:${PORT}/api/docs`)
     })
     io = new SocketIOServer(server)
     //Importa la función que comunica la base de datos y el front para actualización automatica
@@ -91,4 +92,4 @@ if (SERVER_MODE === 'cluster' && cluster.isPrimary) {
 
 /* const cart = await ticketsService.purchase('644699f414b4336cb400bc9f','admin')
 
-console.log(cart); */
+Logger.silly(cart); */

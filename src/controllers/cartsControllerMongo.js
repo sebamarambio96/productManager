@@ -26,7 +26,6 @@ export async function addCart(req, res, next) {
         if (user.cart === "") {
             usersRepository.updateOne({ _id: id }, { cart: cart._id });
         }
-        console.log(cart);
         res.status(201).json({ cart });
     } catch (error) {
         next(error);
@@ -60,7 +59,6 @@ export async function purchase(req, res, next) {
         const ticket = await ticketsService.purchase(cid, purchaser, role);
         res.status(201).json(ticket);
     } catch (error) {
-        console.log(error)
         next(error);
     }
 }

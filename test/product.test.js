@@ -4,31 +4,10 @@ import { logger } from "../src/utils/logger.js";
 import { randomString } from "../src/utils/randomUUID.js";
 import { Logger } from "../src/utils/winston.js";
 
-/* const productRepositoryMock = {
-    create: product => { console.log('Se ha creado el producto correctamente') }
-}
-
-const reqBodySimulado = {
-    title: "producto prueba actualizado 3",
-    description: "Este es un producto prueba",
-    price: 300,
-    thumbnail: ["11asda12312.jpg"],
-    code: `${randomString()}`,
-    stock: 25
-}
-
-const productService = new ProductService(productRepositoryMock)
-
-const newProduct = new Products(reqBodySimulado)
-
-const res = await productService.addProduct(newProduct.dto())
-
-console.log(res)
- */
 export async function mocking100Products(req, res, next) {
     try {
         const productRepositoryMock = {
-            create: product => { console.log('Se han creado 100 productos falsos') }
+            create: product => { Logger.silly('Se han creado 100 productos falsos') }
         }
 
         const tenTenProducts = []

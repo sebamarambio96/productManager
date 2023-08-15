@@ -1,12 +1,12 @@
 import passport from "passport";
 import local from "passport-local";
-import { usersManager } from "../dao/usersShema.js";
 import { encryptPass, validPass } from "../utils/bcrypt.js";
 import { Strategy as GithubStrategy } from "passport-github2";
 import { Users } from "../models/entities/users.js";
 import { ErrorLoginFailed } from "../models/errors/loginFailed.js";
 import { Logger } from "../utils/winston.js";
 import { usersRepository } from "../repositories/users.repository.js";
+import { randomString } from "../utils/randomUUID.js";
 
 const LocalStrategy = local.Strategy;
 
@@ -20,8 +20,7 @@ passport.use(
         },
         async (req, _u, _p, done) => {
             try {
-                const { user, pass, first_name, last_name, age, cart, role } =
-                    req.body;
+                const { user, pass, first_name, last_name, age, cart } = req.body;
                 const newUser = new Users({
                     user,
                     pass: encryptPass(pass),
@@ -31,8 +30,7 @@ passport.use(
                     cart,
                     role: "user",
                 });
-                /* console.log(newUser.dto()) */
-                await usersManager.register(newUser.dto());
+                await usersRepository.create({ ...newUser.dto() });
                 done(null, { user, pass });
             } catch (error) {
                 return done(error);
@@ -53,16 +51,12 @@ passport.use(
             try {
                 const { username, pass } = req.body;
                 Logger.silly({ username, pass });
-                const usersData = await usersManager.getAll();
+                const usersData = await usersRepository.readMany({});
                 const exist = usersData.filter((x) => x.user == username);
-                if (exist.length < 1)
-                    throw new ErrorLoginFailed("El usuario no existe");
-                console.log(exist[0].pass);
-                console.log(validPass(exist[0].pass, req.body));
-                if (!validPass(exist[0].pass, { pass: pass }))
-                    throw new ErrorLoginFailed("Contraseña incorrecta");
+                if (exist.length < 1) throw new ErrorLoginFailed("El usuario no existe");
+                if (!validPass(exist[0].pass, { pass: pass })) throw new ErrorLoginFailed("Contraseña incorrecta");
                 req.session.user = exist[0].user;
-                usersRepository.updateOne({_id:exist[0]._id}, {last_connection: new Date})
+                usersRepository.updateOne({ _id: exist[0]._id }, { last_connection: new Date() });
                 done(null, exist[0]);
             } catch (error) {
                 return done(error);
@@ -81,16 +75,18 @@ passport.use(
         },
         async (accessToken, refreshToken, profile, done) => {
             try {
-                /* console.log(profile) */
-                let user = await usersManager.getByUser(profile.username);
+                let user = await usersRepository.readOne({ user: profile.username }, false);
                 if (!user) {
-                    let newUser = {
+                    const fullName = profile.displayName;
+                    const nameParts = fullName.split(" ");
+                    const first_name = nameParts[0];
+                    const last_name = nameParts.slice(1).join(" ");
+
+                    let result = usersRepository.create({
                         user: profile.username,
-                        pass: "",
-                    };
-                    let result = usersManager.register({
-                        user: newUser.user,
-                        pass: newUser.pass,
+                        pass: encryptPass(randomString()),
+                        first_name,
+                        last_name
                     });
 
                     done(null, result);
@@ -122,37 +118,3 @@ export const autenticacionPorGithub_CB = passport.authenticate("github", {
     session: false,
     failWithError: true,
 });
-
-/* const secret = 'secreto'
-passport.use('jwt', new JwtStrategy({
-    jwtFromRequest: ExtractJwt.fromExtractors([function (req) {
-        let token = null
-        if (req && req.signedCookies) {
-            token = req.signedCookies['jwt_authorization']
-        }
-        return token
-    }]),
-    secretOrKey: secret,
-}, async (jwt_payload, done) => {
-    try {
-        done(null, jwt_payload) // se guarda en el req.user
-    } catch (error) {
-        done(error)
-    }
-}))
-
-export function authJwtApi(req, res, next) {
-    passport.authenticate('jwt', (error, jwt_payload, info) => {
-        if (error || !jwt_payload) return next(new Error('Error de autenticacion'))
-        req.user = jwt_payload
-        next(error)
-    })(req, res, next)
-}
-
-export function authJwtView(req, res, next) {
-    passport.authenticate('jwt', (error, jwt_payload) => {
-        if (error || !jwt_payload) return res.redirect('/login')
-        req.user = jwt_payload
-        next(error)
-    })(req, res, next)
-} */

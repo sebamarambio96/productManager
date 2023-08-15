@@ -1,5 +1,6 @@
 import { createTransport } from "nodemailer";
 import { EMAIL_PASS, EMAIL_USER } from "../config/env.config.js";
+import { Logger } from "../utils/winston.js";
 
 class EmailService {
     #clientNodemailer;
@@ -29,10 +30,10 @@ class EmailService {
         };
         try {
             const info = await this.#clientNodemailer.sendMail(mailOptions);
-            console.log(info);
+            Logger.silly(info);
             return info;
         } catch (error) {
-            console.log(error);
+            Logger.silly(error);
             throw error;
         }
     }
@@ -46,10 +47,10 @@ class EmailService {
         };
         try {
             const info = await this.#clientNodemailer.sendMail(mailOptions);
-            console.log(info);
+            Logger.silly(info);
             return info;
         } catch (error) {
-            console.log(error);
+            Logger.silly(error);
             throw error;
         }
     }
@@ -67,10 +68,10 @@ class EmailService {
         };
         try {
             const info = await this.#clientNodemailer.sendMail(mailOptions);
-            console.log(info);
+            Logger.silly(info);
             return info;
         } catch (error) {
-            console.log(error);
+            Logger.silly(error);
             throw error;
         }
     }

@@ -4,7 +4,6 @@ logoutBtn.addEventListener("click", (e) => {
     fetch("http://localhost:8080/profile/logout")
         .then((res) => res.json())
         .then((res) => {
-            console.log(res);
             if (res.message == "Logout OK") {
                 Swal.fire({
                     icon: "success",

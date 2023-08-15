@@ -11,10 +11,19 @@ export async function ioManager(io) {
 
     io.on("connection", async (clientSocket) => {
         Logger.silly(`Nuevo cliente conectado! socket id# ${clientSocket.id}`);
-        clientSocket.emit("updateProducts", await productsManager.getAll());
+
+        //Users
+        clientSocket.on("updateUsers", async () => {
+            try {
+                clientSocket.emit("updateUsers", await usersRepository.readMany({}));
+            } catch (error) {
+                Logger.error(error);
+            }
+        });
         //PRODUCTS
 
         //New product
+        clientSocket.emit("updateProducts", await productsManager.getAll());
         clientSocket.on("newProduct", async (product) => {
             try {
                 //Validate owner
@@ -27,7 +36,7 @@ export async function ioManager(io) {
                 await productsManager.addProduct(productReq.dto());
                 clientSocket.emit("updateProducts", await productsManager.getAll());
             } catch (error) {
-                console.log(error);
+                Logger.error(error);
             }
         });
         //Update product

@@ -1,36 +1,38 @@
 export class GenericRepository {
-    #dao
+    #dao;
     constructor(dao) {
-      this.#dao = dao
+        this.#dao = dao;
     }
-  
-    get dao() { return this.#dao }
-  
-    create(data, options) {
-      return this.#dao.create(data)
+
+    get dao() {
+        return this.#dao;
     }
-  
-    readOne(criteria, options) {
-      return this.#dao.readOne(criteria)
+
+    create(data) {
+        return this.#dao.create(data);
     }
-  
-    readMany(criteria, options) {
-      return this.#dao.readMany(criteria)
+
+    readOne(criteria, validate) {
+        return this.#dao.readOne(criteria, validate);
     }
-  
-    updateOne(criteria, newData, options) {
-      return this.#dao.updateOne(criteria, newData)
+
+    readMany(criteria) {
+        return this.#dao.readMany(criteria);
     }
-  
-    updateMany(criteria, newData, options) {
-      return this.#dao.updateMany(criteria, newData)
+
+    updateOne(criteria, newData) {
+        return this.#dao.updateOne(criteria, newData);
     }
-  
-    deleteOne(criteria, options) {
-      return this.#dao.deleteOne(criteria)
+
+    updateMany(criteria, newData) {
+        return this.#dao.updateMany(criteria, newData);
     }
-  
-    deleteMany(criteria, options) {
-      return this.#dao.deleteMany(criteria)
+
+    deleteOne(criteria) {
+        return this.#dao.deleteOne(criteria);
     }
-  }
+
+    deleteMany(criteria) {
+        return this.#dao.deleteMany(criteria);
+    }
+}

@@ -32,7 +32,6 @@ function login(username, pass) {
     })
         .then((res) => res.json())
         .then((res) => {
-            console.log(res);
             if (res.message === "cookie set") {
                 Swal.fire({
                     icon: "success",
@@ -52,7 +51,6 @@ function login(username, pass) {
 }
 function register(user, pass, first_name, last_name, age) {
     const data = { user, pass, first_name, last_name, age, role: "" };
-    console.log(user, pass);
     fetch("http://localhost:8080/profile/register", {
         method: "POST",
         headers: {
@@ -62,7 +60,6 @@ function register(user, pass, first_name, last_name, age) {
     })
         .then((res) => res.json())
         .then((res) => {
-            console.log(res);
             if (res.message == "Usuario registrado") {
                 Swal.fire({
                     icon: "success",

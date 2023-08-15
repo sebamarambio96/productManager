@@ -5,7 +5,6 @@ const allCookies = document.cookie;
 fetch("http://localhost:8080/profile/current")
     .then((res) => res.json())
     .then((res) => {
-        console.log(res);
         if (res.cart && res.cart !== "") {
             localStorage.setItem("cartID", res.cart);
         } else {
@@ -14,7 +13,6 @@ fetch("http://localhost:8080/profile/current")
             })
                 .then((res) => res.json())
                 .then((res) => {
-                    console.log(res.cart._id);
                     localStorage.setItem("cartID", res.cart);
                 });
         }
@@ -27,14 +25,13 @@ serverSocket.on('newCart', async cart => {
 
 function listenAddButtons() {
     const buttons = document.querySelectorAll(".btn-info");
-    /* console.log(buttons); */
     buttons.forEach((btn) => {
         btn.addEventListener("click", (e) => {
             fetch(`http://localhost:8080/api/carts/${cartSave}/product/${btn.id}`, {
                 method: "POST",
             })
                 .then((res) => res.json())
-                .then((res) => console.log(res));
+                .then((res) =>{});
         });
     });
 }

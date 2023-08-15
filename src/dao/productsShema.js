@@ -61,7 +61,3 @@ export class ProductsManager {
 }
 
 export const productsManager = new ProductsManager()
-
-/* const products = await productsManager.getAll()
-
-console.log(products); */

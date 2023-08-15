@@ -1,7 +1,6 @@
 fetch('http://localhost:8080/profile/current')
     .then(res => res.json())
     .then(res => {
-        console.log(res)
         if (res.first_name) {
             Swal.fire({
                 icon: 'success',

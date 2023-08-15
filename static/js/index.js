@@ -13,7 +13,6 @@ btnAdd.addEventListener("click", () => {
         fetch(`http://localhost:8080/profile/current`)
             .then((res) => res.json())
             .then((res) => {
-                console.log(res);
                 if (res.role === "admin" || res.role === "premium") {
                     serverSocket.emit("newProduct", {
                         title,
@@ -45,10 +44,13 @@ btnDelete.addEventListener("click", () => {
         })
             .then((res) => res.json())
             .then((res) => {
-                console.log(res);
+                let message =  res.message
+                if (res.description) {
+                    message = res.description
+                }
                 Swal.fire({
                     title: "Resultado:",
-                    text: `${res.message}`,
+                    text: `${message}`,
                 });
                 if (res.message == "Producto eliminado") {
                     window.location.href = "/realtimesproduct";

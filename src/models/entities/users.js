@@ -13,7 +13,7 @@ export class Users {
     #pass;
 
     constructor({ _id, first_name, last_name, age, cart, role, user, pass }) {
-        this.#id = notEmpty(_id);
+        this.#id = _id;
         this.#first_name = validateString(first_name, true, true);
         this.#last_name = validateString(last_name, true, true);
         this.#age = validateNum(age);

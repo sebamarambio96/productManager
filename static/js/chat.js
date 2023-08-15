@@ -1,46 +1,44 @@
-const serverSocket = io()
+const serverSocket = io();
 
-fetch('http://localhost:8080/profile/current')
-    .then(res => res.json())
-    .then(res => {
-        console.log(res)
+fetch("http://localhost:8080/profile/current")
+    .then((res) => res.json())
+    .then((res) => {
         if (res.first_name) {
-            const inputAutor = document.getElementById('inputUser')
-            if (!(inputAutor instanceof HTMLInputElement)) return
-            inputAutor.value = res.user
-            serverSocket.emit('newUser', inputAutor.value)
+            const inputAutor = document.getElementById("inputUser");
+            if (!(inputAutor instanceof HTMLInputElement)) return;
+            inputAutor.value = res.user;
+            serverSocket.emit("newUser", inputAutor.value);
         } else {
             Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: `¡Necesitas iniciar sesión para comenzar a chatear!`
-            })
+                icon: "error",
+                title: "Oops...",
+                text: `¡Necesitas iniciar sesión para comenzar a chatear!`,
+            });
         }
-    })
+    });
 
 if (btnSend) {
-    btnSend.addEventListener('click', e => {
-        fetch('http://localhost:8080/profile/current')
-            .then(res => res.json())
-            .then(res => {
-                console.log(res)
+    btnSend.addEventListener("click", (e) => {
+        fetch("http://localhost:8080/profile/current")
+            .then((res) => res.json())
+            .then((res) => {
                 if (res.first_name) {
-                    const inputUser = document.getElementById('inputUser')
-                    const inputMessage = document.getElementById('inputMessage')
-                    const user = inputUser.value
-                    const message = inputMessage.value
+                    const inputUser = document.getElementById("inputUser");
+                    const inputMessage = document.getElementById("inputMessage");
+                    const user = inputUser.value;
+                    const message = inputMessage.value;
                     //Validamos que exista
-                    if (!user || !message) return
-                    serverSocket.emit('newMessage', { user, message })
+                    if (!user || !message) return;
+                    serverSocket.emit("newMessage", { user, message });
                 } else {
                     Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: `¡Necesitas iniciar sesión para comenzar a chatear!`
-                    })
+                        icon: "error",
+                        title: "Oops...",
+                        text: `¡Necesitas iniciar sesión para comenzar a chatear!`,
+                    });
                 }
-            })
-    })
+            });
+    });
 }
 
 const template = `
@@ -53,24 +51,23 @@ const template = `
 {{else}}
 <p>Se el primero en hablar</p>
 {{/if}}
-`
-const addMessage = Handlebars.compile(template)
+`;
+const addMessage = Handlebars.compile(template);
 
-serverSocket.on('updateMessage', messages => {
-    console.log(messages)
-    const messageContainer = document.getElementById('messages')
+serverSocket.on("updateMessage", (messages) => {
+    const messageContainer = document.getElementById("messages");
     if (messageContainer) {
-        messageContainer.innerHTML = addMessage({ messages, hayMensajes: messages.length > 0 })
+        messageContainer.innerHTML = addMessage({ messages, hayMensajes: messages.length > 0 });
     }
-})
+});
 
-serverSocket.on('newUser', username => {
+serverSocket.on("newUser", (username) => {
     Swal.fire({
         toast: true,
-        position: 'top-end',
+        position: "top-end",
         showConfirmButton: false,
         timer: 3000,
         title: `"${username}" Ha ingresado a la sala`,
-        icon: "success"
-    })
-})
+        icon: "success",
+    });
+});

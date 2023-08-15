@@ -11,9 +11,8 @@ export async function sendMail(req, res, next) {
 
     try {
         const info = await emailService.sendRequest(to, message);
-        console.log(info);
     } catch (error) {
-        console.log(error);
+        next(error);
     }
 
     res.redirect("/");
@@ -21,7 +20,6 @@ export async function sendMail(req, res, next) {
 
 export async function passRecoveryMail(req, res, next) {
     const { username } = req.body;
-    console.log(req.body);
     try {
         //Find user data
         const userData = await usersRepository.readOne({ user: username });
@@ -32,7 +30,6 @@ export async function passRecoveryMail(req, res, next) {
         Logger.silly(info);
         res.status(201).json({ info, message: "Un correo con su código de recuperación ha sido enviado, recuerde revisar SPAM." });
     } catch (error) {
-        console.log(error);
         next(error);
     }
 }

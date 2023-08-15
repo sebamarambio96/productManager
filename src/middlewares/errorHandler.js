@@ -4,7 +4,6 @@ import { ErrorNotFound } from "../models/errors/notFound.js";
 import { ErrorInvalidJWT } from "../models/errors/invalidJWT.js";
 
 export function errorHandler(error, req, res, next) {
-    console.log(error);
     switch (true) {
         case error instanceof ErrorInvalidArgument:
             res.status(400).json({

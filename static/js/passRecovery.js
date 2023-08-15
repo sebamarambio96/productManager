@@ -8,7 +8,7 @@ const passRecoveryVerifyForm = document.getElementById("passRecoveryVerify");
 passRecoveryMailForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const username = document.getElementById("username").value;
-    console.log(username);
+
     passRecoveryMail(username);
 });
 
@@ -30,7 +30,6 @@ function passRecoveryMail(username, pass) {
     })
         .then((res) => res.json())
         .then((res) => {
-            console.log(res);
             if (res.message === "Un correo con su código de recuperación ha sido enviado, recuerde revisar SPAM.") {
                 Swal.fire({
                     icon: "success",
@@ -46,7 +45,6 @@ function passRecoveryMail(username, pass) {
             }
         })
         .catch((err) => {
-            console.log(err);
             Swal.fire({
                 icon: "error",
                 title: "Oops...",
@@ -56,7 +54,6 @@ function passRecoveryMail(username, pass) {
 }
 
 function passRecoveryVerify(token, newPassword) {
-    console.log({ token, pass: newPassword});
     const data = { token, pass: newPassword };
     fetch("http://localhost:8080/msg/passRecoveryVerify", {
         method: "POST",
@@ -67,7 +64,6 @@ function passRecoveryVerify(token, newPassword) {
     })
         .then((res) => res.json())
         .then((res) => {
-            console.log(res);
             if (res.message === "Contraseña actualizada exitosamente") {
                 Swal.fire({
                     icon: "success",
@@ -84,7 +80,6 @@ function passRecoveryVerify(token, newPassword) {
         })
         .catch((err) => {
             err = JSON.parse(err);
-            console.log(err);
             Swal.fire({
                 icon: "error",
                 title: "Oops...",

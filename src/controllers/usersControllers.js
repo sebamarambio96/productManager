@@ -9,7 +9,6 @@ export async function getUsers(req, res, next) {
         const users = await usersRepository.readMany({});
 
         const usersBasicInfo = users.map((user) => {
-            console.log(user);
             let userDto = new Users({
                 _id: user._id,
                 user: user.user || "Sin registrar",
@@ -34,6 +33,8 @@ export async function getUser(req, res, next) {
     //User ID
     const { uid } = req.params;
     try {
+        const user = await usersRepository.readOne({ _id: uid });
+        if (!user) throw new ErrorNotFound("Usuario no encontrado");
         const userData = await usersRepository.readOne({ _id: uid });
         return res.status(201).json({ userData });
     } catch (error) {
@@ -46,6 +47,8 @@ export async function updateUser(req, res, next) {
     const { uid } = req.params;
     const updateData = req.body;
     try {
+        const user = await usersRepository.readOne({ _id: uid });
+        if (!user) throw new ErrorNotFound("Usuario no encontrado");
         await usersRepository.updateOne({ _id: uid }, { ...updateData });
         return res.status(201).json({ message: "Usuario actualizado con éxito" });
     } catch (error) {
@@ -57,7 +60,9 @@ export async function deleteUser(req, res, next) {
     //User ID
     const { uid } = req.params;
     try {
-        await usersRepository.deleteOnes({ _id: uid });
+        const user = await usersRepository.readOne({ _id: uid });
+        if (!user) throw new ErrorNotFound("Usuario no encontrado");
+        await usersRepository.deleteOne({ _id: uid });
         return res.status(201).json({ message: "Usuario eliminado con éxito" });
     } catch (error) {
         next(error);
@@ -95,7 +100,6 @@ export async function uploadDocuments(req, res, next) {
         const user = await usersRepository.readOne({ _id: uid });
 
         if (!user) throw new ErrorNotFound("Usuario no encontrado");
-        /* console.log(uploadedImages); */
         // Process uploaded files and update user
         if (!uploadedImages) throw new ErrorInvalidArgument("No se han subido documentos");
         if (!user.documents) user.documents = [];

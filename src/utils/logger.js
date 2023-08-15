@@ -1,4 +1,5 @@
 import { LOG_LEVEL, NODE_ENV } from "../config/env.config.js"
+import { Logger } from "./winston.js"
 
 class LoggerHandMade {
     constructor(env, level) {
@@ -7,7 +8,7 @@ class LoggerHandMade {
     }
     log(mensaje, level = 0) {
         if (this.env === 'dev' && level <= this.level) {
-            console.log(`${new Date().toLocaleString()}: ${mensaje}`)
+            Logger.error(`${new Date().toLocaleString()}: ${mensaje}`)
         }
     }
 }

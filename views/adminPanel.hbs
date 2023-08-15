@@ -5,24 +5,28 @@
         <table class="table">
             <thead>
                 <tr>
+                    <th>_ID</th>
                     <th>Usuario</th>
                     <th>Rol</th>
                     <th>Primer Nombre</th>
                     <th>Segundo Nombre</th>
                     <th>Edad</th>
                     <th>ID de Carrito</th>
+                    <th>Documentos</th>
                     <th>Última Conexión</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="usersTable">
                 {{#each users}}
                     <tr>
+                        <td>{{this._id}}</td>
                         <td>{{this.user}}</td>
                         <td>{{this.role}}</td>
                         <td>{{this.first_name}}</td>
                         <td>{{this.last_name}}</td>
                         <td>{{this.age}}</td>
                         <td>{{this.cart}}</td>
+                        <td>{{this.documents}}</td>
                         <td>{{this.last_connection}}</td>
                     </tr>
                 {{/each}}
@@ -39,7 +43,12 @@
         <input type="text" id="id_delete"/>
         <button id="btnDelete" class="btn btn-danger">Enviar</button>
     </div>
+    <div class="my-3">
+        <h2 class="py-2">Modificar rol USER/PREMIUM:</h2>
+        <label for="id">ID:</label>
+        <input type="text" id="id_role"/>
+        <button id="btnChangeRole" class="btn btn-warning">Enviar</button>
+    </div>
 </section>
 
 <script src="/socket.io/socket.io.js"></script>
-<script src="static/js/passRecovery.js"></script>

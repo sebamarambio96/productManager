@@ -17,9 +17,11 @@ export class DaoMongoose {
         return pojo;
     }
 
-    async readOne(criteria) {
+    async readOne(criteria, validate = true) {
         const result = await this.#model.findOne(criteria).lean();
-        if (!result) throw new ErrorNotFound("No se encontrado ningún resultado que coincida con la busqueda");
+        if (validate) {
+            if (!result) throw new ErrorNotFound("No se encontrado ningún resultado que coincida con la busqueda");
+        }
         return result;
     }
 

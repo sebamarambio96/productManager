@@ -1,7 +1,6 @@
 let cartID;
 const serverSocket = io("http://localhost:8080");
 let cartSave = localStorage.getItem("cartID");
-console.log(cartSave);
 
 if (cartSave) {
     cartID = localStorage.getItem("cartID");
@@ -47,7 +46,6 @@ serverSocket.on("updateCart", async (cart) => {
     })
         .then((res) => res.json())
         .then((res) => {
-            console.log(res);
             const template = `
 <h2 class="py-3">Listado de productos:</h2>
 {{#if hayProductos}}
@@ -80,16 +78,13 @@ serverSocket.on("updateCart", async (cart) => {
 
 function listenDeleteButtons() {
     const buttons = document.querySelectorAll(".btn-danger");
-    console.log(buttons);
     buttons.forEach((btn) => {
         btn.addEventListener("click", (e) => {
-            console.log("firts");
             fetch(`http://localhost:8080/api/carts/${cartID}/product/${btn.id}`, {
                 method: "DELETE",
             })
                 .then((res) => res.json())
                 .then((res) => {
-                    console.log(res);
                     cartSave = localStorage.getItem("cartID");
                     serverSocket.emit("updateCart", cartSave);
                 });
@@ -103,7 +98,6 @@ function listenPurchase() {
         fetch(`http://localhost:8080/profile/current`)
             .then((res) => res.json())
             .then((res) => {
-                console.log(res);
                 if (res.role) {
                     const data = {
                         cid: res.cart,
@@ -119,12 +113,15 @@ function listenPurchase() {
                     })
                         .then((res) => res.json())
                         .then((res) => {
-                            console.log(res);
-                            if (res.message) {
+                            let message = res.message;
+                            if (res.description) {
+                                message = res.description;
+                            }
+                            if (message) {
                                 Swal.fire({
                                     icon: "error",
                                     title: "Oops...",
-                                    text: `${res.message}`,
+                                    text: `${message}`,
                                 });
                             }
                             renderTicket(res);
@@ -147,7 +144,6 @@ listenPurchase();
 listenDeleteButtons();
 
 function renderTicket(ticketData) {
-
     const formattedDate = new Date(ticketData.newTicket.purchase_datetime).toLocaleString();
 
     const ticketTemplate = `
@@ -167,5 +163,3 @@ function renderTicket(ticketData) {
     const ticketInfoElement = document.getElementById("ticketInfo");
     ticketInfoElement.innerHTML = ticketTemplate;
 }
-
-

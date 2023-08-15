@@ -1,5 +1,6 @@
 import fs from "fs/promises"
 import { ErrorInvalidArgument } from "../../models/errors/invalidArgument.js"
+import { Logger } from "../../utils/winston.js"
 
 export class ProductManager {
     constructor(path) {
@@ -35,7 +36,7 @@ export class ProductManager {
         arrayProducts.length === 0 ? object.id = 1 : object.id = arrayProducts[arrayProducts.length - 1].id + 1
         arrayProducts.push(object)
         await this.saveProducts(arrayProducts)
-        console.log('Producto añadido')
+        Logger.silly('Producto añadido')
     }
 
     async updateProduct(id, newData) {
@@ -49,7 +50,7 @@ export class ProductManager {
         }
         arrayProducts[idx] = newProduct
         await this.saveProducts(arrayProducts)
-        console.log('Producto actualizado')
+        Logger.silly('Producto actualizado')
     }
 
     async deleteProduct(id) {
@@ -59,7 +60,7 @@ export class ProductManager {
         if (product.length === 0) throw Error('ID no existe')
         const newArray = arrayProducts.filter(item => item.id !== parseInt(id))
         await this.saveProducts(newArray)
-        console.log('Producto eliminado')
+        Logger.silly('Producto eliminado')
     }
 }
 
@@ -73,7 +74,7 @@ export class ProductManager {
     thumbnail: "Sin imagen",
     code: "abc1341232",
     stock: 25
-}).then(res => console.log('Producto agregado')) */
+}).then(res => Logger.silly('Producto agregado')) */
 
 /* productManager.updateProduct(512274163, {
     title: "producto prueba modificado",
