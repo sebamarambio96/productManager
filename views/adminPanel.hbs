@@ -1,0 +1,45 @@
+<h1>{{encabezado}}</h1>
+
+<main class="form-signin">
+    {{#if hayUsers}}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Usuario</th>
+                    <th>Rol</th>
+                    <th>Primer Nombre</th>
+                    <th>Segundo Nombre</th>
+                    <th>Edad</th>
+                    <th>ID de Carrito</th>
+                    <th>Última Conexión</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each users}}
+                    <tr>
+                        <td>{{this.user}}</td>
+                        <td>{{this.role}}</td>
+                        <td>{{this.first_name}}</td>
+                        <td>{{this.last_name}}</td>
+                        <td>{{this.age}}</td>
+                        <td>{{this.cart}}</td>
+                        <td>{{this.last_connection}}</td>
+                    </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    {{else}}
+        <p>no hay usuarios...</p>
+    {{/if}}
+</main>
+<section>
+    <div class="my-3">
+        <h2 class="py-2">Eliminar usuario:</h2>
+        <label for="id">ID:</label>
+        <input type="text" id="id_delete"/>
+        <button id="btnDelete" class="btn btn-danger">Enviar</button>
+    </div>
+</section>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="static/js/passRecovery.js"></script>

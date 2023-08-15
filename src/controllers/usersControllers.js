@@ -30,6 +30,40 @@ export async function getUsers(req, res, next) {
     }
 }
 
+export async function getUser(req, res, next) {
+    //User ID
+    const { uid } = req.params;
+    try {
+        const userData = await usersRepository.readOne({ _id: uid });
+        return res.status(201).json({ userData });
+    } catch (error) {
+        next(error);
+    }
+}
+
+export async function updateUser(req, res, next) {
+    //User ID
+    const { uid } = req.params;
+    const updateData = req.body;
+    try {
+        await usersRepository.updateOne({ _id: uid }, { ...updateData });
+        return res.status(201).json({ message: "Usuario actualizado con éxito" });
+    } catch (error) {
+        next(error);
+    }
+}
+
+export async function deleteUser(req, res, next) {
+    //User ID
+    const { uid } = req.params;
+    try {
+        await usersRepository.deleteOnes({ _id: uid });
+        return res.status(201).json({ message: "Usuario eliminado con éxito" });
+    } catch (error) {
+        next(error);
+    }
+}
+
 export async function changeRole(req, res, next) {
     try {
         const { uid } = req.params;

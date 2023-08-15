@@ -1,12 +1,6 @@
 import { Router } from "express";
 import { onlyAdmin } from "../controllers/profileControllers.js";
-import {
-    changeRole,
-    getUsers,
-    removeInactives,
-    uploadDocuments,
-    uploadProfile,
-} from "../controllers/usersControllers.js";
+import { changeRole, deleteUser, getUser, getUsers, removeInactives, updateUser, uploadDocuments, uploadProfile } from "../controllers/usersControllers.js";
 import multer from "multer";
 import { uploadThumbnail } from "../controllers/productsController.js";
 
@@ -17,6 +11,15 @@ usersRouter.get("/premium/:uid", onlyAdmin, changeRole);
 
 //Get all users basic information
 usersRouter.get("/", getUsers);
+
+//GET user by id
+usersRouter.get("/:uid", onlyAdmin, getUser);
+
+//UPDATE user info
+usersRouter.put("/:uid", onlyAdmin, updateUser);
+
+//DELETE user
+usersRouter.delete("/:uid", onlyAdmin, deleteUser);
 
 //Delete inactive users.
 usersRouter.delete("/", removeInactives);

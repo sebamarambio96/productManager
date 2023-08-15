@@ -2,3 +2,7 @@
     height: 53vh;
     overflow-y: scroll;
 }
+
+.hidden {
+    display: none;
+}
