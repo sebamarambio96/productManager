@@ -13,7 +13,6 @@ export class DaoMongoose {
 
     async create(element) {
         const pojo = toPojo(await this.#model.create(element));
-        delete pojo._id;
         return pojo;
     }
 

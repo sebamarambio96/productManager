@@ -111,13 +111,19 @@ export async function onlyPremium(req, res, next) {
 //current
 export async function current(req, res, next) {
     try {
-        Logger.silly(req.session.passport.user);
-        const user = new Users(req.session.passport.user);
-        req.session.user = user.dtoSafe();
-        //Validate token
-        decryptJWT(req.cookies.accessToken);
-        user.role === "admin" ? (req.session.admin = true) : (req.session.admin = false);
-        res.status(200).json(user.dtoSafe());
+        let response = {
+            message: "Aún no se ha iniciado sesión",
+        };
+        if (req.session.passport) {
+            Logger.silly(req.session.passport.user);
+            const user = new Users(req.session.passport.user);
+            req.session.user = user.dtoSafe();
+            //Validate token
+            decryptJWT(req.cookies.accessToken);
+            user.role === "admin" ? (req.session.admin = true) : (req.session.admin = false);
+            response = user.dtoSafe();
+        }
+        res.status(200).json(response);
     } catch (error) {
         next(error);
     }

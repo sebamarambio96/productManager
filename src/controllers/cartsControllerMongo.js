@@ -19,15 +19,20 @@ export async function getCart(req, res, next) {
 //ADD new cart
 export async function addCart(req, res, next) {
     try {
-        const cart = await cartsRepository.create({ cartProducts: [] });
         //Validate token
-        const { id } = await decryptJWT(req.cookies.accessToken);
-        //If user don´t have cart, set it
-        const user = await usersRepository.readOne({ _id: id });
-        if (user.cart === "") {
-            usersRepository.updateOne({ _id: id }, { cart: cart._id });
+        let cart
+        if (req.cookies.accessToken) {
+            const { id } = await decryptJWT(req.cookies.accessToken);
+            //If user don´t have cart, set it
+            const user = await usersRepository.readOne({ _id: id });
+            if (user.cart === "") {
+                cart = await cartsRepository.create({});
+                usersRepository.updateOne({ _id: id }, { cart: cart._id });
+            }
+        } else {
+            cart = await cartsRepository.create({});
         }
-        res.status(201).json({ cart });
+        res.status(201).json(cart);
     } catch (error) {
         next(error);
     }
