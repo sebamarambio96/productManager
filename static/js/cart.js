@@ -17,11 +17,11 @@ if (cartSave) {
         <div class="card" style="width: 15rem;">
             <div class="card-body">
                 <h6 class="card-subtitle mb-2 text-muted">ID: {{this._id}}</h6>
-                <h5 class="card-title text-success">Nombre: {{this.product.title}}</h5>
+                <h5 class="card-title text-success">Nombre: {{this.title}}</h5>
                 <h6 class="card-title text-success">Cantidad: {{this.quantity}}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Categoría: {{this.product.category}}</h5>
-                <h6 class="card-subtitle mb-2 text-muted">Precio: {{this.product.price}}</h6>
-                <button id="{{this.product._id}}" class="btn btn-danger">Eliminar</button>
+                <h6 class="card-subtitle mb-2 text-muted">Categoría: {{this.category}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Precio: {{this.price}}</h6>
+                <button id="{{this._id}}" class="btn btn-danger">Eliminar</button>
             </div>
         </div>
     {{/each}}

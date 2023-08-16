@@ -10,9 +10,9 @@ fetch("https://productmanager.up.railway.app/profile/current")
     });
 
 //DELETE USER
-const btnDelete = document.getElementById("btnDelete");
-if (btnDelete) {
-    btnDelete.addEventListener("click", () => {
+const btnDeleteAP = document.getElementById("btnDelete");
+if (btnDeleteAP) {
+    btnDeleteAP.addEventListener("click", () => {
         const id = document.getElementById("id_delete").value;
         if (id != "") {
             fetch(`https://productmanager.up.railway.app/api/users/${id}`, {
