@@ -61,7 +61,8 @@ export class DaoMongoose {
     }
 
     async deleteMany(criteria) {
-        await this.#model.deleteMany(criteria);
+        const deletedUsers = await this.#model.deleteMany(criteria);
+        return deletedUsers
     }
 
     // POPULATIONS ----------------------------------------------------------

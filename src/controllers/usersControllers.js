@@ -2,6 +2,7 @@ import { Users } from "../models/entities/users.js";
 import { ErrorInvalidArgument } from "../models/errors/invalidArgument.js";
 import { ErrorNotFound } from "../models/errors/notFound.js";
 import { usersRepository } from "../repositories/users.repository.js";
+import { emailService } from "../services/email.service.js";
 import { usersService } from "../services/users.service.js";
 
 export async function getUsers(req, res, next) {
@@ -141,9 +142,21 @@ export async function removeInactives(req, res, next) {
 
         const now = new Date();
         const inactiveLimit = new Date(now - timeInactive);
-
+        const usersBefore = await usersRepository.readMany({});
         //Delete users who are under the time limit
-        const deletedUsers = await usersRepository.deleteMany({ last_connection: { $lt: inactiveLimit } });
+        await usersRepository.deleteMany({ last_connection: { $lt: inactiveLimit } });
+        const usersAfter = await usersRepository.readMany({});
+
+        const deletedUsers = usersBefore.filter((userBefore) => !usersAfter.some((userAfter) => userAfter._id.toString() === userBefore._id.toString()));
+        //Send email
+        deletedUsers.forEach((user) => {
+            emailService.sendMail(
+                "Admin PM",
+                user.user,
+                "Su cuenta ha sido eliminada",
+                "Tu cuenta fue elminada por llevar 2 días sin conectarse"
+                );
+        });
 
         res.status(200).json({
             message: `Usuarios con tiempo de inactividad "${timeInactive / 3600000} horas" han sido eliminados y notificados.`,

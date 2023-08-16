@@ -57,6 +57,27 @@ if (btnChangeRole) {
     });
 }
 
+//Delete inactive users
+const btnDeleteInactive = document.getElementById("btnDeleteInactive");
+if (btnDeleteInactive) {
+    btnDeleteInactive.addEventListener("click", () => {
+        fetch(`http://localhost:8080/api/users/`, {
+            method: "DELETE",
+        })
+            .then((res) => res.json())
+            .then((res) => {
+                let message = res.message;
+                if (res.description) {
+                    message = res.description;
+                }
+                Swal.fire({
+                    title: "Resultado:",
+                    text: `${message}`,
+                });
+            });
+    });
+}
+
 //Renderizar
 
 const template = `

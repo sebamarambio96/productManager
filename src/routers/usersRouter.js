@@ -22,7 +22,7 @@ usersRouter.put("/:uid", onlyAdmin, updateUser);
 usersRouter.delete("/:uid", onlyAdmin, deleteUser);
 
 //Delete inactive users.
-usersRouter.delete("/", removeInactives);
+usersRouter.delete("/", onlyAdmin, removeInactives);
 
 // Multer config
 const storage = multer.diskStorage({
