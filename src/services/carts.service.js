@@ -32,7 +32,8 @@ export class CartsService {
         const arrayCarts = await this.repo.readMany({});
         let cart = arrayCarts.filter((item) => item._id == cid);
         cart = cart[0];
-        let updateCart = cart.cartProducts.filter((item) => item.product._id != pid);
+        console.log(cart);
+        let updateCart = cart.cartProducts.filter((item) => item.product._id !== pid);
         await this.repo.updateOne({ _id: cid }, { cartProducts: updateCart });
         return cart;
     }
