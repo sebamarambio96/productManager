@@ -80,7 +80,7 @@ if (btnDeleteInactive) {
 
 //Renderizar
 
-const template = `
+const templateAP = `
 {{#each users}}
                     <tr>
                         <td>{{this._id}}</td>
@@ -95,7 +95,7 @@ const template = `
                     </tr>
 {{/each}}
 `;
-const renderUsers = Handlebars.compile(template);
+const renderUsers = Handlebars.compile(templateAP);
 
 socket.on("updateUsers", (users) => {
     const divUsers = document.getElementById("usersTable");
