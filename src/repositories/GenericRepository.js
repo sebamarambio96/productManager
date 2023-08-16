@@ -1,4 +1,3 @@
-
 export class GenericRepository {
     #dao;
     constructor(dao) {
@@ -47,5 +46,9 @@ export class GenericRepository {
 
     deleteMany(criteria) {
         return this.#dao.deleteMany(criteria);
+    }
+    readOnePopulated(criteria, localField) {
+        // localfield example 'cartProducts.product'
+        return this.#dao.readOnePopulated(criteria, localField);
     }
 }

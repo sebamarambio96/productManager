@@ -1,5 +1,5 @@
 let cartID;
-const serverSocket = io("https://productmanager.up.railway.app");
+const serverSocket = io("https://productmanager.up.railway.app/");
 const loginForm = document.getElementById("login");
 
 loginForm.addEventListener("submit", (e) => {

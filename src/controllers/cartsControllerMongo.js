@@ -8,7 +8,7 @@ import { decryptJWT } from "../utils/jwt.js";
 export async function getCart(req, res, next) {
     try {
         const { cid } = req.params;
-        const cart = await cartsRepository.readOne({ _id: cid });
+        const cart = await cartsRepository.readOnePopulated({ _id: cid },"cartProducts.product");
         if (!cart) throw new Error("ID no existe");
         res.status(200).json(cart);
     } catch (error) {

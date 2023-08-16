@@ -442,3 +442,107 @@
 {"level":"silly","message":"Base de datos conectada: Practica"}
 {"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 11812"}
 {"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
+{"level":"silly","message":"Base de datos conectada: Practica"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 8332"}
+{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
+{"level":"silly","message":"Base de datos conectada: Practica"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 20116"}
+{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
+{"level":"silly","message":"Base de datos conectada: Practica"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 20044"}
+{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
+{"level":"silly","message":"Base de datos conectada: Practica"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 19700"}
+{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
+{"level":"silly","message":"Nuevo cliente conectado! socket id# d_oQ74qDmFw12tS5AAAB"}
+{"level":"silly","message":"Nuevo cliente conectado! socket id# 63Gj69ijCA3VTsUMAAAD"}
+{"level":"silly","message":{"pass":"1","username":"s.marambiosandoval@gmail.com"}}
+{"level":"http","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T21:17:12.541Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
+{"level":"silly","message":"64a76c46b0610bb8ad81039b"}
+{"level":"silly","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTc2YzQ2YjA2MTBiYjhhZDgxMDM5YiIsImlhdCI6MTY5MjIyMDk4OCwiZXhwIjoxNjkyMzA1NTg4fQ.l3oxo2kNj4GPpiRW98f1q78_tbKye-_OCVXhfIPyArs"}
+{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T21:17:12.541Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
+{"level":"silly","message":"Nuevo cliente conectado! socket id# lqgw6rkBdaLHZf5MAAAF"}
+{"level":"silly","message":"Nuevo cliente conectado! socket id# 0HH-6VXUlNpxYhNPAAAH"}
+{"level":"silly","message":"Nuevo cliente conectado! socket id# Ojh761SR5O68Dde1AAAJ"}
+{"level":"silly","message":{"pass":"1","username":"s.marambiosandoval@gmail.com"}}
+{"level":"http","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T21:23:08.601Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
+{"level":"silly","message":"64a76c46b0610bb8ad81039b"}
+{"level":"silly","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTc2YzQ2YjA2MTBiYjhhZDgxMDM5YiIsImlhdCI6MTY5MjIyMTA2MiwiZXhwIjoxNjkyMzA1NjYyfQ.VHVxqFiyKx2oHq7hZEFkWwPgqC_pSeK7vgK9mDaTP_s"}
+{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T21:23:08.601Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
+{"level":"silly","message":"Nuevo cliente conectado! socket id# kVJmYWv6F_mxo7U6AAAL"}
+{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T21:23:08.601Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
+{"level":"silly","message":"Base de datos conectada: Practica"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 3728"}
+{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
+{"level":"silly","message":"Nuevo cliente conectado! socket id# puRlEjA-ruXyq33YAAAB"}
+{"level":"silly","message":"Nuevo cliente conectado! socket id# aNYCz22oSsPmy8y7AAAD"}
+{"level":"silly","message":"Base de datos conectada: Practica"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 20276"}
+{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
+{"level":"silly","message":"Nuevo cliente conectado! socket id# Y1pAGSiCcumTenmAAAAB"}
+{"level":"silly","message":"Nuevo cliente conectado! socket id# gPSXtyUkwvc4Kh54AAAD"}
+{"level":"silly","message":"Base de datos conectada: Practica"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 12704"}
+{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
+{"level":"silly","message":"Base de datos conectada: Practica"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 13184"}
+{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
+{"level":"silly","message":"Nuevo cliente conectado! socket id# R3neKbCLvQZuzIJdAAAB"}
+{"level":"silly","message":"Nuevo cliente conectado! socket id# IFqIk5AigbOODDJ8AAAD"}
+{"level":"silly","message":"Base de datos conectada: Practica"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 21460"}
+{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
+{"level":"silly","message":"Nuevo cliente conectado! socket id# NMePO4ywoGmQhzRmAAAB"}
+{"level":"silly","message":"Nuevo cliente conectado! socket id# PpSLfudGgg68wu6dAAAD"}
+{"level":"silly","message":"Base de datos conectada: Practica"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 21080"}
+{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
+{"level":"silly","message":"Nuevo cliente conectado! socket id# INtkCWnYRBxH6w6_AAAB"}
+{"level":"silly","message":"Nuevo cliente conectado! socket id# rL8FFV2NG-Rqc_naAAAD"}
+{"level":"silly","message":"Nuevo cliente conectado! socket id# jk4YzwOrHmU_r2-xAAAF"}
+{"level":"silly","message":"Base de datos conectada: Practica"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 2772"}
+{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
+{"level":"silly","message":"Nuevo cliente conectado! socket id# kNMU8r1KEZxorxRGAAAB"}
+{"level":"silly","message":"Base de datos conectada: Practica"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 20092"}
+{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
+{"level":"silly","message":"Nuevo cliente conectado! socket id# Aog37mh32OVBSHyFAAAB"}
+{"level":"silly","message":"Nuevo cliente conectado! socket id# N0QJpuUk3WqXbYb6AAAD"}
+{"level":"silly","message":"Base de datos conectada: Practica"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 6968"}
+{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
+{"level":"silly","message":"Nuevo cliente conectado! socket id# la8g3rmKGetfqSMUAAAB"}
+{"level":"silly","message":"Nuevo cliente conectado! socket id# Qu58Ew_gp0XfMswEAAAD"}
+{"level":"silly","message":"Nuevo cliente conectado! socket id# LOh3LLoHnL1oILkYAAAF"}
+{"level":"silly","message":"Base de datos conectada: Practica"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 10260"}
+{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
+{"level":"silly","message":"Nuevo cliente conectado! socket id# fxnHcZxp_5UFh8rSAAAB"}
+{"level":"silly","message":"Base de datos conectada: Practica"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 20596"}
+{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
+{"level":"silly","message":"Nuevo cliente conectado! socket id# LOXwnLe7Egtw_COyAAAB"}
+{"level":"silly","message":"Base de datos conectada: Practica"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 20120"}
+{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
+{"level":"silly","message":"Nuevo cliente conectado! socket id# JReP4Aha55y122TkAAAB"}
+{"level":"silly","message":"Base de datos conectada: Practica"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 21080"}
+{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
+{"level":"silly","message":"Nuevo cliente conectado! socket id# M5SJGagPveh5Eh07AAAB"}
+{"level":"silly","message":"Nuevo cliente conectado! socket id# ui5TgPMh9d8SkOy9AAAD"}
+{"level":"silly","message":{"pass":"1","username":"s.marambiosandoval@gmail.com"}}
+{"level":"http","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T21:24:22.199Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
+{"level":"silly","message":"64a76c46b0610bb8ad81039b"}
+{"level":"silly","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTc2YzQ2YjA2MTBiYjhhZDgxMDM5YiIsImlhdCI6MTY5MjIyMTY3MSwiZXhwIjoxNjkyMzA2MjcxfQ.JmRRN5aLGoBgzuo2EmMk1bo9ZdcNOoVA9wUzUFnJkEQ"}
+{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T21:24:22.199Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
+{"level":"silly","message":"Nuevo cliente conectado! socket id# UOL_J0jZpL07DL3PAAAF"}
+{"level":"silly","message":"Base de datos conectada: Practica"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 4568"}
+{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
+{"level":"silly","message":"Nuevo cliente conectado! socket id# rOP1HNmLGeKqVCjiAAAB"}
+{"level":"silly","message":"Base de datos conectada: Practica"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 21284"}
+{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
+{"level":"silly","message":"Nuevo cliente conectado! socket id# tgzLVCUnXz5ThIqfAAAB"}
