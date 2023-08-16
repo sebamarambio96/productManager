@@ -1,6 +1,6 @@
 const socket = io("http://localhost:8080");
 
-fetch("http://localhost:8080/profile/current")
+fetch("https://productmanager.up.railway.app/profile/current")
     .then((res) => res.json())
     .then((res) => {
         if (res.role === "admin") {
@@ -15,7 +15,7 @@ if (btnDelete) {
     btnDelete.addEventListener("click", () => {
         const id = document.getElementById("id_delete").value;
         if (id != "") {
-            fetch(`http://localhost:8080/api/users/${id}`, {
+            fetch(`https://productmanager.up.railway.app/api/users/${id}`, {
                 method: "DELETE",
             })
                 .then((res) => res.json())
@@ -40,7 +40,7 @@ if (btnChangeRole) {
     btnChangeRole.addEventListener("click", () => {
         const id = document.getElementById("id_role").value;
         if (id != "") {
-            fetch(`http://localhost:8080/api/users/premium/${id}`)
+            fetch(`https://productmanager.up.railway.app/api/users/premium/${id}`)
                 .then((res) => res.json())
                 .then((res) => {
                     let message = res.message;
@@ -61,7 +61,7 @@ if (btnChangeRole) {
 const btnDeleteInactive = document.getElementById("btnDeleteInactive");
 if (btnDeleteInactive) {
     btnDeleteInactive.addEventListener("click", () => {
-        fetch(`http://localhost:8080/api/users/`, {
+        fetch(`https://productmanager.up.railway.app/api/users/`, {
             method: "DELETE",
         })
             .then((res) => res.json())

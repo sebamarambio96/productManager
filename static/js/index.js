@@ -10,7 +10,7 @@ btnAdd.addEventListener("click", () => {
     const code = document.getElementById("code").value;
     const category = document.getElementById("category").value;
     if ((title != "") & (price != "") & (stock != "") & (description != "") & (code != "") & (category != "")) {
-        fetch(`http://localhost:8080/profile/current`)
+        fetch(`https://productmanager.up.railway.app/profile/current`)
             .then((res) => res.json())
             .then((res) => {
                 if (res.role === "admin" || res.role === "premium") {
@@ -39,7 +39,7 @@ const btnDelete = document.getElementById("btnDelete");
 btnDelete.addEventListener("click", () => {
     const id = document.getElementById("id").value;
     if (id != "") {
-        fetch(`http://localhost:8080/api/products/${id}`, {
+        fetch(`https://productmanager.up.railway.app/api/products/${id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())
