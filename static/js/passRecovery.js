@@ -1,5 +1,5 @@
 let cartID;
-const serverSocket = io("http://localhost:8080");
+const serverSocket = io("https://productmanager.up.railway.app");
 //Forms
 const passRecoveryMailForm = document.getElementById("passRecoveryMail");
 const passRecoveryVerifyForm = document.getElementById("passRecoveryVerify");
@@ -21,7 +21,7 @@ passRecoveryVerifyForm.addEventListener("submit", (e) => {
 
 function passRecoveryMail(username, pass) {
     const data = { username, pass };
-    fetch("http://localhost:8080/msg/passRecoveryMail", {
+    fetch("https://productmanager.up.railway.app/msg/passRecoveryMail", {
         method: "POST",
         headers: {
             "Content-type": "application/json",
@@ -55,7 +55,7 @@ function passRecoveryMail(username, pass) {
 
 function passRecoveryVerify(token, newPassword) {
     const data = { token, pass: newPassword };
-    fetch("http://localhost:8080/msg/passRecoveryVerify", {
+    fetch("https://productmanager.up.railway.app/msg/passRecoveryVerify", {
         method: "POST",
         headers: {
             "Content-type": "application/json",

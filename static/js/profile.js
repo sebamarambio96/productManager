@@ -1,5 +1,5 @@
 let cartID;
-const serverSocket = io("http://localhost:8080");
+const serverSocket = io("https://productmanager.up.railway.app");
 const loginForm = document.getElementById("login");
 
 loginForm.addEventListener("submit", (e) => {
@@ -23,7 +23,7 @@ registerForm.addEventListener("submit", (e) => {
 
 function login(username, pass) {
     const data = { username, pass };
-    fetch("http://localhost:8080/profile/login", {
+    fetch("https://productmanager.up.railway.app/profile/login", {
         method: "POST",
         headers: {
             "Content-type": "application/json",
@@ -51,7 +51,7 @@ function login(username, pass) {
 }
 function register(user, pass, first_name, last_name, age) {
     const data = { user, pass, first_name, last_name, age, role: "" };
-    fetch("http://localhost:8080/profile/register", {
+    fetch("https://productmanager.up.railway.app/profile/register", {
         method: "POST",
         headers: {
             "Content-type": "application/json",

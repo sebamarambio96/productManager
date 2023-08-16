@@ -1,4 +1,4 @@
-const serverSocket = io("http://localhost:8080");
+const serverSocket = io("https://productmanager.up.railway.app");
 
 const btnAdd = document.getElementById("btnAdd");
 btnAdd.addEventListener("click", () => {

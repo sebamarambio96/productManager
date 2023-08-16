@@ -1,4 +1,4 @@
-const socket = io("http://localhost:8080");
+const socket = io("https://productmanager.up.railway.app");
 
 fetch("https://productmanager.up.railway.app/profile/current")
     .then((res) => res.json())

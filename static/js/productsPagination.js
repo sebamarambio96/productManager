@@ -1,14 +1,14 @@
-const serverSocket = io("http://localhost:8080");
+const serverSocket = io("https://productmanager.up.railway.app");
 let cartSave = localStorage.getItem("cartID");
 const allCookies = document.cookie;
 
-fetch("http://localhost:8080/profile/current")
+fetch("https://productmanager.up.railway.app/profile/current")
     .then((res) => res.json())
     .then((res) => {
         if (res.cart && res.cart !== "") {
             localStorage.setItem("cartID", res.cart);
         } else if (!cartSave) {
-            fetch("http://localhost:8080/api/carts/", {
+            fetch("https://productmanager.up.railway.app/api/carts/", {
                 method: "POST",
             })
                 .then((res) => res.json())
@@ -27,7 +27,7 @@ function listenAddButtons() {
                 const data = {
                     quantity: parseInt(quantityInput.value),
                 };
-                fetch(`http://localhost:8080/api/carts/${cartSave}/product/${btn.id}`, {
+                fetch(`https://productmanager.up.railway.app/api/carts/${cartSave}/product/${btn.id}`, {
                     method: "POST",
                     headers: {
                         "Content-type": "application/json",

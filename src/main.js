@@ -81,14 +81,3 @@ if (SERVER_MODE === "cluster" && cluster.isPrimary) {
     //Importa la función que comunica la base de datos y el front para actualización automatica
     ioManager(io);
 }
-
-/* const cart = await cartsDaoMoongose.readOnePopulated(
-    { _id: '644699f414b4336cb400bc9f' },
-    'cartProducts.product',
-) */
-
-/* const cart = await cartsManager.getByID('644699f414b4336cb400bc9f') */
-
-/* const cart = await ticketsService.purchase('644699f414b4336cb400bc9f','admin')
-
-Logger.silly(cart); */

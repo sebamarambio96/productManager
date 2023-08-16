@@ -1,4 +1,4 @@
-fetch("http://localhost:8080/profile/current")
+fetch("https://productmanager.up.railway.app/profile/current")
     .then((res) => res.json())
     .then((res) => {
         if (res.first_name) {

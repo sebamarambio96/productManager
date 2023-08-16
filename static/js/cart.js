@@ -1,10 +1,10 @@
 let cartID;
-const serverSocket = io("http://localhost:8080");
+const serverSocket = io("https://productmanager.up.railway.app");
 let cartSave = localStorage.getItem("cartID");
 
 if (cartSave) {
     cartID = localStorage.getItem("cartID");
-    fetch(`http://localhost:8080/api/carts/${cartID}`, {
+    fetch(`https://productmanager.up.railway.app/api/carts/${cartID}`, {
         method: "GET",
     })
         .then((res) => res.json())
@@ -41,7 +41,7 @@ if (cartSave) {
 
 //Actualizar carrito
 serverSocket.on("updateCart", async (cart) => {
-    fetch(`http://localhost:8080/api/carts/${cartID}`, {
+    fetch(`https://productmanager.up.railway.app/api/carts/${cartID}`, {
         method: "GET",
     })
         .then((res) => res.json())
@@ -80,7 +80,7 @@ function listenDeleteButtons() {
     const buttons = document.querySelectorAll(".btn-danger");
     buttons.forEach((btn) => {
         btn.addEventListener("click", (e) => {
-            fetch(`http://localhost:8080/api/carts/${cartID}/product/${btn.id}`, {
+            fetch(`https://productmanager.up.railway.app/api/carts/${cartID}/product/${btn.id}`, {
                 method: "DELETE",
             })
                 .then((res) => res.json())
@@ -95,7 +95,7 @@ function listenDeleteButtons() {
 function listenPurchase() {
     const purcharBtn = document.getElementById("purchaseBtn");
     purcharBtn.addEventListener("click", (e) => {
-        fetch(`http://localhost:8080/profile/current`)
+        fetch(`https://productmanager.up.railway.app/profile/current`)
             .then((res) => res.json())
             .then((res) => {
                 if (res.role) {
@@ -104,7 +104,7 @@ function listenPurchase() {
                         purchaser: res.user,
                         role: res.role,
                     };
-                    fetch("http://localhost:8080/api/carts/purchase", {
+                    fetch("https://productmanager.up.railway.app/api/carts/purchase", {
                         method: "POST",
                         headers: {
                             "Content-type": "application/json",

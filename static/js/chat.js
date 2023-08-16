@@ -1,6 +1,6 @@
 const serverSocket = io();
 
-fetch("http://localhost:8080/profile/current")
+fetch("https://productmanager.up.railway.app/profile/current")
     .then((res) => res.json())
     .then((res) => {
         if (res.first_name) {
@@ -19,7 +19,7 @@ fetch("http://localhost:8080/profile/current")
 
 if (btnSend) {
     btnSend.addEventListener("click", (e) => {
-        fetch("http://localhost:8080/profile/current")
+        fetch("https://productmanager.up.railway.app/profile/current")
             .then((res) => res.json())
             .then((res) => {
                 if (res.first_name) {

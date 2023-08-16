@@ -1,7 +1,7 @@
 const logoutBtn = document.getElementById("logout");
 logoutBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    fetch("http://localhost:8080/profile/logout")
+    fetch("https://productmanager.up.railway.app/profile/logout")
         .then((res) => res.json())
         .then((res) => {
             if (res.message == "Logout OK") {
