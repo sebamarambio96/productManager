@@ -80,6 +80,7 @@ function listenDeleteButtons() {
     const buttons = document.querySelectorAll(".btn-danger");
     buttons.forEach((btn) => {
         btn.addEventListener("click", (e) => {
+            console.log(btn.id);
             fetch(`https://productmanager.up.railway.app/api/carts/${cartID}/product/${btn.id}`, {
                 method: "DELETE",
             })
