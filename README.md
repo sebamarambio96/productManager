@@ -21,6 +21,7 @@ Additionally, the project includes the following elements:
 - 🚨 **Error Handler:** A global error handler that captures errors and ensures a consistent response.
 - 🌐 **Environment Variables:** Utilizing environment variables for configuration.
 - 📜 **Configurable Logging System:** A logging system that is configurable, providing insights into the system's behavior and issues.
+- 🌐 **Websockets for Real-Time Updates:** The project leverages websockets to enable real-time updates of information, ensuring swift and seamless communication for dynamic data changes. This feature enhances the user experience by delivering timely and live updates to relevant information within the system.
 
 This structured approach ensures clear and modular code organization, facilitating system maintenance and scalability.
 
