@@ -4,6 +4,10 @@
 
 This project is aimed at showcasing my backend development skills using a variety of advanced tools.
 
+## Project Architecture
+
+The project architecture is based on a DAO (Data Access Object) approach, utilizing components such as DAO, Repository, Controller, Services, Models, and Router. This structure allows for clear and modular code organization, facilitating system maintenance and scalability.
+
 ## Key Tools Utilized
 
 - **bcrypt:** For password encryption.
@@ -28,9 +32,6 @@ This project is aimed at showcasing my backend development skills using a variet
 - **swagger-jsdoc and swagger-ui-express:** API documentation with Swagger.
 - **winston and winston-console-formatter:** Logging tools.
 
-## Project Architecture
-
-The project architecture is based on a DAO (Data Access Object) approach, utilizing components such as DAO, Repository, Controller, Services, Models, and Router. This structure allows for clear and modular code organization, facilitating system maintenance and scalability.
 
 # Docker build
 docker build -t dockerProductManager
