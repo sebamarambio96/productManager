@@ -6,7 +6,23 @@ This project is aimed at showcasing my backend development skills using a variet
 
 ## Project Architecture
 
-The project architecture is based on a DAO (Data Access Object) approach, utilizing components such as DAO, Repository, Controller, Services, Models, and Router. This structure allows for clear and modular code organization, facilitating system maintenance and scalability.
+The project architecture is based on a DAO (Data Access Object) approach, utilizing the following components:
+
+- **DAO:** Data Access Object.
+- **Repository:** Manages data access and storage.
+- **Controller:** Handles request processing and response generation.
+- **Services:** Contains business logic and application-specific functionality.
+- **Models:** Defines data structures and represents the business entities.
+- **Router:** Directs incoming requests to the appropriate controller.
+
+Additionally, the project includes the following elements:
+
+- **Entities:** Representing the core business objects.
+- **Error Handler:** A global error handler that captures errors and ensures a consistent response.
+- **Environment Variables:** Utilizing environment variables for configuration.
+- **Configurable Logging System:** A logging system that is configurable, providing insights into the system's behavior and issues.
+
+This structured approach ensures clear and modular code organization, facilitating system maintenance and scalability.
 
 ## Key Tools Utilized
 
