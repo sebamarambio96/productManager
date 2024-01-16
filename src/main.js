@@ -4,6 +4,7 @@ import session from "express-session";
 import MongoStore from "connect-mongo";
 import cors from "cors";
 import cluster from "cluster";
+import bodyParser from 'body-parser';
 import { cpus } from "os";
 import { engine } from "express-handlebars";
 import { Server as SocketIOServer } from "socket.io";
@@ -49,7 +50,8 @@ app.use("/", viewsRouter);
 app.use("/api", apiRouter);
 app.use("/profile", sessionRouter);
 app.use("/msg", messagesRouter);
-
+/* app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json()); */
 //Error handling
 app.use(errorHandler);
 

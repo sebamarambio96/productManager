@@ -12,4 +12,4 @@ messagesRouter.post("/passRecoveryMail", passRecoveryMail);
 messagesRouter.post("/passRecoveryVerify", passRecoveryVerify);
 
 //Portfolio
-messagesRouter.post("/sendMail", sendRequestPortfolio);
+messagesRouter.post("/mailPortfolio", sendRequestPortfolio);

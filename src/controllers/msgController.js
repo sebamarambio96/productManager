@@ -20,10 +20,11 @@ export async function sendMail(req, res, next) {
 
 // Definir la función del controlador
 export async function sendRequestPortfolio(req, res, next) {
+    /* console.log(req.body); */
     const { name, email, subject, message } = req.body;
-
+    const templateData = { name, email, message };
     try {
-        const info = await emailService.sendMail(`Portfolio: ${name} ${email}` , 'sebams.dev@gmail.com', subject, message);
+        const info = await emailService.sendMail(`Portfolio ${email}`, "sebams.dev@gmail.com", subject, templateData);
 
         res.status(200).json({ success: true, message: "Correo enviado con éxito" });
     } catch (error) {

@@ -1,6 +1,9 @@
 import { createTransport } from "nodemailer";
 import { EMAIL_PASS, EMAIL_USER } from "../config/env.config.js";
 import { Logger } from "../utils/winston.js";
+import hbs from "hbs";
+import { promises as fs } from "fs";
+import { resolve } from "path";
 
 class EmailService {
     #clientNodemailer;
@@ -21,13 +24,24 @@ class EmailService {
             },
         });
     }
-    async sendMail(from, to, subject, text) {
+    async sendMail(from, to, subject, templateData) {
+        // Construir la ruta completa hacia el archivo de plantilla
+        const templatePath = resolve("./views/mails/emailTemplate1.hbs");
+
+        // Cargar la plantilla Handlebars desde el archivo
+        const template = await fs.readFile(templatePath, "utf-8");
+
+        // Compilar la plantilla con los datos proporcionados
+        const compiledTemplate = hbs.compile(template);
+        const html = compiledTemplate(templateData);
+
         const mailOptions = {
             from,
             to,
             subject,
-            text,
+            html,
         };
+        console.log(from);
         try {
             const info = await this.#clientNodemailer.sendMail(mailOptions);
             Logger.silly(info);
