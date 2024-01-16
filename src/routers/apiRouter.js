@@ -12,3 +12,4 @@ apiRouter.use("/carts", cartsRouter);
 apiRouter.use("/test", testRouter);
 apiRouter.use("/docs", swaggerRouter);
 apiRouter.use("/users", usersRouter);
+apiRouter.use("/test", testRouter);

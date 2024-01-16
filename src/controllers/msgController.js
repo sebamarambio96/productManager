@@ -18,6 +18,19 @@ export async function sendMail(req, res, next) {
     res.redirect("/");
 }
 
+// Definir la función del controlador
+export async function sendRequestPortfolio(req, res, next) {
+    const { name, email, subject, message } = req.body;
+
+    try {
+        const info = await emailService.sendMail(`Portfolio: ${name} ${email}` , 'sebams.dev@gmail.com', subject, message);
+
+        res.status(200).json({ success: true, message: "Correo enviado con éxito" });
+    } catch (error) {
+        next(error);
+    }
+}
+
 export async function passRecoveryMail(req, res, next) {
     const { username } = req.body;
     try {

@@ -40,7 +40,7 @@ class EmailService {
 
     async sendRequest(to, message) {
         const mailOptions = {
-            from: "Admin eccomerce",
+            from: "Server Backend Js",
             to: to,
             subject: "Mail de consulta",
             text: message,

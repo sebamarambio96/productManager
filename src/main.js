@@ -41,7 +41,7 @@ app.use("/static", express.static("./static"));
 app.engine(".hbs", engine({ extname: ".hbs" }));
 app.set("view engine", ".hbs");
 app.set("views", "./views");
-app.use(express.json());
+app.use(express.json({ limit: '100mb' }));
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(passportInit, passportSession);

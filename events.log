@@ -1,548 +1,103 @@
+
+{"level":"silly","message":"./static/dataReceive/datos_2023-09-01_13-53-54.json"}
 {"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 18452"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 20252"}
+{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
+{"level":"silly","message":"./static/dataReceive/datos_2023-09-01_15-54-09.json"}
+{"level":"silly","message":"Base de datos conectada: Practica"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 4080"}
+{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
+{"level":"silly","message":"./static/dataReceive/datos_2023-09-01_16-15-04.json"}
+{"level":"silly","message":"Base de datos conectada: Practica"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 19880"}
+{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
+{"level":"silly","message":"./static/dataReceive/datos_2023-09-01_16-16-47.json"}
+{"level":"silly","message":"Base de datos conectada: Practica"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 20576"}
 {"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
 {"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 8656"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 7080"}
+{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
+{"level":"silly","message":"./static/dataReceive/datos_2023-09-01_16-18-49.json"}
+{"level":"silly","message":"Base de datos conectada: Practica"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 9564"}
+{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
+{"level":"silly","message":"./static/dataReceive/datos_2023-09-01_16-20-10.json"}
+{"level":"silly","message":"Base de datos conectada: Practica"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 18612"}
+{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
+{"level":"silly","message":"./static/dataReceive/datos_2023-09-01_16-20-35.json"}
+{"level":"silly","message":"Base de datos conectada: Practica"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 3836"}
+{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
+{"level":"silly","message":"./static/dataReceive/datos_2023-09-01_16-25-31.json"}
+{"level":"silly","message":"Base de datos conectada: Practica"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 21428"}
 {"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
 {"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 14364"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 13100"}
 {"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
+{"level":"silly","message":"./static/dataReceive/datos_2023-09-01_17-59-02.json"}
 {"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 15060"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 19028"}
 {"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
+{"level":"silly","message":"./static/dataReceive/datos_2023-09-01_18-00-02.json"}
 {"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 11924"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 12460"}
 {"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# DkrKLmCSP6QfeuazAAAC"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# 5N-O4AlYZfUOpHk3AAAD"}
-{"level":"silly","message":{"pass":"1","username":"s.marambiosandoval@gmail.com"}}
-{"level":"http","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-15T22:16:14.468Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"64a76c46b0610bb8ad81039b"}
-{"level":"silly","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTc2YzQ2YjA2MTBiYjhhZDgxMDM5YiIsImlhdCI6MTY5MjIxNTkzMiwiZXhwIjoxNjkyMzAwNTMyfQ.0XwunRf8uFRQcMj1tnanbN2tbBmGY0c6f25PKvlor34"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# ucyrzctHNYS-kVPoAAAF"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-15T22:16:14.468Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-15T22:16:14.468Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# r8h6YwBM8vuFjbJDAAAH"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-15T22:16:14.468Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-15T22:16:14.468Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# Rs2GIjd7HjpAD25pAAAJ"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-15T22:16:14.468Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
+{"level":"silly","message":"./static/dataReceive/datos_2023-09-01_18-01-02.json"}
 {"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 9384"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 4084"}
 {"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# DkA2Hep4x_aKvZCFAAAB"}
+{"level":"silly","message":"./static/dataReceive/datos_2023-09-01_18-02-02.json"}
 {"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 17880"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 20252"}
 {"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# EXBBQBnR7VkkfXAJAAAB"}
+{"level":"silly","message":"./static/dataReceive/datos_2023-09-01_18-03-02.json"}
 {"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 17384"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 2008"}
 {"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# jpzYCEfZBDWQsOONAAAB"}
+{"level":"silly","message":"./static/dataReceive/datos_2023-09-01_18-04-02.json"}
 {"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 1340"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 15816"}
 {"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# eo7w8lUYGRUtaeFIAAAB"}
+{"level":"silly","message":"./static/dataReceive/datos_2023-09-01_18-05-02.json"}
 {"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 4720"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 328"}
 {"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# 5Tx0I9HPU77uThc4AAAB"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# XgUbtEktsSmVA0t_AAAD"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# RReGdcSjeOm46QmCAAAF"}
-{"level":"silly","message":{"pass":"1","username":"s.marambiosandoval@gmail.com"}}
-{"level":"http","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T19:58:52.353Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"64a76c46b0610bb8ad81039b"}
-{"level":"silly","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTc2YzQ2YjA2MTBiYjhhZDgxMDM5YiIsImlhdCI6MTY5MjIxNjA4OSwiZXhwIjoxNjkyMzAwNjg5fQ.e0AoCRKZisalXue19IxbH-nGvjmd4Iy9eTQKHHfNoX0"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# 7QN4PmePeoGW_rHfAAAH"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T19:58:52.353Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T19:58:52.353Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# eKjtNl3kALoZz78cAAAJ"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T19:58:52.353Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T19:58:52.353Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# VXznZmScvYKrlqzyAAAL"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T19:58:52.353Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
+{"level":"silly","message":"./static/dataReceive/datos_2023-09-01_18-06-02.json"}
 {"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 13688"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 19124"}
 {"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# K5f3Vbt4i8dYY8V2AAAB"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# LqimWn0ybRjjZhhBAAAD"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# pz9UprSjSyb5gCq5AAAF"}
-{"level":"silly","message":{"pass":"1","username":"s.marambiosandoval@gmail.com"}}
-{"level":"http","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:01:28.852Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"64a76c46b0610bb8ad81039b"}
-{"level":"silly","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTc2YzQ2YjA2MTBiYjhhZDgxMDM5YiIsImlhdCI6MTY5MjIxNjEzNCwiZXhwIjoxNjkyMzAwNzM0fQ.A64Cf9Vc4jua9CQ3H5u9awpwEob6XMHEs2Ujt206TPc"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# BPzWM7YfBEkhWDraAAAH"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:01:28.852Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:01:28.852Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# QUZ9xot0qYw_CBVeAAAJ"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:01:28.852Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:01:28.852Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# 54QeeAkcmR0qY9ciAAAL"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:01:28.852Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
+{"level":"silly","message":"./static/dataReceive/datos_2023-09-01_18-07-03.json"}
 {"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 7968"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 10768"}
 {"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# BGiSzPF30b4kSC9jAAAB"}
+{"level":"silly","message":"./static/dataReceive/datos_2023-09-01_18-08-02.json"}
 {"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 5972"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 20076"}
 {"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# Joc2fMuIn83Y70p3AAAB"}
+{"level":"silly","message":"./static/dataReceive/datos_2023-09-01_18-08-43.json"}
 {"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 3512"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 3372"}
 {"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# 3jCeCc94CVbET5bMAAAB"}
+{"level":"silly","message":"./static/dataReceive/datos_2023-09-01_18-14-02.json"}
 {"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 15624"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 20584"}
 {"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# BQMRF9YIDJWaSFBIAAAB"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# yaHC4MbTj0kD-UXCAAAD"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# _bajkvAjk1pwMiioAAAF"}
-{"level":"silly","message":{"pass":"1","username":"s.marambiosandoval@gmail.com"}}
-{"level":"http","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:02:14.229Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"64a76c46b0610bb8ad81039b"}
-{"level":"silly","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTc2YzQ2YjA2MTBiYjhhZDgxMDM5YiIsImlhdCI6MTY5MjIxNjIzNiwiZXhwIjoxNjkyMzAwODM2fQ.VcE6uL6F_fsyFU1eQ9vO7OuZduhj63FDV9y0rqEZYyg"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# Lv-97dh4ZYv3NvsFAAAH"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:02:14.229Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:02:14.229Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# hcwuG_BJ4e4Hzi_bAAAJ"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:02:14.229Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:02:14.229Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# cKVrGD4oTVwhZB82AAAL"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:02:14.229Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:02:14.229Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
+{"level":"silly","message":"./static/dataReceive/datos_2023-09-01_18-16-11.json"}
 {"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 19100"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 19596"}
 {"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# hntMFbSvGzLf2ENFAAAB"}
+{"level":"silly","message":"./static/dataReceive/datos_2023-09-01_18-17-02.json"}
 {"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 18712"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 20784"}
 {"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# bc0TWD2LmPJBlX0YAAAB"}
+{"level":"silly","message":"./static/dataReceive/datos_2023-09-01_18-20-02.json"}
 {"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 7296"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 20232"}
 {"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# BLkPiPrm4eNpp0nzAAAB"}
+{"level":"silly","message":"./static/dataReceive/datos_2023-09-01_18-21-02.json"}
 {"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 13680"}
+{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 21648"}
 {"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# GAnVYNq4rUdJzbZdAAAB"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# 3TufXSEKhxajsGTXAAAD"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# Ix6k35HV2nDyatm-AAAF"}
-{"level":"silly","message":{"pass":"1","username":"s.marambiosandoval@gmail.com"}}
-{"level":"http","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:03:56.168Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"64a76c46b0610bb8ad81039b"}
-{"level":"silly","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTc2YzQ2YjA2MTBiYjhhZDgxMDM5YiIsImlhdCI6MTY5MjIxNjMzMCwiZXhwIjoxNjkyMzAwOTMwfQ.eoZ_7AFOAABJ3p-jRWi5IBBJZmIwn_bXeN0BbaMPWtg"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# tQCEipmRxdz-AMq4AAAH"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:03:56.168Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:03:56.168Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# agU752wmNw_yS9XFAAAJ"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:03:56.168Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:03:56.168Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# xcLwj_clZUrVfNxoAAAL"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:03:56.168Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:03:56.168Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 13832"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# QI3aqlo99MHORFf_AAAB"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# Po1nlTF8Ajw6YtUAAAAD"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# ahAzH46GoKTOxETBAAAF"}
-{"level":"silly","message":{"pass":"1","username":"prueba@gmail.com"}}
-{"level":"silly","message":{"pass":"123","username":"prueba@gmail.com"}}
-{"level":"http","message":{"_id":"64dbc418270cc588e3967a15","age":123,"cart":"","documents":[],"first_name":"asdf","last_name":"asdfa","pass":"$2b$10$vjl3/toeBi5YpHE52oNoD.ehSfbxi//jtz1zIPX2EnhVl2RaIJdLK","role":"user","user":"prueba@gmail.com"}}
-{"level":"silly","message":"64dbc418270cc588e3967a15"}
-{"level":"silly","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZGJjNDE4MjcwY2M1ODhlMzk2N2ExNSIsImlhdCI6MTY5MjIxNjQ2NCwiZXhwIjoxNjkyMzAxMDY0fQ.1z0YCUcOgBE_Q0q83OVpjgFNnp-leW71VXbYktnbgXY"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# me4G5jYzY5XqOJ4xAAAH"}
-{"level":"silly","message":{"_id":"64dbc418270cc588e3967a15","age":123,"cart":"","documents":[],"first_name":"asdf","last_name":"asdfa","pass":"$2b$10$vjl3/toeBi5YpHE52oNoD.ehSfbxi//jtz1zIPX2EnhVl2RaIJdLK","role":"user","user":"prueba@gmail.com"}}
-{"level":"silly","message":{"_id":"64dbc418270cc588e3967a15","age":123,"cart":"","documents":[],"first_name":"asdf","last_name":"asdfa","pass":"$2b$10$vjl3/toeBi5YpHE52oNoD.ehSfbxi//jtz1zIPX2EnhVl2RaIJdLK","role":"user","user":"prueba@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# webXSqShPIKkAY-RAAAJ"}
-{"level":"silly","message":{"_id":"64dbc418270cc588e3967a15","age":123,"cart":"","documents":[],"first_name":"asdf","last_name":"asdfa","pass":"$2b$10$vjl3/toeBi5YpHE52oNoD.ehSfbxi//jtz1zIPX2EnhVl2RaIJdLK","role":"user","user":"prueba@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# R6GjbHkNHpXsh-gHAAAL"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# 8Xf6Ow0oj4eQ2FBCAAAN"}
-{"level":"silly","message":{"pass":"1","username":"s.marambiosandoval@gmail.com"}}
-{"level":"http","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:05:30.362Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"64a76c46b0610bb8ad81039b"}
-{"level":"silly","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTc2YzQ2YjA2MTBiYjhhZDgxMDM5YiIsImlhdCI6MTY5MjIxNjQ4OSwiZXhwIjoxNjkyMzAxMDg5fQ.yuP9_JYS61uQrWixWj-RxXMSpi_N6E4981JnYSVl3yw"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# kdWTqtq3zpNOEWSzAAAQ"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# kRWQ__yBoB8xMrYcAAAR"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:05:30.362Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:05:30.362Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:05:30.362Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:05:30.362Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# npe-exazG3LVeolMAAAT"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:05:30.362Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:05:30.362Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 2740"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# 5hEcCNakD8naNxTtAAAB"}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 8684"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# Li7lhALKQUVgmsZ0AAAB"}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 14600"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# PXI7aKuWDXrB0yY0AAAB"}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 19020"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# wp3Q9Hbh5vM9l7yFAAAB"}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 11740"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# FF-YYM6_LVm2ayl1AAAB"}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 11780"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# oYHPeFF3MNJU3gMuAAAB"}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 14364"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# IY8unrxn3Ubgd3o8AAAB"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# ryfjCd3KjCq9CISLAAAD"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# s3wQ-SWgmljZmoCCAAAF"}
-{"level":"silly","message":{"pass":"123","username":"albano@gmail.com"}}
-{"level":"http","message":{"_id":"64dd2da1cb45155fcd778b99","age":12,"cart":"","documents":[],"first_name":"Usuario ","last_name":"Prueba2","pass":"$2b$10$DfKYBrE.sMfIv028m9.lGek68LjncJ9RpVwa1VjWERdCfUubd1vxu","role":"user","user":"albano@gmail.com"}}
-{"level":"silly","message":"64dd2da1cb45155fcd778b99"}
-{"level":"silly","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZGQyZGExY2I0NTE1NWZjZDc3OGI5OSIsImlhdCI6MTY5MjIxNjc2MSwiZXhwIjoxNjkyMzAxMzYxfQ.GSfRDhH9OfAYfNjli2WUJBQU_RHuCQw0CIMLOHBwYhk"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# OAw7vWgpjBztamHFAAAH"}
-{"level":"silly","message":{"_id":"64dd2da1cb45155fcd778b99","age":12,"cart":"","documents":[],"first_name":"Usuario ","last_name":"Prueba2","pass":"$2b$10$DfKYBrE.sMfIv028m9.lGek68LjncJ9RpVwa1VjWERdCfUubd1vxu","role":"user","user":"albano@gmail.com"}}
-{"level":"silly","message":{"_id":"64dd2da1cb45155fcd778b99","age":12,"cart":"","documents":[],"first_name":"Usuario ","last_name":"Prueba2","pass":"$2b$10$DfKYBrE.sMfIv028m9.lGek68LjncJ9RpVwa1VjWERdCfUubd1vxu","role":"user","user":"albano@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# BMEULQSndakx83IqAAAJ"}
-{"level":"silly","message":{"_id":"64dd2da1cb45155fcd778b99","age":12,"cart":"","documents":[],"first_name":"Usuario ","last_name":"Prueba2","pass":"$2b$10$DfKYBrE.sMfIv028m9.lGek68LjncJ9RpVwa1VjWERdCfUubd1vxu","role":"user","user":"albano@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# 3yoBJijH4yo95wyBAAAL"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# xAuDP3V_TS00x1PwAAAN"}
-{"level":"silly","message":{"pass":"1","username":"s.marambiosandoval@gmail.com"}}
-{"level":"http","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:08:09.598Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"64a76c46b0610bb8ad81039b"}
-{"level":"silly","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTc2YzQ2YjA2MTBiYjhhZDgxMDM5YiIsImlhdCI6MTY5MjIxNjc5NiwiZXhwIjoxNjkyMzAxMzk2fQ.aX7b6WjJV83SNPeiQqbhNduQX689XQ48krN7TrdrIAE"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# jZdmCb9LQo2wk4kdAAAQ"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# 0P2fLVA3iUgMr7cTAAAR"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:08:09.598Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:08:09.598Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:08:09.598Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:08:09.598Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# O1BNzuWio2mqCmeVAAAT"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:08:09.598Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:08:09.598Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 3572"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# XoEco_COU665XmyaAAAB"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# hPnPKuoSO-QD2NglAAAD"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# QM2pY7P1PSQJghIXAAAF"}
-{"level":"silly","message":{"pass":"1","username":"s.marambiosandoval@gmail.com"}}
-{"level":"http","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:13:16.620Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"64a76c46b0610bb8ad81039b"}
-{"level":"silly","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTc2YzQ2YjA2MTBiYjhhZDgxMDM5YiIsImlhdCI6MTY5MjIxNjgxOSwiZXhwIjoxNjkyMzAxNDE5fQ.y6RtcmaEik5968Q-jSjFeHbDSo3ZC7Ioe8TLoos6yvc"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# AO37K6VXrq03PK7ZAAAH"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:13:16.620Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:13:16.620Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# W4MZfb8Qo50nuQ34AAAJ"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:13:16.620Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:13:16.620Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# xvd58qEQ9n8Yy7WeAAAL"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:13:16.620Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:13:16.620Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# uuTl5c9k6JO8pUjDAAAN"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# p3R0X8qnz84jrg_RAAAP"}
-{"level":"silly","message":{"pass":"123","username":"albano@gmail.com"}}
-{"level":"http","message":{"_id":"64dd2e24098b033988020268","age":123,"cart":"","documents":[],"first_name":"Entidad","last_name":"Prueba","pass":"$2b$10$ny6Klbl44VgQr3oxrMAJPuGH9Y1doTzV76hMmwSWxJxLZyEpX4fzi","role":"user","user":"albano@gmail.com"}}
-{"level":"silly","message":"64dd2e24098b033988020268"}
-{"level":"silly","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZGQyZTI0MDk4YjAzMzk4ODAyMDI2OCIsImlhdCI6MTY5MjIxNjg5MSwiZXhwIjoxNjkyMzAxNDkxfQ.E7ISXOeZuj9EXH6XLkBKiOAmuQH3rfIwNagQH1T3oPE"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# qQvxKyAuMs9QNPvpAAAS"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# 5uP0TtNpw6xZxIQwAAAT"}
-{"level":"silly","message":{"_id":"64dd2e24098b033988020268","age":123,"cart":"","documents":[],"first_name":"Entidad","last_name":"Prueba","pass":"$2b$10$ny6Klbl44VgQr3oxrMAJPuGH9Y1doTzV76hMmwSWxJxLZyEpX4fzi","role":"user","user":"albano@gmail.com"}}
-{"level":"silly","message":{"_id":"64dd2e24098b033988020268","age":123,"cart":"","documents":[],"first_name":"Entidad","last_name":"Prueba","pass":"$2b$10$ny6Klbl44VgQr3oxrMAJPuGH9Y1doTzV76hMmwSWxJxLZyEpX4fzi","role":"user","user":"albano@gmail.com"}}
-{"level":"silly","message":{"_id":"64dd2e24098b033988020268","age":123,"cart":"","documents":[],"first_name":"Entidad","last_name":"Prueba","pass":"$2b$10$ny6Klbl44VgQr3oxrMAJPuGH9Y1doTzV76hMmwSWxJxLZyEpX4fzi","role":"user","user":"albano@gmail.com"}}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 8224"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# zypYtm7FDnM23bINAAAC"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# 33kItnSrhjz8qBsTAAAD"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# RfDpmHIWRWjsjh-2AAAF"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# BUnv3gOC-rtiJA2gAAAH"}
-{"level":"silly","message":{"pass":"1","username":"s.marambiosandoval@gmail.com"}}
-{"level":"http","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:13:39.679Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"64a76c46b0610bb8ad81039b"}
-{"level":"silly","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTc2YzQ2YjA2MTBiYjhhZDgxMDM5YiIsImlhdCI6MTY5MjIxNjk0MCwiZXhwIjoxNjkyMzAxNTQwfQ.kNx6aps_XRZ11I4bZwjpvS6thmdHRi33jtAinc_thP4"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# W9SueLdnrwztwIGIAAAJ"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:13:39.679Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:13:39.679Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# A08tKVqxHTk25oAuAAAL"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:13:39.679Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:13:39.679Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# ZFP9tGx4ocT8WgraAAAN"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:13:39.679Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:13:39.679Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 15464"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# OZ7GstFGVD-NC0RTAAAB"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# gX7pse7BIO9tClxVAAAD"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# Uuxa-pl9u3AKyxkyAAAF"}
-{"level":"silly","message":{"pass":"123","username":"albano@gmail.com"}}
-{"level":"http","message":{"_id":"64dd2e9a46940c18e6ba5e08","age":123,"cart":"","documents":[],"first_name":"asdfasf","last_name":"asdfasd","pass":"$2b$10$WUwvD3JBAeW2wLMmWlpqNeonfDkKU4OPq5e8I2r5g/DCOynd1/v7C","role":"user","user":"albano@gmail.com"}}
-{"level":"silly","message":"64dd2e9a46940c18e6ba5e08"}
-{"level":"silly","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZGQyZTlhNDY5NDBjMThlNmJhNWUwOCIsImlhdCI6MTY5MjIxNjk5MywiZXhwIjoxNjkyMzAxNTkzfQ.fuQJnH9r9CnLWLtInI7kMdxGLcUlJhokSFWXLLZI-xA"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# nsJuoqyhTQFcoCvhAAAH"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# oBj4lTAKoNbOL6LnAAAJ"}
-{"level":"silly","message":{"_id":"64dd2e9a46940c18e6ba5e08","age":123,"cart":"","documents":[],"first_name":"asdfasf","last_name":"asdfasd","pass":"$2b$10$WUwvD3JBAeW2wLMmWlpqNeonfDkKU4OPq5e8I2r5g/DCOynd1/v7C","role":"user","user":"albano@gmail.com"}}
-{"level":"silly","message":{"_id":"64dd2e9a46940c18e6ba5e08","age":123,"cart":"","documents":[],"first_name":"asdfasf","last_name":"asdfasd","pass":"$2b$10$WUwvD3JBAeW2wLMmWlpqNeonfDkKU4OPq5e8I2r5g/DCOynd1/v7C","role":"user","user":"albano@gmail.com"}}
-{"level":"silly","message":{"_id":"64dd2e9a46940c18e6ba5e08","age":123,"cart":"","documents":[],"first_name":"asdfasf","last_name":"asdfasd","pass":"$2b$10$WUwvD3JBAeW2wLMmWlpqNeonfDkKU4OPq5e8I2r5g/DCOynd1/v7C","role":"user","user":"albano@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# 1cqwdjwv4qvz6906AAAL"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# kDOy82TcVInWg7qSAAAN"}
-{"level":"silly","message":{"pass":"123","username":"albano@gmail.com"}}
-{"level":"http","message":{"_id":"64dd2e9a46940c18e6ba5e08","age":123,"cart":"","documents":[],"first_name":"asdfasf","last_connection":"2023-08-16T20:16:32.942Z","last_name":"asdfasd","pass":"$2b$10$WUwvD3JBAeW2wLMmWlpqNeonfDkKU4OPq5e8I2r5g/DCOynd1/v7C","role":"user","user":"albano@gmail.com"}}
-{"level":"silly","message":"64dd2e9a46940c18e6ba5e08"}
-{"level":"silly","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZGQyZTlhNDY5NDBjMThlNmJhNWUwOCIsImlhdCI6MTY5MjIxNzA3OSwiZXhwIjoxNjkyMzAxNjc5fQ.aoKvF6kO-8xiK-wst5JTETfMH3H-bzPnhs8tP4nFeeU"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# Ove2iD8HyfUlCzHAAAAP"}
-{"level":"silly","message":{"_id":"64dd2e9a46940c18e6ba5e08","age":123,"cart":"","documents":[],"first_name":"asdfasf","last_connection":"2023-08-16T20:16:32.942Z","last_name":"asdfasd","pass":"$2b$10$WUwvD3JBAeW2wLMmWlpqNeonfDkKU4OPq5e8I2r5g/DCOynd1/v7C","role":"user","user":"albano@gmail.com"}}
-{"level":"silly","message":{"_id":"64dd2e9a46940c18e6ba5e08","age":123,"cart":"","documents":[],"first_name":"asdfasf","last_connection":"2023-08-16T20:16:32.942Z","last_name":"asdfasd","pass":"$2b$10$WUwvD3JBAeW2wLMmWlpqNeonfDkKU4OPq5e8I2r5g/DCOynd1/v7C","role":"user","user":"albano@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# 9_3lInSDPjTY1E3TAAAR"}
-{"level":"silly","message":{"_id":"64dd2e9a46940c18e6ba5e08","age":123,"cart":"","documents":[],"first_name":"asdfasf","last_connection":"2023-08-16T20:16:32.942Z","last_name":"asdfasd","pass":"$2b$10$WUwvD3JBAeW2wLMmWlpqNeonfDkKU4OPq5e8I2r5g/DCOynd1/v7C","role":"user","user":"albano@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# FyVz80P3fh-uwjUlAAAT"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# 8eHeTOsVIw_GzGFPAAAV"}
-{"level":"silly","message":{"_id":"64dd2e9a46940c18e6ba5e08","age":123,"cart":"","documents":[],"first_name":"asdfasf","last_connection":"2023-08-16T20:16:32.942Z","last_name":"asdfasd","pass":"$2b$10$WUwvD3JBAeW2wLMmWlpqNeonfDkKU4OPq5e8I2r5g/DCOynd1/v7C","role":"user","user":"albano@gmail.com"}}
-{"level":"silly","message":{"pass":"1","username":"s.marambiosandoval@gmail.com"}}
-{"level":"http","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:15:40.579Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"64a76c46b0610bb8ad81039b"}
-{"level":"silly","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTc2YzQ2YjA2MTBiYjhhZDgxMDM5YiIsImlhdCI6MTY5MjIxNzA4NSwiZXhwIjoxNjkyMzAxNjg1fQ.3UJhau0lMTr6oPY2t998BL2mCnuhp5d3K4_DpjNs1Sc"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# N1M4x-t_Qxux-whcAAAY"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# oXgd4jZ1GGC3Eam5AAAZ"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:15:40.579Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:15:40.579Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:15:40.579Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:15:40.579Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# -PJW_8smk1HXAQHVAAAb"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:15:40.579Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:15:40.579Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# j1tKePz0yoMDk13UAAAd"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# YmeLoCAxmQs3BWXtAAAf"}
-{"level":"silly","message":{"pass":"1","username":"s.marambiosandoval@gmail.com"}}
-{"level":"http","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:18:05.361Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"64a76c46b0610bb8ad81039b"}
-{"level":"silly","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTc2YzQ2YjA2MTBiYjhhZDgxMDM5YiIsImlhdCI6MTY5MjIxNzEzMiwiZXhwIjoxNjkyMzAxNzMyfQ.aSV3ens9v3szSO37rvb65LdIb1rckvbiGO1cxAW-h78"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# Arszm6dpMCRhJeBzAAAi"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# mnfS5uv0DtzV8UivAAAj"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:18:05.361Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:18:05.361Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:18:05.361Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:18:05.361Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# LxxWJmBpLxRKk4etAAAl"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:18:05.361Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:18:05.361Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 8092"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# XtXz5KsBqgjWtH00AAAB"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# lJ4Tt6a1l9XfxCVUAAAD"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# feiB6RxS04NPZu4oAAAF"}
-{"level":"silly","message":{"pass":"123","username":"albano@gmail.com"}}
-{"level":"http","message":{"_id":"64dd2fbf505f906ec8802e05","age":123,"cart":"","documents":[],"first_name":"asdf","last_name":"asdf","pass":"$2b$10$RAiib2NpRUz5TPfdo4fah.aD129pkUG98mWnuNT9uF2ZMmG8Bgsh6","role":"user","user":"albano@gmail.com"}}
-{"level":"silly","message":"64dd2fbf505f906ec8802e05"}
-{"level":"silly","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZGQyZmJmNTA1ZjkwNmVjODgwMmUwNSIsImlhdCI6MTY5MjIxNzI4NSwiZXhwIjoxNjkyMzAxODg1fQ.CeF9sXdgrZawZWVhIfbVFMvQtBWg6uKAZfMs1RNoKss"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# PySQeCzdrM4oHheYAAAH"}
-{"level":"silly","message":{"_id":"64dd2fbf505f906ec8802e05","age":123,"cart":"","documents":[],"first_name":"asdf","last_name":"asdf","pass":"$2b$10$RAiib2NpRUz5TPfdo4fah.aD129pkUG98mWnuNT9uF2ZMmG8Bgsh6","role":"user","user":"albano@gmail.com"}}
-{"level":"silly","message":{"_id":"64dd2fbf505f906ec8802e05","age":123,"cart":"","documents":[],"first_name":"asdf","last_name":"asdf","pass":"$2b$10$RAiib2NpRUz5TPfdo4fah.aD129pkUG98mWnuNT9uF2ZMmG8Bgsh6","role":"user","user":"albano@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# 77iaw41ULW6ft3KRAAAJ"}
-{"level":"silly","message":{"_id":"64dd2fbf505f906ec8802e05","age":123,"cart":"","documents":[],"first_name":"asdf","last_name":"asdf","pass":"$2b$10$RAiib2NpRUz5TPfdo4fah.aD129pkUG98mWnuNT9uF2ZMmG8Bgsh6","role":"user","user":"albano@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# HFIfyn6OgehsO4McAAAL"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# GE_MMYjvnkFLk6DWAAAN"}
-{"level":"silly","message":{"_id":"64dd2fbf505f906ec8802e05","age":123,"cart":"","documents":[],"first_name":"asdf","last_name":"asdf","pass":"$2b$10$RAiib2NpRUz5TPfdo4fah.aD129pkUG98mWnuNT9uF2ZMmG8Bgsh6","role":"user","user":"albano@gmail.com"}}
-{"level":"silly","message":{"pass":"1","username":"s.marambiosandoval@gmail.com"}}
-{"level":"http","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:18:51.965Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"64a76c46b0610bb8ad81039b"}
-{"level":"silly","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTc2YzQ2YjA2MTBiYjhhZDgxMDM5YiIsImlhdCI6MTY5MjIxNzI5MiwiZXhwIjoxNjkyMzAxODkyfQ.GeFlyW3yX98ehRgEiVkk9O29dU4yI4a9fNTGT4Uye2E"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# -P8KrUbZUuuUAF38AAAQ"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# tFMQdHr2iujRdDmNAAAR"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:18:51.965Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:18:51.965Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:18:51.965Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:18:51.965Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# RUunPU358o3bBsV9AAAT"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:18:51.965Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# ProrhFoScb4FkLpmAAAW"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# NrOEjyrGUiRND2OJAAAX"}
-{"level":"silly","message":{"pass":"1","username":"s.marambiosandoval@gmail.com"}}
-{"level":"http","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:21:32.218Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"64a76c46b0610bb8ad81039b"}
-{"level":"silly","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTc2YzQ2YjA2MTBiYjhhZDgxMDM5YiIsImlhdCI6MTY5MjIxNzMyNiwiZXhwIjoxNjkyMzAxOTI2fQ.kY9Nvx1P-YOpftQNGOw14t1NDex4i_pNKDMDD45IJ3o"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# i0pI5v2P99s5yl33AAAa"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# WHfRxOe8rqyxvwZkAAAb"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:21:32.218Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:21:32.218Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:21:32.218Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:21:32.218Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# MKcsWXWY-UiKuJesAAAd"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:21:32.218Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:21:32.218Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 18880"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# QwFy_4tjLSfn9dFlAAAB"}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 13688"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# ucuu0kqUiJ5EhTnQAAAB"}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 12616"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 16852"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# 9QjLdoTphIB6SWrGAAAB"}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 16972"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# yVTGQ5m_ocF1CqIbAAAB"}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 3808"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# Yx5e8AIUU_YUl8R-AAAB"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# 24Tc3LbKMQIu8W6aAAAD"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# LlF80z3OQLxDpOycAAAG"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# I0UfYcMaEJ5OOBcaAAAH"}
-{"level":"silly","message":{"pass":"1","username":"sebams.dev@gmail.com"}}
-{"level":"http","message":{"_id":"64dbbd2f4112f68061f35ade","age":27,"cart":"","documents":[{"_id":"64dbbffe679d75b4687ae30e","name":"1630443841858.jpeg","reference":"uploads\\documents\\1692123134035_1630443841858.jpeg"},{"_id":"64dbbfff679d75b4687ae312","name":"1630443841858.jpeg","reference":"uploads\\documents\\1692123135705_1630443841858.jpeg"},{"_id":"64dbc002679d75b4687ae317","name":"1630443841858.jpeg","reference":"uploads\\documents\\1692123138565_1630443841858.jpeg"}],"first_name":"Usuario ","last_name":"Prueba","pass":"$2b$10$9pEzkvjBJMiIOg25ssASJuRVH5vX8vO/MkVYb3HcizPmMspNY1J/m","role":"premium","user":"sebams.dev@gmail.com"}}
-{"level":"silly","message":"64dbbd2f4112f68061f35ade"}
-{"level":"silly","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0ZGJiZDJmNDExMmY2ODA2MWYzNWFkZSIsImlhdCI6MTY5MjIxNzU5NCwiZXhwIjoxNjkyMzAyMTk0fQ.Ec59pL24kSAObGp8yHAErEEygfiIcZJD5SQsHz184EY"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# TLDLNY-Fu2XgADSzAAAJ"}
-{"level":"silly","message":{"_id":"64dbbd2f4112f68061f35ade","age":27,"cart":"","documents":[{"_id":"64dbbffe679d75b4687ae30e","name":"1630443841858.jpeg","reference":"uploads\\documents\\1692123134035_1630443841858.jpeg"},{"_id":"64dbbfff679d75b4687ae312","name":"1630443841858.jpeg","reference":"uploads\\documents\\1692123135705_1630443841858.jpeg"},{"_id":"64dbc002679d75b4687ae317","name":"1630443841858.jpeg","reference":"uploads\\documents\\1692123138565_1630443841858.jpeg"}],"first_name":"Usuario ","last_name":"Prueba","pass":"$2b$10$9pEzkvjBJMiIOg25ssASJuRVH5vX8vO/MkVYb3HcizPmMspNY1J/m","role":"premium","user":"sebams.dev@gmail.com"}}
-{"level":"silly","message":{"_id":"64dbbd2f4112f68061f35ade","age":27,"cart":"","documents":[{"_id":"64dbbffe679d75b4687ae30e","name":"1630443841858.jpeg","reference":"uploads\\documents\\1692123134035_1630443841858.jpeg"},{"_id":"64dbbfff679d75b4687ae312","name":"1630443841858.jpeg","reference":"uploads\\documents\\1692123135705_1630443841858.jpeg"},{"_id":"64dbc002679d75b4687ae317","name":"1630443841858.jpeg","reference":"uploads\\documents\\1692123138565_1630443841858.jpeg"}],"first_name":"Usuario ","last_name":"Prueba","pass":"$2b$10$9pEzkvjBJMiIOg25ssASJuRVH5vX8vO/MkVYb3HcizPmMspNY1J/m","role":"premium","user":"sebams.dev@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# 5dXu_JipwmJTwkO1AAAL"}
-{"level":"silly","message":{"_id":"64dbbd2f4112f68061f35ade","age":27,"cart":"","documents":[{"_id":"64dbbffe679d75b4687ae30e","name":"1630443841858.jpeg","reference":"uploads\\documents\\1692123134035_1630443841858.jpeg"},{"_id":"64dbbfff679d75b4687ae312","name":"1630443841858.jpeg","reference":"uploads\\documents\\1692123135705_1630443841858.jpeg"},{"_id":"64dbc002679d75b4687ae317","name":"1630443841858.jpeg","reference":"uploads\\documents\\1692123138565_1630443841858.jpeg"}],"first_name":"Usuario ","last_name":"Prueba","pass":"$2b$10$9pEzkvjBJMiIOg25ssASJuRVH5vX8vO/MkVYb3HcizPmMspNY1J/m","role":"premium","user":"sebams.dev@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# 5v4EYVm_LMxka9unAAAN"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# kOJBx3i8GCOwlHktAAAP"}
-{"level":"silly","message":{"pass":"1","username":"s.marambiosandoval@gmail.com"}}
-{"level":"http","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:22:06.499Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"64a76c46b0610bb8ad81039b"}
-{"level":"silly","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTc2YzQ2YjA2MTBiYjhhZDgxMDM5YiIsImlhdCI6MTY5MjIxNzYxNiwiZXhwIjoxNjkyMzAyMjE2fQ.QIfd8WEgMCCFPaRx88EkVKLM2VyrqvU6eAAMP5mwrn0"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# QSLTMYTp_9t7YRlwAAAS"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# xXSHRvsP19kwvujEAAAT"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:22:06.499Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:22:06.499Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:22:06.499Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:22:06.499Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# h4RzUQCxCf2xjmSnAAAV"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:22:06.499Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T20:22:06.499Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":{"accepted":["sebams.dev@gmail.com"],"ehlo":["SIZE 35882577","8BITMIME","AUTH LOGIN PLAIN XOAUTH2 PLAIN-CLIENTTOKEN OAUTHBEARER XOAUTH","ENHANCEDSTATUSCODES","PIPELINING","CHUNKING","SMTPUTF8"],"envelope":{"from":"","to":["sebams.dev@gmail.com"]},"envelopeTime":660,"messageId":"<f0f0bf5a-2fc5-b97e-0389-399d9fe3ee6f@localhost>","messageSize":337,"messageTime":868,"rejected":[],"response":"250 2.0.0 OK  1692217628 zc13-20020a056871270d00b001c03d1a519fsm7834048oab.39 - gsmtp"}}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 16172"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# 5UhDn2tMAT6ROIesAAAB"}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 9940"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 18572"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 11812"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 8332"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 20116"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 20044"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 19700"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# d_oQ74qDmFw12tS5AAAB"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# 63Gj69ijCA3VTsUMAAAD"}
-{"level":"silly","message":{"pass":"1","username":"s.marambiosandoval@gmail.com"}}
-{"level":"http","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T21:17:12.541Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"64a76c46b0610bb8ad81039b"}
-{"level":"silly","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTc2YzQ2YjA2MTBiYjhhZDgxMDM5YiIsImlhdCI6MTY5MjIyMDk4OCwiZXhwIjoxNjkyMzA1NTg4fQ.l3oxo2kNj4GPpiRW98f1q78_tbKye-_OCVXhfIPyArs"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T21:17:12.541Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# lqgw6rkBdaLHZf5MAAAF"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# 0HH-6VXUlNpxYhNPAAAH"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# Ojh761SR5O68Dde1AAAJ"}
-{"level":"silly","message":{"pass":"1","username":"s.marambiosandoval@gmail.com"}}
-{"level":"http","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T21:23:08.601Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"64a76c46b0610bb8ad81039b"}
-{"level":"silly","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTc2YzQ2YjA2MTBiYjhhZDgxMDM5YiIsImlhdCI6MTY5MjIyMTA2MiwiZXhwIjoxNjkyMzA1NjYyfQ.VHVxqFiyKx2oHq7hZEFkWwPgqC_pSeK7vgK9mDaTP_s"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T21:23:08.601Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# kVJmYWv6F_mxo7U6AAAL"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T21:23:08.601Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 3728"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# puRlEjA-ruXyq33YAAAB"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# aNYCz22oSsPmy8y7AAAD"}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 20276"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# Y1pAGSiCcumTenmAAAAB"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# gPSXtyUkwvc4Kh54AAAD"}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 12704"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 13184"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# R3neKbCLvQZuzIJdAAAB"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# IFqIk5AigbOODDJ8AAAD"}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 21460"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# NMePO4ywoGmQhzRmAAAB"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# PpSLfudGgg68wu6dAAAD"}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 21080"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# INtkCWnYRBxH6w6_AAAB"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# rL8FFV2NG-Rqc_naAAAD"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# jk4YzwOrHmU_r2-xAAAF"}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 2772"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# kNMU8r1KEZxorxRGAAAB"}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 20092"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# Aog37mh32OVBSHyFAAAB"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# N0QJpuUk3WqXbYb6AAAD"}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 6968"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# la8g3rmKGetfqSMUAAAB"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# Qu58Ew_gp0XfMswEAAAD"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# LOh3LLoHnL1oILkYAAAF"}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 10260"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# fxnHcZxp_5UFh8rSAAAB"}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 20596"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# LOXwnLe7Egtw_COyAAAB"}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 20120"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# JReP4Aha55y122TkAAAB"}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 21080"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# M5SJGagPveh5Eh07AAAB"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# ui5TgPMh9d8SkOy9AAAD"}
-{"level":"silly","message":{"pass":"1","username":"s.marambiosandoval@gmail.com"}}
-{"level":"http","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T21:24:22.199Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"64a76c46b0610bb8ad81039b"}
-{"level":"silly","message":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YTc2YzQ2YjA2MTBiYjhhZDgxMDM5YiIsImlhdCI6MTY5MjIyMTY3MSwiZXhwIjoxNjkyMzA2MjcxfQ.JmRRN5aLGoBgzuo2EmMk1bo9ZdcNOoVA9wUzUFnJkEQ"}
-{"level":"silly","message":{"_id":"64a76c46b0610bb8ad81039b","age":112,"cart":"64c73beb0c0a99f51789006b","first_name":"Entidad 2","last_connection":"2023-08-16T21:24:22.199Z","last_name":"Perez 2","pass":"$2b$10$5QlA/wElLHnMihVC86sPbe0jTsGiBnTNATkkHAeUQIuTY6svkU7rW","role":"admin","user":"s.marambiosandoval@gmail.com"}}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# UOL_J0jZpL07DL3PAAAF"}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 4568"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# rOP1HNmLGeKqVCjiAAAB"}
-{"level":"silly","message":"Base de datos conectada: Practica"}
-{"level":"silly","message":"Servidor en el puerto 8080 - PID WORKER 21284"}
-{"level":"silly","message":"Documentación disponible en http://localhost:8080/api/docs"}
-{"level":"silly","message":"Nuevo cliente conectado! socket id# tgzLVCUnXz5ThIqfAAAB"}
